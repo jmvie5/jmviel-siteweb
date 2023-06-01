@@ -22,10 +22,10 @@ export default function NavBar() {
                 enterTo="transform opacity-100 translate-x-0 scale-100"
                 leave="transition ease-in duration-200"
                 leaveFrom="transform opacity-100 translate-x-0 scale-100"
-                leaveTo="transform opacity-0 -translate-x-full scale-95"
+                leaveTo="transform opacity-0 translate-x-full scale-95"
             >
                 
-                <Menu.Items className="absolute inset-x-2 sm:inset-x-4 top-full mt-2 rounded-md shadow-lg bg-jmv_white ring-1 ring-jmv_lessDark ring-opacity-5 focus:outline-none max-w-sm">
+                <Menu.Items className="absolute top-full w-60 mt-2 rounded-md shadow-lg bg-jmv_white ring-1 ring-jmv_lessDark ring-opacity-5 focus:outline-none max-w-sm">
                     <div className="py-1">
                         {siteMetadata.menuLinks.map(link => (
                             <Menu.Item key={link.name}>
