@@ -32,7 +32,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-netlify",
-    "gatsby-plugin-google-gtag",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {

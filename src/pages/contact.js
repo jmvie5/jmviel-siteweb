@@ -26,7 +26,8 @@ return (
                         <select name="service" className="mt-1 block w-full px-3 py-2 bg-jmv_white border border-jmv_light rounded-md text-sm shadow-sm placeholder-jmv_light focus:outline-none focus:border-jmv_light focus:ring-1 focus:ring-jmv_light" required>
                             <option disabled selected value=""> -- Sélectionnez -- </option>
                             <option value="Musicien">Musicien</option>
-                            <option value="Conception de site web">Conception de votre site web</option>
+                            <option value="Développeur web">Développeur web</option>
+                            <option value="Programmeur">Programmeur</option>
                         </select>
                     </label>
                 </div>
