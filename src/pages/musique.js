@@ -2,17 +2,17 @@ import * as React from 'react'
 import Layout from '../components/Layout'
 import { Seo } from '../components/Seo'
 
-const IndexPage = () => {
+const MusiquePage = () => {
 
 return (
-    <Layout pageTitle="">
-        
+    <Layout pageTitle="Musique">
+
     </Layout>
 )
 }
 
-export default IndexPage
+export default MusiquePage
 
 export const Head = () => (
-<Seo />
+<Seo title="Musique" />
 )

@@ -5,8 +5,8 @@ import { Seo } from '../components/Seo'
 const IndexPage = () => {
 
 return (
-    <Layout pageTitle="">
-        
+    <Layout pageTitle="À propos">
+
     </Layout>
 )
 }
@@ -14,5 +14,5 @@ return (
 export default IndexPage
 
 export const Head = () => (
-<Seo />
+<Seo title="À propos" description=""/>
 )
