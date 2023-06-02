@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
-import { Seo } from '../components/Seo'
+import Seo from '../components/Seo'
 import Siteweb from '../components/Siteweb'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -15,14 +15,14 @@ return (
             <h2 className='text-xl text-jmv_light '>Développement web</h2>
             <Siteweb
                 name="Laurence bf, orthopédagogue"
-                description={<div><p>Laurence bf est une orthopédagogue spécialisée en difficultés d’apprentissage en français (lecture/écriture) auprès d’enfants de tous âges. Comme elle a le désir d’aider le plus d’enfants possibles à développer leurs compétences littéraciques (lecture-écriture), <strong>elle a décidé de créer l’espace Laurence bf, orthopédagogue</strong> pour rejoindre les parents, les acteurs les plus importants dans la vie des enfants.</p><p className='mt-2'>Son but est de soutenir et d’aider les parents qui se questionnent sur les façons d’intervenir auprès de leur enfant qui rencontre des difficultés en français.</p></div>}
+                description={<div><p>Laurence bf est une orthopédagogue spécialisée en difficultés d’apprentissage en français (lecture/écriture) auprès d’enfants de tous âges. Comme elle a le désir d’aider le plus d’enfants possible à développer leurs compétences littéraciques (lecture-écriture), <strong>elle a décidé de créer l’espace Laurence bf, orthopédagogue</strong> pour rejoindre les parents, les acteurs les plus importants dans la vie des enfants.</p><p className='mt-2'>Son but est de soutenir et d’aider les parents qui se questionnent sur les façons d’intervenir auprès de leur enfant qui rencontre des difficultés en français.</p></div>}
                 siteName="laurencebf.ca"
                 github="https://github.com/jmvie5/laurence-orthopedagogue"
             >
                 <StaticImage src='../images/laurencebf.png' alt='Logo Laurence bf, orthopédagogue'/>
             </Siteweb>
             <Siteweb
-                name="Musique nationale de la Réserver Navale"
+                name="Musique nationale de la Réserve Navale"
                 description={<div><p>La Musique nationale de la Réserve navale (MNRN), formée en 1976, est composée de musiciens réservistes choisis parmi les six divisions de la Réserve navale du Canada ayant une musique.</p>La MNRN s’entraine et se produit principalement pendant l’été afin d’appuyer la mission de la Réserve navale qui est de représenter les Forces armées canadiennes et de créer des liens avec les Canadiens.<p></p></div>}
                 siteName="nbnr.ca"
                 github="https://github.com/jmvie5/nbnr-mnrn"
@@ -41,7 +41,7 @@ return (
         <div className='flex flex-col my-4'>
             <h2 className='text-jmv_light text-xl'>Jeux vidéos</h2>
             <div className='flex flex-col sm:flex-row gap-4'>
-                <p className='text-jmv_white ml-4 my-4'>Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créer le jeu au coeur de la recherche avec Roblox. Allez y jeter un coup d'oeil :</p>
+                <p className='text-jmv_white ml-4 my-4'>Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au coeur de la recherche avec Roblox. Allez y jeter un coup d'oeil :</p>
                 <a title="Improvison" href="https://www.roblox.com/games/5984084686/Improvison" className='flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110'>
                     <StaticImage src="../images/roblox.svg" alt="Roblox logo" className='w-12'/>
                     <p className='text-jmv_white text-2xl font-bold font-josefin'>Improvison</p>

@@ -2,8 +2,13 @@ import * as React from 'react'
 import NavBar from './NavBar'
 import { StaticImage } from 'gatsby-plugin-image'
 
+interface LayoutProps {
+    children: React.ReactNode,
+    pageTitle: string
+}
 
-const Layout = ({ pageTitle, children }) => {
+
+const Layout = ( {pageTitle, children}:LayoutProps ) => {
 
     return (
         <div className='flex bg-jmv_dark min-h-screen justify-center'>

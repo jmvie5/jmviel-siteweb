@@ -7,7 +7,7 @@ import {ArrowSmallLeftIcon} from "@heroicons/react/24/outline"
 const NotFoundPage = () => {
 
 return (
-    <Layout pageTitle="Erreur 404" description="Page introuvable.">
+    <Layout pageTitle="Erreur 404">
         <title>404</title>
         <div className="space-y-4">
             <p className="text-jmv_white">Page introuvable.</p>

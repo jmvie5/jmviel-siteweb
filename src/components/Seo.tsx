@@ -1,15 +1,22 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-export const Seo = ({ title, description, pathname, children }) => {
-  const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata()
+interface SeoProps {
+  title?: string,
+  description?: string,
+  pathname?: string,
+  children?: ReactNode
+};
+
+export default function Seo({ title, description, pathname, children }: SeoProps) {
+  const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata();
 
   const seo = {
       title: title || defaultTitle,
       description: description || defaultDescription,
       image: `${siteUrl}${image}`,
       url: `${siteUrl}${pathname || ``}`,
-  }
+  };
 
   return (
       <>
@@ -18,5 +25,5 @@ export const Seo = ({ title, description, pathname, children }) => {
       <meta name="image" content={seo.image} />
       {children}
       </>
-  )
+  );
 }

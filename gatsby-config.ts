@@ -2,6 +2,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  graphqlTypegen: true,
   siteMetadata: {
     title: `Jean-Michel Viel`,
     siteUrl: `https://jeanmichelviel.ca`,
