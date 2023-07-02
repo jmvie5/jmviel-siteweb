@@ -4,7 +4,7 @@
 module.exports = {
   graphqlTypegen: true,
   siteMetadata: {
-    title: `Jean-Michel Viel`,
+    title: `Jean-Michel Viel, musicien et programmeur`,
     siteUrl: `https://jeanmichelviel.ca`,
     description: "Site web de Jean-Michel Viel, musicien et programmeur.",
     image: "./src/images/icon.png",
@@ -30,6 +30,9 @@ module.exports = {
         link: "/contact"
       }
     ]
+  },
+  flags: {
+    DEV_SSR: true
   },
   plugins: [
     "gatsby-plugin-netlify",
@@ -75,5 +78,6 @@ module.exports = {
         policy: [{userAgent: '*', allow: '/'}]
       }
     },
-  ]
+  ],
+  
 };

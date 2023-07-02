@@ -12,10 +12,10 @@ return (
             <p className='text-jmv_white ml-4 mb-4'>Spécialisé en développement web, j'aime aussi le développement de jeux vidéos et de programmes utilitaires.</p>
         </div>
         <div className='space-y-4'>
-            <h2 className='text-xl text-jmv_light '>Développement web</h2>
+            <h2 id="info-web" className='text-xl text-jmv_light '>Développement web</h2>
             <Siteweb
                 name="Laurence bf, orthopédagogue"
-                description={<div><p>Laurence bf est une orthopédagogue spécialisée en difficultés d’apprentissage en français (lecture/écriture) auprès d’enfants de tous âges. Comme elle a le désir d’aider le plus d’enfants possible à développer leurs compétences littéraciques (lecture-écriture), <strong>elle a décidé de créer l’espace Laurence bf, orthopédagogue</strong> pour rejoindre les parents, les acteurs les plus importants dans la vie des enfants.</p><p className='mt-2'>Son but est de soutenir et d’aider les parents qui se questionnent sur les façons d’intervenir auprès de leur enfant qui rencontre des difficultés en français.</p></div>}
+                description={<div><p className='mb-2'>Laurence bf est une orthopédagogue spécialisée en difficultés d’apprentissage en français (lecture/écriture) auprès d’enfants de tous âges. Comme elle a le désir d’aider le plus d’enfants possible à développer leurs compétences littéraciques (lecture-écriture), <strong>elle a décidé de créer l’espace Laurence bf, orthopédagogue</strong> pour rejoindre les parents, les acteurs les plus importants dans la vie des enfants.</p><p>Son but est de soutenir et d’aider les parents qui se questionnent sur les façons d’intervenir auprès de leur enfant qui rencontre des difficultés en français.</p></div>}
                 siteName="laurencebf.ca"
                 github="https://github.com/jmvie5/laurence-orthopedagogue"
             >
@@ -23,7 +23,7 @@ return (
             </Siteweb>
             <Siteweb
                 name="Musique nationale de la Réserve Navale"
-                description={<div><p>La Musique nationale de la Réserve navale (MNRN), formée en 1976, est composée de musiciens réservistes choisis parmi les six divisions de la Réserve navale du Canada ayant une musique.</p>La MNRN s’entraine et se produit principalement pendant l’été afin d’appuyer la mission de la Réserve navale qui est de représenter les Forces armées canadiennes et de créer des liens avec les Canadiens.<p></p></div>}
+                description={<div><p className='mb-2'>La Musique nationale de la Réserve navale (MNRN), formée en 1976, est composée de musiciens réservistes choisis parmi les six divisions de la Réserve navale du Canada ayant une musique.</p><p>La MNRN s’entraine et se produit principalement pendant l’été afin d’appuyer la mission de la Réserve navale qui est de représenter les Forces armées canadiennes et de créer des liens avec les Canadiens.</p></div>}
                 siteName="nbnr.ca"
                 github="https://github.com/jmvie5/nbnr-mnrn"
             >
@@ -37,9 +37,22 @@ return (
             >
                 <StaticImage src="../images/improvison.png" alt="Logo Improvison"/>
             </Siteweb>
+            <Siteweb
+                name="Café social"
+                description={<div><p className='mb-2'>Réseau social personnel à petite échelle pour le partage de grains de café, de recettes, de trucs et astuces, etc.</p><p>Projet en développement.</p></div>}
+                github='https://github.com/charlotrudel/cafe_social'
+                >
+                    <StaticImage src="../images/cafesocial.png" alt="Logo Café social"/>
+            </Siteweb>
+            <Siteweb
+                name="Jean-Michel Viel, musicien et programmeur"
+                description={<div>Ce site web!</div>}
+                github="https://github.com/jmvie5/jmviel-siteweb">
+                    <StaticImage src="../images/icon.png" alt="Logo JM Viel"/>              
+            </Siteweb>
         </div>
         <div className='flex flex-col my-4'>
-            <h2 className='text-jmv_light text-xl'>Jeux vidéos</h2>
+            <h2 id="info-jeux" className='text-jmv_light text-xl'>Jeux vidéos</h2>
             <div className='flex flex-col sm:flex-row gap-4'>
                 <p className='text-jmv_white ml-4 my-4'>Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au coeur de la recherche avec Roblox. Allez y jeter un coup d'oeil :</p>
                 <a title="Improvison" href="https://www.roblox.com/games/5984084686/Improvison" className='flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110'>

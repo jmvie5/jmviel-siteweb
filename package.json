@@ -1,8 +1,8 @@
 {
-  "name": "Jean-Michel Viel, musicien et développeur web",
+  "name": "Jean-Michel Viel, musicien et programmeur",
   "version": "1.0.0",
   "private": true,
-  "description": "Site web de Jean-Michel Viel, musicien et développeur web.",
+  "description": "Site web de Jean-Michel Viel, musicien et programmeur.",
   "author": "Jean-Michel Viel",
   "keywords": [
     "gatsby"

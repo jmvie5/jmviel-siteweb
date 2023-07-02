@@ -7,7 +7,7 @@ export const useSiteMetadata = () => {
         title: string,
         description: string,
         siteUrl: string,
-        image: any,
+        image: string,
         menuLinks: [{
           name: string,
           link: string,

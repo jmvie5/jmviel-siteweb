@@ -1,8 +1,16 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image';
 
+interface SitewebProps {
+    name: string,
+    id?: string,
+    siteName?: string,
+    description: React.ReactElement,
+    github: string,
+    children: React.ReactNode
+}
 //children = static image of website icon
-const Siteweb = ({ name, siteName, description, github, children }) => {
+const Siteweb = ({ name, id, siteName, description, github, children }: SitewebProps) => {
     const link = "https://" + siteName;
 
     return (
