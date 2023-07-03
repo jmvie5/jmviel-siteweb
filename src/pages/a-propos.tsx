@@ -15,7 +15,7 @@ return (
             <div className="">
                 <h2 className='text-xl text-jmv_light mb-2'>Musique</h2>
                 <div className='space-y-2 flex flex-col xs:inline'>
-                    <StaticImage src="../images/ComboJazzMTMBateau.jpg" alt="Spectacle sur le HMS PROTECTOR" className='float-right aspect-square w-72 mx-4 mb-2 self-center'/>
+                    <StaticImage src="../images/a-propos/ComboJazzMTMBateau.jpg" alt="Spectacle sur le HMS PROTECTOR" className='float-right aspect-square w-72 mx-4 mb-2 self-center'/>
                     <p>J'ai complété en 2018 mon baccalauréat avec mention d'honneur de la doyenne en interprétation jazz/pop, puis j'ai poursuivi à la maitrise en didactique instrumentale que j'ai complété en 2021. Mon sujet : L’improvisation comme moteur d’apprentissage chez les jeunes guitaristes. Si ça vous intéresse, n'hésitez pas à le <a href="" title="L’improvisation comme moteur d’apprentissage chez les jeunes guitaristes">télécharger</a>.</p>
                     <p>Mes études au deuxième cycle m'ont initié au monde de la recherche académique. J'y suis encore actif à titre professionnel de recherche pour Jean-Philippe Després (Ph. D.), à l'Université Laval, dans le cadre de son projet de recherche-développement de matériel pédagogique ludique pour soutenir l'apprentissage de l'improvisation musicale.</p>
                     <p>En complétant ma maitrise, je me suis aussi enrôlé dans les Forces armées canadiennes comme musicien pour le NCSM Montcalm, une division de la réserve navale située à Québec. Aujourd'hui, je suis principalement actif avec la Musique nationale de la Réserve navale tout en étant présent pour les répétitions et les engagements de la Musique du NCSM Montcalm.</p>

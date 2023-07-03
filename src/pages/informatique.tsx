@@ -19,7 +19,7 @@ return (
                 siteName="laurencebf.ca"
                 github="https://github.com/jmvie5/laurence-orthopedagogue"
             >
-                <StaticImage src='../images/laurencebf.png' alt='Logo Laurence bf, orthopédagogue'/>
+                <StaticImage src='../images/informatique/laurencebf.png' alt='Logo Laurence bf, orthopédagogue'/>
             </Siteweb>
             <Siteweb
                 name="Musique nationale de la Réserve Navale"
@@ -27,7 +27,7 @@ return (
                 siteName="nbnr.ca"
                 github="https://github.com/jmvie5/nbnr-mnrn"
             >
-                <StaticImage src="../images/nbnr.png" alt="Logo NBNR"/>
+                <StaticImage src="../images/informatique/nbnr.png" alt="Logo NBNR"/>
             </Siteweb>
             <Siteweb
                 name="Improvison"
@@ -35,18 +35,19 @@ return (
                 siteName="improvison.ca"
                 github="https://github.com/jmvie5/improvison"
             >
-                <StaticImage src="../images/improvison.png" alt="Logo Improvison"/>
+                <StaticImage src="../images/informatique/improvison.png" alt="Logo Improvison"/>
             </Siteweb>
             <Siteweb
                 name="Café social"
                 description={<div><p className='mb-2'>Réseau social personnel à petite échelle pour le partage de grains de café, de recettes, de trucs et astuces, etc.</p><p>Projet en développement.</p></div>}
                 github='https://github.com/charlotrudel/cafe_social'
                 >
-                    <StaticImage src="../images/cafesocial.png" alt="Logo Café social"/>
+                    <StaticImage src="../images/informatique/cafesocial.png" alt="Logo Café social"/>
             </Siteweb>
             <Siteweb
                 name="Jean-Michel Viel, musicien et programmeur"
                 description={<div>Ce site web!</div>}
+                siteName='jeanmichelviel.ca'
                 github="https://github.com/jmvie5/jmviel-siteweb">
                     <StaticImage src="../images/icon.png" alt="Logo JM Viel"/>              
             </Siteweb>
@@ -56,7 +57,7 @@ return (
             <div className='flex flex-col sm:flex-row gap-4'>
                 <p className='text-jmv_white ml-4 my-4'>Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au coeur de la recherche avec Roblox. Allez y jeter un coup d'oeil :</p>
                 <a title="Improvison" href="https://www.roblox.com/games/5984084686/Improvison" className='flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110'>
-                    <StaticImage src="../images/roblox.svg" alt="Roblox logo" className='w-12'/>
+                    <StaticImage src="../images/informatique/roblox.svg" alt="Roblox logo" className='w-12'/>
                     <p className='text-jmv_white text-2xl font-bold font-josefin'>Improvison</p>
                 </a>
             </div>
@@ -69,15 +70,15 @@ return (
                 <a title="MongoDB" href="https://www.mongodb.com/"><StaticImage className="w-44 transition duration-300 ease-in hover:scale-110" alt="MongoDB Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png"/></a>
                 <a title="expressjs" href="https://expressjs.com/"><StaticImage className="w-44 transition duration-300 ease-in hover:scale-110" alt="Expressjs" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"/></a>
                 <a title="NodeJS" href="https://nodejs.org"><StaticImage className="w-44 transition duration-300 ease-in hover:scale-110" alt="NodeJS" src="https://upload.wikimedia.org/wikipedia/commons/6/67/NodeJS.png"/></a>
-                <a title="GatsbyJS" href="https://gastbyjs.com"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" src="../images/gatsbyjs.png" alt="GatsbyJS logo"/></a>
+                <a title="GatsbyJS" href="https://gastbyjs.com"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" src="../images/informatique/gatsbyjs.png" alt="GatsbyJS logo"/></a>
                 <a title="GraphQL" href="https://graphql.org/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="GraphQL Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png"/></a>
                 <a title="Netlify" href="https://www.netlify.com/"><StaticImage className="w-44 transition duration-300 ease-in hover:scale-110" alt="Netlify logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/512px-Netlify_logo_%282%29.svg.png"/></a>
                 <a title="Tailwind CSS" href="https://tailwindcss.com"><img className="w-24 transition duration-300 ease-in hover:scale-110" alt="Tailwind CSS Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png"/></a>
                 <a title="JavaScript" href="https://www.javascript.com/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="JavaScript-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png"/></a>
                 <a title="TypeScript" href="https://www.typescriptlang.org/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="Typescript logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png"/></a>
-                <a title="HTML5" href="https://html.spec.whatwg.org/multipage/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="HTML5 logo" src="../images/html5.png"/></a>
+                <a title="HTML5" href="https://html.spec.whatwg.org/multipage/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="HTML5 logo" src="../images/informatique/html5.png"/></a>
                 <a title="CSS3" href="https://www.w3.org/Style/CSS/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="CSS3 logo and wordmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/256px-CSS3_logo_and_wordmark.svg.png"/></a>
-                <a title="Python" href="https://www.python.org/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="Python logo" src="../images/python.png"/></a>
+                <a title="Python" href="https://www.python.org/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="Python logo" src="../images/informatique/python.png"/></a>
                 <a title="C++" href="https://cplusplus.com/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="C++ Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/256px-ISO_C%2B%2B_Logo.svg.png"/></a>
                 <a title="Lua" href="https://www.lua.org/"><StaticImage className="w-24 transition duration-300 ease-in hover:scale-110" alt="Lua-Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/512px-Lua-Logo.svg.png"/></a>
                 <a title="Git" href="https://git-scm.com/"><StaticImage className="w-32 transition duration-300 ease-in hover:scale-110" alt="Git-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png"/></a>

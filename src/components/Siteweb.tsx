@@ -25,7 +25,7 @@ const Siteweb = ({ name, id, siteName, description, github, children }: SitewebP
                         <a href={link} className='hover:underline'>{siteName}</a>
                         <a href={github} className='hover:underline'>
                             <div className='flex gap-1'>
-                                <StaticImage src="../images/github.png" alt="Github logo" className="w-6"/>
+                                <StaticImage src="../images/informatique/github.png" alt="Github logo" className="w-6"/>
                                 <p>GitHub</p>
                             </div>
                         </a>

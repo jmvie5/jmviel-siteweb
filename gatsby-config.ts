@@ -31,9 +31,6 @@ module.exports = {
       }
     ]
   },
-  flags: {
-    DEV_SSR: true
-  },
   plugins: [
     "gatsby-plugin-netlify",
     "gatsby-plugin-image",
