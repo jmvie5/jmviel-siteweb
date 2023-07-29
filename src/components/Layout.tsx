@@ -1,10 +1,9 @@
 import * as React from 'react'
-import NavBar from './NavBar'
 import { StaticImage } from 'gatsby-plugin-image'
 
 interface LayoutProps {
     children: React.ReactNode,
-    pageTitle: string
+    pageTitle?: string
 }
 
 
@@ -12,10 +11,8 @@ const Layout = ( {pageTitle, children}:LayoutProps ) => {
 
     return (
         <div className='flex bg-jmv_dark min-h-screen justify-center'>
-            <div className=" flex flex-col justify-between max-w-screen-xl w-full">
-                <main className="flex flex-col h-full mx-2 sm:mx-4">
-                    <NavBar/>
-                    <h2 className='text-jmv_light text-xl my-4'>{pageTitle}</h2>
+            <div className=" flex flex-col justify-between w-full">
+                <main className="flex flex-col h-full">
                     {children}
                 </main>
                 <footer className='flex flex-col xs:flex-row gap-4 justify-around text-jmv_white m-4 pt-4 border-t border-jmv_light' >

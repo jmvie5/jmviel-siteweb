@@ -4,9 +4,9 @@
 module.exports = {
   graphqlTypegen: true,
   siteMetadata: {
-    title: `Jean-Michel Viel, musicien et programmeur`,
+    title: `Jean-Michel Viel`,
     siteUrl: `https://jeanmichelviel.ca`,
-    description: "Site web de Jean-Michel Viel, musicien et programmeur.",
+    description: "Jean-Michel Viel, musicien, pédaguoge et programmeur.",
     image: "./src/images/icon.png",
     menuLinks: [
       {

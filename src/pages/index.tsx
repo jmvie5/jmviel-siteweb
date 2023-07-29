@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
+import NavBar from '../components/NavBar'
 import Seo from '../components/Seo'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -7,10 +8,14 @@ const IndexPage = () => {
 
 return (
     <Layout pageTitle="">
-        <div className='flex flex-col place-self-center max-w-sm gap-2'>
-            <StaticImage src="../images/exclam.png" alt="Attention!"/>
-            <p className='text-jmv_white text-2xl text-center font-medium '>Site web en cours de construction.</p>
-        </div> 
+        <div className="bg-[url(../images/mascarade.jpg)] bg-cover bg-center h-screen">
+            <div className='flex flex-col my-4  '>
+                <h1 className='text-2xl ml-4'>Jean-Michel Viel</h1>
+                <NavBar dark more/>
+            </div>
+            
+        </div>
+        <div className=' bg-gradient-to-b from-black to bg-jmv_dark h-10'></div>
     </Layout>
 )
 }
