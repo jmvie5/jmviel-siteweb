@@ -33,9 +33,9 @@ const MusiquePage = () => {
 					</div>
 					
 					<div className="ml-4 row-span-2 -mt-4 sm:-mt-0 ">
-						<h2 className='text-xl my-4'>Musique</h2>
-						<p className='text-sm md:text-base'>Je suis musicien depuis plus de 14 ans, gradué du baccalauréat en interprétation jazz/pop et de la maitrise en didactique instrumentale de la Faculté de musique de l'Université Laval.</p>
-						<p className='text-sm md:text-base my-4'>Besoin d'un musicien ou d'un groupe pour votre évènement? <Link to="/contact" className='font-medium underline hover:text-jmv_light'>Contactez moi!</Link></p>
+						<h2 className='text-xl sm:my-4 my-2'>Musique</h2>
+						<p className='text-sm md:text-base'>Je suis musicien à Québec depuis plus de 14 ans, diplômé du baccalauréat en interprétation jazz/pop et de la maitrise en didactique instrumentale de la Faculté de musique de l'Université Laval.</p>
+						<p className='text-sm md:text-base my-4'>Besoin d'un musicien ou d'un groupe pour votre évènement? <Link to="/contact" className='font-medium underline hover:text-jmv_light'>Contactez-moi!</Link></p>
 						<p></p>
 					</div>
 				</div>
@@ -46,7 +46,7 @@ const MusiquePage = () => {
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 id="mus-duo" className='text-xl text-jmv_light '>Duo Pichenotte</h2>
 					<div className='flex flex-col sm:flex-row'>
-						<StaticImage src='../images/musique/Duo_Pichenotte.jpg' alt="Duo Pichenotte" className='sm:w-[50%]'/>
+						<StaticImage src='../images/musique/Duo_Pichenotte.jpg' alt="Duo Pichenotte" className='sm:w-[50%] mb-2 sm:mb-0'/>
 						<div className='sm:w-[50%] flex flex-col justify-around sm:ml-2'>
 							<iframe className="border-0 w-full h-32" src="https://bandcamp.com/EmbeddedPlayer/album=1471944775/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://leduopichenotte.bandcamp.com/album/with-friends-for-christmas">With friends, for Christmas de Le Duo Pichenotte</a></iframe>
 							<iframe className="border-0 w-full h-32" src="https://bandcamp.com/EmbeddedPlayer/album=3343381706/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://leduopichenotte.bandcamp.com/album/comme-un-manouche">Comme Un Manouche de Le Duo Pichenotte</a></iframe>
@@ -55,17 +55,27 @@ const MusiquePage = () => {
 					</div>
 				</div>
 				<div className='space-y-2 mx-2 sm:mx-4'>
-					<h2 className='text-xl text-jmv_light'>La Revoir</h2>
+					
 					<div className='flex flex-col sm:flex-row gap-2'>
-						<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F2600890786839713%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden w-full" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-						<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F268978514085998%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden w-full" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" ></iframe>
+						
+						<div className="flex flex-col w-full sm:w-[50%] justify-between">
+							<h2 className='text-xl text-jmv_light mb-2'>La Revoir</h2>
+							<iframe className='w-full aspect-square' src="https://bandcamp.com/EmbeddedPlayer/track=809649105/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="https://larevoir.bandcamp.com/track/lautomnale">L'automnale by La Revoir</a></iframe>
+						</div>
+						
+						<div className='flex flex-col gap-2 justify-between w-full sm:w-[50%]'>
+							<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F2600890786839713%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden " allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+							<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F268978514085998%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden " allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" ></iframe>
+						</div>
 					</div>
+						
+					
 				</div>
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 id="mus-solo" className='text-xl text-jmv_light '>Guitare solo</h2>
 					<div className='flex flex-col sm:flex-row gap-2'>
 						<StaticImage src='../images/musique/Solo.jpg' alt="Jean-Michel Viel, soliste" className='sm:w-[50%]'/>
-						<div className='sm:w-[50%] flex flex-col justify-around sm:ml-2 gap-2'>
+						<div className='sm:w-[50%] flex flex-col justify-around gap-2'>
 							<div className='aspect-video w-full'>
 								<lite-youtube videoId='B3IEiCGBJ6s' title='Like Someone In Love'></lite-youtube>
 							</div>

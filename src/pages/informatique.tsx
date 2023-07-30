@@ -69,7 +69,7 @@ return (
             <div className='flex flex-col my-4 mx-2 sm:mx-4'>
                 <h2 id="info-jeux" className='text-jmv_light text-xl'>Jeux vidéos</h2>
                 <div className='flex flex-col sm:flex-row gap-4'>
-                    <p className='text-jmv_white ml-4 my-4'>Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au coeur de la recherche avec Roblox. Allez y jeter un coup d'oeil :</p>
+                    <p className='text-jmv_white ml-4 my-4'>Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au cœur de la recherche avec Roblox. Allez y jeter un coup d'oeil :</p>
                     <a title="Improvison" href="https://www.roblox.com/games/5984084686/Improvison" className='flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110'>
                         <StaticImage src="../images/informatique/roblox.svg" alt="Roblox logo" className='w-12'/>
                         <p className='text-jmv_white text-2xl font-bold font-josefin'>Improvison</p>

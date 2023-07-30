@@ -18,7 +18,7 @@ return (
                 
                 <div className="m-4 row-span-2 bg-jmv_white/50 p-2 rounded-lg">
                     <h2 className='text-xl mb-4'>À propos</h2>
-                    <p className='mt-4'>Guitariste, pédagogue et programmeur; ce sont mes trois passions qui, à leur tour, m'ont guidé jusqu'à aujourd'hui.</p>
+                    <p className='mt-4'>La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui.</p>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@ return (
                 <h2 className='text-xl text-jmv_light mb-2'>Musique</h2>
                 <div className='space-y-2 flex flex-col xs:inline'>
                     <StaticImage src="../images/a-propos/ComboJazzMTMBateau.jpg" alt="Spectacle sur le HMS PROTECTOR" className='float-right aspect-square w-72 sm:w-96 mx-4 mb-2 self-center'/>
-                    <p>J'ai complété en 2018 mon baccalauréat avec mention d'honneur de la doyenne en interprétation jazz/pop, puis j'ai poursuivi à la maitrise en didactique instrumentale que j'ai complété en 2021. Mon sujet : L’improvisation comme moteur d’apprentissage chez les jeunes guitaristes.</p>
+                    <p>J'ai complété, en 2018, mon baccalauréat avec mention d'honneur de la doyenne en interprétation jazz/pop, puis j'ai poursuivi à la maitrise en didactique instrumentale que j'ai complété en 2021. Mon sujet : L’improvisation comme moteur d’apprentissage chez les jeunes guitaristes.</p>
                     <p>J'ai commencé à enseigner la musique pendant mon baccalauréat en interprétation. L'enseignement est un domaine que j'aime encore énormément, si vous cherchez un professeur de guitare ou d'improvisation musicale, n'hésitez pas à me <Link to='/contact' className='font-medium hover:underline'>contacter</Link>!</p>
                     <p>Mes études au deuxième cycle m'ont initié au monde de la recherche académique. J'y suis encore actif à titre professionnel de recherche pour Jean-Philippe Després (Ph. D.), à l'Université Laval, dans le cadre de son projet de recherche-développement de matériel pédagogique ludique pour soutenir l'apprentissage de l'improvisation musicale.</p>
                     <p>En complétant ma maitrise, je me suis aussi enrôlé dans les Forces armées canadiennes comme musicien pour le NCSM Montcalm, une division de la réserve navale située à Québec. Aujourd'hui, je suis principalement actif avec la Musique nationale de la Réserve navale tout en étant présent pour les répétitions et les engagements de la Musique du NCSM Montcalm.</p>
@@ -42,7 +42,7 @@ return (
                     <p>
                         En finissant ma maitrise en didactique instrumentale, la COVID-19 est arrivée et a complètement perturbé le projet de recherche dans lequel je travaillais. Impossible de faire tester le jeu d'improvisation musicale analogue à des participants qui ne se voit désormais plus qu'en ligne. C'est sous cette nouvelle réalité que j'ai migré le jeu de table développé pendant le projet de recherche vers <a href='/informatique#info-jeux' className='font-medium hover:underline'>Roblox</a>. Ce qui nous a permis de continuer le projet, et m'a fait faire le bond en informatique.</p>
                     <p>
-                        Pour accroitre mes connaissances dans le domaine, je me suis inscrit au certificat en informatique de l'université Laval. Avec mon emploi avec la Musique nationale de la Réserve navale et le projet de recherche de Jean-Philippe Després, je complète ma formation au ralenti, mais elle m'a permis d'acquérir plusieurs compétences importantes dans le domaine.
+                        Pour accroitre mes connaissances dans le domaine, je me suis inscrit au certificat en informatique de l'Université Laval. Avec mon emploi avec la Musique nationale de la Réserve navale et le projet de recherche de Jean-Philippe Després, je complète ma formation au ralenti, mais elle m'a permis d'acquérir plusieurs compétences importantes dans le domaine.
                     </p>
                     <p className='mt-2'>Liste de cours complétés :</p>
                     <ul className='list-disc ml-6'>

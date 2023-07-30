@@ -43,7 +43,7 @@ const ContactPage = () => {
                         <NavBar dark more/>
                     </div>
                     
-                    <div className="ml-4 row-span-2 min-[480px]:w-[50%]">
+                    <div className="ml-4 row-span-2 min-[480px]:w-[360px] lg:w-[450px]">
                         <h2 className='text-xl my-4'>Contact</h2>
                         <p className='my-4 mr-4'>Contactez-moi en remplissant ce formulaire ou en m'envoyant un courriel à <a className="hover:underline " href="mailto:info@jeanmichelviel.ca">info@jeanmichelviel.ca</a></p>
                     </div>
@@ -110,27 +110,27 @@ const ContactPage = () => {
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-jmv_white p-6 text-left align-middle shadow-xl transition-all">
-                                <Dialog.Title
-                                    as="h3"
-                                    className="text-lg font-medium leading-6 text-jmv_dark"
-                                >
-                                    Merci!
-                                </Dialog.Title>
-                                <div className="mt-2">
-                                    <p className="text-sm text-jmv_lessDark">
-                                    Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.
-                                    </p>
-                                </div>
-
-                                <div className="mt-4">
-                                    <button
-                                    type="button"
-                                    className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-jmv_lessDark hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:jmv_light focus-visible:ring-offset-2"
-                                    onClick={closeModal}
+                                    <Dialog.Title
+                                        as="h3"
+                                        className="text-lg font-medium leading-6 text-jmv_dark"
                                     >
-                                    Fermer
-                                    </button>
-                                </div>
+                                        Merci!
+                                    </Dialog.Title>
+                                    <div className="mt-2">
+                                        <p className="text-sm text-jmv_lessDark">
+                                        Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.
+                                        </p>
+                                    </div>
+
+                                    <div className="mt-4">
+                                        <button
+                                        type="button"
+                                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-jmv_lessDark hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:jmv_light focus-visible:ring-offset-2"
+                                        onClick={closeModal}
+                                        >
+                                        Fermer
+                                        </button>
+                                    </div>
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
