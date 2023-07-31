@@ -9,12 +9,13 @@ interface SeoProps {
 };
 
 export default function Seo({ title, description, pathname, children }: SeoProps) {
-  const { title: defaultTitle, description: defaultDescription, image, siteUrl } = useSiteMetadata();
+  const { title: defaultTitle, description: defaultDescription, image, previewImage, siteUrl } = useSiteMetadata();
 
   const seo = {
       title: title || defaultTitle,
       description: description || defaultDescription,
       image: `${siteUrl}${image}`,
+      previewImage: `${siteUrl}${previewImage}`,
       url: `${siteUrl}${pathname || ``}`,
   };
 
@@ -23,6 +24,7 @@ export default function Seo({ title, description, pathname, children }: SeoProps
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <meta property="og:image" content={previewImage} />
       {children}
       </>
   );

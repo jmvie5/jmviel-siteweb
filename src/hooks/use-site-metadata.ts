@@ -8,6 +8,7 @@ export const useSiteMetadata = () => {
         description: string,
         siteUrl: string,
         image: string,
+        previewImage: string,
         menuLinks: [{
           name: string,
           link: string,
@@ -24,6 +25,7 @@ export const useSiteMetadata = () => {
           description
           siteUrl
           image
+          previewImage
           menuLinks {
             name
             link
