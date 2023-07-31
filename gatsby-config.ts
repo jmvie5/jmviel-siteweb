@@ -8,7 +8,7 @@ module.exports = {
     siteUrl: `https://jeanmichelviel.ca`,
     description: "Jean-Michel Viel, musicien, pédaguoge et programmeur.",
     image: "./src/images/icon.png",
-    previewImage: "./src/images/mascarade.jpg",
+    previewImage: "./src/images/mascaradePreview.webp",
     menuLinks: [
       {
         name: "Accueil",
