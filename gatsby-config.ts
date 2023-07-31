@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Jean-Michel Viel`,
     siteUrl: `https://jeanmichelviel.ca`,
-    description: "Jean-Michel Viel, musicien, pédaguoge et programmeur.",
+    description: "Jean-Michel Viel, musicien, pédaguogue et programmeur.",
     image: "./src/images/icon.png",
     previewImage: "./src/images/mascaradePreview.webp",
     menuLinks: [

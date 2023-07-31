@@ -45,9 +45,9 @@ const MusiquePage = () => {
 			<div className='flex flex-col max-w-7xl self-center gap-4'>
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 id="mus-duo" className='text-xl text-jmv_light '>Duo Pichenotte</h2>
-					<div className='flex flex-col sm:flex-row'>
-						<StaticImage src='../images/musique/Duo_Pichenotte.jpg' alt="Duo Pichenotte" className='sm:w-[50%] mb-2 sm:mb-0'/>
-						<div className='sm:w-[50%] flex flex-col justify-around sm:ml-2'>
+					<div className='grid grid-cols-1 sm:grid-cols-2'>
+						<StaticImage src='../images/musique/Duo_Pichenotte.jpg' alt="Duo Pichenotte" className='mb-2 sm:mb-0'/>
+						<div className='flex flex-col justify-around sm:ml-2'>
 							<iframe className="border-0 w-full h-32" src="https://bandcamp.com/EmbeddedPlayer/album=1471944775/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://leduopichenotte.bandcamp.com/album/with-friends-for-christmas">With friends, for Christmas de Le Duo Pichenotte</a></iframe>
 							<iframe className="border-0 w-full h-32" src="https://bandcamp.com/EmbeddedPlayer/album=3343381706/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://leduopichenotte.bandcamp.com/album/comme-un-manouche">Comme Un Manouche de Le Duo Pichenotte</a></iframe>
 							<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fduopichenotte%2Fvideos%2F1236176119915900%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden w-full" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"/>
@@ -55,50 +55,86 @@ const MusiquePage = () => {
 					</div>
 				</div>
 				<div className='space-y-2 mx-2 sm:mx-4'>
-					
-					<div className='flex flex-col sm:flex-row gap-2'>
-						
-						<div className="flex flex-col w-full sm:w-[50%] justify-between">
+					<div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+						<div className="flex flex-col w-full justify-between">
 							<h2 className='text-xl text-jmv_light mb-2'>La Revoir</h2>
 							<iframe className='w-full aspect-square' src="https://bandcamp.com/EmbeddedPlayer/track=809649105/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="https://larevoir.bandcamp.com/track/lautomnale">L'automnale by La Revoir</a></iframe>
 						</div>
-						
-						<div className='flex flex-col gap-2 justify-between w-full sm:w-[50%]'>
+						<div className='flex flex-col gap-2 justify-between w-full'>
 							<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F2600890786839713%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden " allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 							<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F268978514085998%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden " allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" ></iframe>
 						</div>
 					</div>
-						
-					
+				</div>
+				<div className='space-y-2 mx-2 sm:mx-4'>
+					<h2 id="mus-solo" className='text-xl text-jmv_light '>Récital de fin de maitrise</h2>
+					<div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+							<div>
+								<div className='aspect-video w-full'>
+									<lite-youtube videoId='jlYKvRdRvIU' title='Renversement' videoTitle='Renversement'></lite-youtube>
+								</div>
+								<h3 className=' text-sm text-jmv_white text-center'>Renversement</h3>
+							</div>
+							<div>
+								<div className='aspect-video w-full'>
+									<lite-youtube videoId='iyWtXGCrx0I' title="Lines of Oppression"></lite-youtube>
+								</div>
+								<h3 className=' text-sm text-jmv_white text-center'>Lines of Oppression</h3>
+							</div>
+							<div>
+								<div className='aspect-video w-full'>
+									<lite-youtube videoId='N2s9Totqj3g' title="Shaw 'Nuff"></lite-youtube>
+								</div>
+								<h3 className=' text-sm text-jmv_white text-center'>Shaw 'Nuff</h3>
+							</div>
+							<div>
+								<div className='aspect-video w-full'>
+									<lite-youtube videoId='vVpOqi-AiyQ' title="Chelsea Bridge"></lite-youtube>
+								</div>
+								<h3 className=' text-sm text-jmv_white text-center'>Chelsea Bridge</h3>
+							</div>
+						</div>					
 				</div>
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 id="mus-solo" className='text-xl text-jmv_light '>Guitare solo</h2>
-					<div className='flex flex-col sm:flex-row gap-2'>
-						<StaticImage src='../images/musique/Solo.jpg' alt="Jean-Michel Viel, soliste" className='sm:w-[50%]'/>
-						<div className='sm:w-[50%] flex flex-col justify-around gap-2'>
-							<div className='aspect-video w-full'>
-								<lite-youtube videoId='B3IEiCGBJ6s' title='Like Someone In Love'></lite-youtube>
+					<div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+						<StaticImage src='../images/musique/Solo.jpg' alt="Jean-Michel Viel, soliste" className=''/>
+						<div className='flex flex-col justify-around gap-2'>
+							<div>
+								<div className='aspect-video w-full'>
+									<lite-youtube videoId='B3IEiCGBJ6s' title='Like Someone In Love' videoTitle='Like Someone In Love'></lite-youtube>
+								</div>
+								<h3 className=' text-sm text-jmv_white text-center'>Like Someone In Love</h3>
 							</div>
-							<div className='aspect-video w-full'>
-								<lite-youtube videoId='XOkeHWtaB4c' title="You Don't Know What Love Is - Guitare solo"></lite-youtube>
+							<div>
+								<div className='aspect-video w-full'>
+									<lite-youtube videoId='XOkeHWtaB4c' title="You Don't Know What Love Is - Guitare solo"></lite-youtube>
+								</div>
+								<h3 className=' text-sm text-jmv_white text-center'>You Don't Know What Love Is</h3>
 							</div>
 						</div>
 					</div>						
 				</div>
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 className='text-xl text-jmv_light'>Claudia Caron Trio</h2>
-					<div className='flex gap-2 flex-col sm:flex-row'>
-						<div className='aspect-video w-full'>
-							<lite-youtube videoId="h-GswqZiHGU" title='Claudia Caron Trio'></lite-youtube>
+					<div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+						<div>
+							<div className='aspect-video w-full'>
+								<lite-youtube videoId="h-GswqZiHGU" title='Claudia Caron Trio'></lite-youtube>
+							</div>
+							<h3 className=' text-sm text-jmv_white text-center'>Vidéo promo</h3>
 						</div>
-						<div className='aspect-video w-full'>
-							<lite-youtube videoId="F0vM01LoRDg" title="Je Veux (Zaz cover) - Claudia Caron"></lite-youtube>
+						<div>
+							<div className='aspect-video w-full'>
+								<lite-youtube videoId="F0vM01LoRDg" title="Je Veux (Zaz cover) - Claudia Caron"></lite-youtube>
+							</div>
+							<h3 className=' text-sm text-jmv_white text-center'>Je Veux</h3>
 						</div>
 					</div>
 				</div>
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 className='text-xl text-jmv_light'>Musique nationale de la Réserve navale</h2>
-					<div className='flex flex-col sm:flex-row gap-2'>
+					<div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
 						<div className='aspect-video w-full'>
 							<lite-youtube videoId="HrFHISfk81I" title='Cantina Band'></lite-youtube>
 						</div>
@@ -107,6 +143,9 @@ const MusiquePage = () => {
 						</div>
 						<div className='aspect-video w-full'>
 							<lite-youtube videoId="kg6oX0n0NFI" title="Five Foot Two, Eyes of Blue (Has Anybody Seen My Girl?)"></lite-youtube>
+						</div>
+						<div className='aspect-video w-full'>
+							<lite-youtube videoId="DxmbczJdGY4" title="Gens du pays"></lite-youtube>
 						</div>
 					</div>
 				</div>
