@@ -7,7 +7,7 @@ module.exports = {
     title: `Jean-Michel Viel`,
     siteUrl: `https://jeanmichelviel.ca`,
     description: "Jean-Michel Viel, musicien, pédaguogue et programmeur.",
-    image: "./src/images/icon.png",
+    image: "./src/images/icon.webp",
     previewImage: "./src/images/mascaradePreview.webp",
     menuLinks: [
       {
@@ -45,7 +45,7 @@ module.exports = {
         "background_color": `#0d1b2a`,
         "theme_color": `#0d1b2a`,
         "display": `standalone`,
-        "icon": "src/images/icon.png"
+        "icon": "src/images/icon.webp"
       }
     },
     "gatsby-plugin-mdx",

@@ -36,7 +36,7 @@ const ContactPage = () => {
 
     return (
         <Layout>
-            <div className="bg-[url(../images/contact.jpg)] bg-cover h-96">
+            <div className="bg-[url(../images/contact.webp)] bg-cover h-96">
                 <div className="grid grid-rows-3 justify-between h-96 ">
                     <div className='flex flex-col my-4 '>
                         <h1 className='text-2xl ml-4'>Jean-Michel Viel</h1>
@@ -145,5 +145,5 @@ const ContactPage = () => {
 export default ContactPage
 
 export const Head = () => (
-<Seo title="Contact" description='' />
+<Seo title="Contact" description="info@jeanmichelviel.ca" />
 )

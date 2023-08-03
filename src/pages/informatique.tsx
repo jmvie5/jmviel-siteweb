@@ -9,7 +9,7 @@ const InformatiquePage = () => {
 
 return (
     <Layout pageTitle="">
-        <div className="bg-[url(../images/coding.jpeg)] bg-cover h-96">
+        <div className="bg-[url(../images/coding.webp)] bg-cover h-96">
             <div className="grid grid-rows-3 justify-between text-jmv_white h-96 w-[61%] xs:w-[50%] ">
                 <div className='flex flex-col my-4 '>
                     <h1 className='text-2xl ml-4'>Jean-Michel Viel</h1>
@@ -33,7 +33,7 @@ return (
                     siteName="laurencebf.ca"
                     github="https://github.com/jmvie5/laurence-orthopedagogue"
                 >
-                    <StaticImage src='../images/informatique/laurencebf.png' alt='Logo Laurence bf, orthopédagogue'/>
+                    <StaticImage src='../images/informatique/laurencebf.webp' alt='Logo Laurence bf, orthopédagogue'/>
                 </Siteweb>
                 <Siteweb
                     name="Musique nationale de la Réserve Navale"
@@ -41,7 +41,7 @@ return (
                     siteName="nbnr.ca"
                     github="https://github.com/jmvie5/nbnr-mnrn"
                 >
-                    <StaticImage src="../images/informatique/nbnr.png" alt="Logo NBNR"/>
+                    <StaticImage src="../images/informatique/nbnr.webp" alt="Logo NBNR"/>
                 </Siteweb>
                 <Siteweb
                     name="Improvison"
@@ -49,21 +49,21 @@ return (
                     siteName="improvison.ca"
                     github="https://github.com/jmvie5/improvison"
                 >
-                    <StaticImage src="../images/informatique/improvison.png" alt="Logo Improvison"/>
+                    <StaticImage src="../images/informatique/improvison.webp" alt="Logo Improvison"/>
                 </Siteweb>
                 <Siteweb
                     name="Café social"
                     description={<div><p className='mb-2'>Réseau social personnel à petite échelle pour le partage de grains de café, de recettes, de trucs et astuces, etc.</p><p>Projet en développement.</p></div>}
                     github='https://github.com/charlotrudel/cafe_social'
                     >
-                        <StaticImage src="../images/informatique/cafesocial.png" alt="Logo Café social"/>
+                        <StaticImage src="../images/informatique/cafesocial.webp" alt="Logo Café social"/>
                 </Siteweb>
                 <Siteweb
                     name="Jean-Michel Viel, musicien et programmeur"
                     description={<div>Ce site web!</div>}
                     siteName='jeanmichelviel.ca'
                     github="https://github.com/jmvie5/jmviel-siteweb">
-                        <StaticImage src="../images/icon.png" alt="Logo JM Viel"/>              
+                        <StaticImage src="../images/icon.webp" alt="Logo JM Viel"/>              
                 </Siteweb>
             </div>
             <div className='flex flex-col my-4 mx-2 sm:mx-4'>
@@ -109,5 +109,5 @@ return (
 export default InformatiquePage
 
 export const Head = () => (
-<Seo title="Informatique" />
+<Seo title="Informatique" description="Spécialisé en développement web, j'aime aussi le développement de jeux vidéos et de programmes utilitaires."/>
 )

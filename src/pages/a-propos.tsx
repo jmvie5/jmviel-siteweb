@@ -28,7 +28,7 @@ return (
             <div className="">
                 <h2 className='text-xl text-jmv_light mb-2'>Musique</h2>
                 <div className='space-y-2 flex flex-col xs:inline'>
-                    <StaticImage src="../images/a-propos/ComboJazzMTMBateau.jpg" alt="Spectacle sur le HMS PROTECTOR" className='float-right aspect-square w-72 sm:w-96 mx-4 mb-2 self-center'/>
+                    <StaticImage src="../images/a-propos/ComboJazzMTMBateau.webp" alt="Spectacle sur le HMS PROTECTOR" className='float-right aspect-square w-72 sm:w-96 mx-4 mb-2 self-center'/>
                     <p>J'ai complété, en 2018, mon baccalauréat avec mention d'honneur de la doyenne en interprétation jazz/pop, puis j'ai poursuivi à la maitrise en didactique instrumentale que j'ai complétée en 2021. Mon sujet : L’improvisation comme moteur d’apprentissage chez les jeunes guitaristes.</p>
                     <p>J'ai commencé à enseigner la musique pendant mon baccalauréat en interprétation. L'enseignement est un domaine que j'aime encore énormément, si vous cherchez un professeur de guitare ou d'improvisation musicale, n'hésitez pas à me <Link to='/contact' className='font-medium hover:underline'>contacter</Link>!</p>
                     <p>Mes études au deuxième cycle m'ont initié au monde de la recherche académique. J'y suis encore actif à titre de professionnel de recherche pour Jean-Philippe Després (Ph. D.), à l'Université Laval, dans le cadre de son projet de recherche-développement de matériel pédagogique ludique pour soutenir l'apprentissage de l'improvisation musicale.</p>
@@ -64,5 +64,5 @@ return (
 export default AProposPage
 
 export const Head = () => (
-<Seo title="À propos" description=""/>
+<Seo title="À propos" description="La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui."/>
 )

@@ -25,7 +25,7 @@ const MusiquePage = () => {
 	
 	return (
 		<Layout>
-			<div className="bg-[url(../images/guitar.jpg)] bg-cover h-96">
+			<div className="bg-[url(../images/guitar.webp)] bg-cover h-96">
 				<div className="grid grid-rows-3 justify-between text-jmv_white h-96 w-[67%] min-[398px]:w-[60%] xxs:w-[50%] min-[506px]:w-[42%] lg:w-[50%] ">
 					<div className='flex flex-col my-4 '>
 						<h1 className='text-2xl ml-4'>Jean-Michel Viel</h1>
@@ -46,7 +46,7 @@ const MusiquePage = () => {
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 id="mus-duo" className='text-xl text-jmv_light '>Duo Pichenotte</h2>
 					<div className='grid grid-cols-1 sm:grid-cols-2'>
-						<StaticImage src='../images/musique/Duo_Pichenotte.jpg' alt="Duo Pichenotte" className='mb-2 sm:mb-0'/>
+						<StaticImage src='../images/musique/Duo_Pichenotte.webp' alt="Duo Pichenotte" className='mb-2 sm:mb-0'/>
 						<div className='flex flex-col justify-around sm:ml-2'>
 							<iframe className="border-0 w-full h-32" src="https://bandcamp.com/EmbeddedPlayer/album=1471944775/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://leduopichenotte.bandcamp.com/album/with-friends-for-christmas">With friends, for Christmas de Le Duo Pichenotte</a></iframe>
 							<iframe className="border-0 w-full h-32" src="https://bandcamp.com/EmbeddedPlayer/album=3343381706/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://leduopichenotte.bandcamp.com/album/comme-un-manouche">Comme Un Manouche de Le Duo Pichenotte</a></iframe>
@@ -98,7 +98,7 @@ const MusiquePage = () => {
 				<div className='space-y-2 mx-2 sm:mx-4'>
 					<h2 id="mus-solo" className='text-xl text-jmv_light '>Guitare solo</h2>
 					<div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
-						<StaticImage src='../images/musique/Solo.jpg' alt="Jean-Michel Viel, soliste" className=''/>
+						<StaticImage src='../images/musique/Solo.webp' alt="Jean-Michel Viel, soliste" className=''/>
 						<div className='flex flex-col justify-around gap-2'>
 							<div>
 								<div className='aspect-video w-full'>
@@ -159,5 +159,5 @@ const MusiquePage = () => {
 export default MusiquePage
 
 export const Head = () => (
-	<Seo title="Musique" />
+	<Seo title="Musique" description="Je suis musicien à Québec depuis plus de 14 ans, diplômé du baccalauréat en interprétation jazz/pop et de la maitrise en didactique instrumentale de la Faculté de musique de l'Université Laval."/>
 )

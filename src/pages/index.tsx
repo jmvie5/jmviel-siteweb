@@ -8,7 +8,7 @@ const IndexPage = () => {
 
 return (
     <Layout pageTitle="">
-        <div className="bg-[url(../images/mascarade.jpg)] bg-cover bg-center h-screen">
+        <div className="bg-[url(../images/mascarade.webp)] bg-cover bg-center h-screen">
             <div className='flex flex-col my-4  '>
                 <h1 className='text-2xl ml-4'>Jean-Michel Viel</h1>
                 <NavBar dark more/>
