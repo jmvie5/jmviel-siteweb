@@ -18,9 +18,6 @@ declare global {
 	}
 }
 
-/* Coquette
-<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fduopichenotte%2Fvideos%2F1051388251728376%2F&show_text=false&width=560&t=0" className="border-0 aspect-video overflow-hidden " allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" />
- */
 const MusiquePage = () => {
 	
 	return (
