@@ -1,12 +1,11 @@
 import * as React from 'react'
-import { Fragment } from 'react';
 import Layout from '../components/Layout'
 import { Link } from 'gatsby';
 import NavBar from '../components/NavBar';
 import Seo from '../components/Seo'
 import { LiteYTEmbed } from '@justinribeiro/lite-youtube';
-import { Transition } from '@headlessui/react'
 import { StaticImage } from 'gatsby-plugin-image';
+import { ArrowTopRightOnSquareIcon, DocumentArrowDownIcon, EnvelopeIcon } from "@heroicons/react/24/outline"
 
 type CustomElement<T> = Partial<T & React.DOMAttributes<T> & { children: any }>;
 
@@ -30,10 +29,16 @@ const MusiquePage = () => {
 					</div>
 					
 					<div className="ml-4 row-span-2 -mt-4 sm:-mt-0 ">
-						<h2 className='text-xl sm:my-4 my-2'>Musique</h2>
+						<h2 className='text-xl sm:mb-4 mb-2'>Musique</h2>
 						<p className='text-sm md:text-base'>Je suis musicien à Québec depuis plus de 14 ans, diplômé du baccalauréat en interprétation jazz/pop et de la maitrise en didactique instrumentale de la Faculté de musique de l'Université Laval.</p>
-						<p className='text-sm md:text-base my-4'>Besoin d'un musicien ou d'un groupe pour votre évènement? <Link to="/contact" className='font-medium underline hover:text-jmv_light'>Contactez-moi!</Link></p>
-						<p></p>
+						<div className=''>
+							<p className='text-sm md:text-base my-4'>Besoin d'un musicien ou d'un groupe pour votre évènement? <Link to="/contact" className='font-medium underline hover:text-jmv_light flex'>Contactez-moi <EnvelopeIcon className='ml-1 w-6' /></Link></p>
+							
+						</div>
+						
+						<div className='text-sm md:text-base hidden lg:flex'>
+							<a href="#mus-partitions" className="flex font-medium underline hover:text-jmv_light">Partitions à télécharger <DocumentArrowDownIcon className='w-6'/></a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -105,7 +110,7 @@ const MusiquePage = () => {
 							</div>
 							<div>
 								<div className='aspect-video w-full'>
-									<lite-youtube videoId='XOkeHWtaB4c' title="You Don't Know What Love Is - Guitare solo"></lite-youtube>
+									<lite-youtube videoId='pVpc0dIli8Q' title="You Don't Know What Love Is - Guitare solo"></lite-youtube>
 								</div>
 								<h3 className=' text-sm text-jmv_white text-center'>You Don't Know What Love Is</h3>
 							</div>
@@ -146,9 +151,48 @@ const MusiquePage = () => {
 						</div>
 					</div>
 				</div>
-				
+				<div className='space-y-2 mx-2 sm:mx-4' id='mus-partitions'>
+					<h2 className='text-xl text-jmv_light'>Transcriptions, exercices et autres partitions</h2>
+					<p className='text-jmv_white'>Cherchez-vous un professeur de guitare pour apprendre les pièces suivantes? <Link to='/contact' className='font-medium underline hover:text-jmv_light'>Contactez-moi</Link> !</p>
+					<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+						<div className='flex flex-col gap-2 text-jmv_white'>
+							<h3 className='font-semibold'>Transcriptions</h3>
+							<p>J'ai fait de nombreuses transcriptions pendant mes études en musique, en voici quelques-unes, n'hésitez pas à les télécharger et à les jouer!</p>
+							<div className=''>
+								<div className='before:content-["•"] flex'><a href='/partitions/Conception-Kurt.pdf' className='hover:underline flex ml-1'><p className='w-[220px] '>Conception, solo de Kurt Rosenwinkel</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
+								</div>
+								<div className='before:content-["•"] flex '><a href='/partitions/Have_you_met_miss_Jones-Kreisberg.pdf' className='hover:underline flex ml-1'><p className='w-[220px] '>Have You Met Miss Jones?, Jonathan Kreisberg</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Sail_Away-Tom_Harell.pdf' className='hover:underline flex ml-1'><p className='w-[220px] '>Sail Away, solo de Tom Harell</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/You_Go_To_My_Head-Kurt.pdf' className='hover:underline flex ml-1'><p className='w-[220px] '>You Go To My Head, Kurt Rosenwinkel</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href="/partitions/You'd_Be_So_Nice_To_Come_Home_To-Jim_Hall.pdf" className='hover:underline flex ml-1'><p className='w-[220px] '>You'd Be So Nice To Come Home To, Jim Hall</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+							</div>
+						</div>
+						<div className='flex flex-col gap-2 text-jmv_white sm:pl-4'>
+							<h3 className='font-semibold'>Exercices</h3>
+							<p>Voici quelques exercices qui m'ont bien été utiles comme échauffement et pour pratiquer ma technique instrumentale à la guitare.</p>
+							<div className=''>
+								<div className='before:content-["•"] flex'><a href='/partitions/Drop_2.pdf' className='hover:underline flex ml-1'><p className='w-[220px]'>Drop 2</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
+								</div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Exercice_Sweep_TuneUp.pdf' className='hover:underline flex ml-1'><p className='w-[220px]'>Sweep de triades sur Tune Up</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Exercices_Arpèges.pdf' className='hover:underline flex ml-1'><p className='w-[220px]'>Exercices d'argèges 7</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Exercices_main_du_manche.pdf' className='hover:underline flex ml-1'><p className='w-[220px]'>Exercice pour main du manche</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+							</div>
+						</div>
+						<div className='flex flex-col gap-2 text-jmv_white'>
+							<h3 className='font-semibold'>Compositions et arrangements</h3>
+							<p>Si vous souhaitez apprendre mes compositions ou mes arrangements que vous avez pu entendre sur cette page, les voici!</p>
+							<div className=''>
+								<div className='before:content-["•"] flex'><a href='/partitions/Like_Someone_In_Love-JMViel.pdf' className='hover:underline flex ml-1'><p className='w-[220px]'>Like Someone In Love</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
+								</div>
+								<div className='before:content-["•"] flex'><a href="/partitions/You_Don't_Know_What_Love_Is.pdf" className='hover:underline flex ml-1'><p className='w-[220px]'>You Don't Know What Love Is</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Entre_deux_villes.pdf' className='hover:underline flex ml-1'><p className='w-[220px]'>Entre deux villes</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href="/partitions/L'Automnale.pdf" className='hover:underline flex ml-1'><p className='w-[220px]'>L'Automnale</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href="/partitions/Renversements.pdf" className='hover:underline flex ml-1'><p className='w-[220px]'>Renversements</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			
 		</Layout>
 	)
 }
