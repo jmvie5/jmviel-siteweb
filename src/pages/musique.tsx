@@ -159,35 +159,35 @@ const MusiquePage = () => {
 							<h3 className='font-semibold'>Transcriptions</h3>
 							<p>J'ai fait de nombreuses transcriptions pendant mes études en musique, en voici quelques-unes, n'hésitez pas à les télécharger et à les jouer!</p>
 							<div className=''>
-								<div className='before:content-["•"] flex'><a href='/partitions/Conception-Kurt.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px] '>Conception, solo de Kurt Rosenwinkel</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
+								<div className='before:content-["•"] flex'><a href='/partitions/Conception-Kurt.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px] '>Conception, solo de Kurt Rosenwinkel</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
 								</div>
-								<div className='before:content-["•"] flex '><a href='/partitions/Have_you_met_miss_Jones-Kreisberg.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px] '>Have You Met Miss Jones?, Jonathan Kreisberg</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href='/partitions/Sail_Away-Tom_Harell.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px] '>Sail Away, solo de Tom Harell</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href='/partitions/You_Go_To_My_Head-Kurt.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px] '>You Go To My Head, Kurt Rosenwinkel</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href="/partitions/You'd_Be_So_Nice_To_Come_Home_To-Jim_Hall.pdf" className='hover:underline flex ml-1' target="_blank"><p className='w-[220px] '>You'd Be So Nice To Come Home To, Jim Hall</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex '><a href='/partitions/Have_you_met_miss_Jones-Kreisberg.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px] '>Have You Met Miss Jones?, Jonathan Kreisberg</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Sail_Away-Tom_Harell.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px] '>Sail Away, solo de Tom Harell</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/You_Go_To_My_Head-Kurt.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px] '>You Go To My Head, Kurt Rosenwinkel</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href="/partitions/You'd_Be_So_Nice_To_Come_Home_To-Jim_Hall.pdf" className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px] '>You'd Be So Nice To Come Home To, Jim Hall</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
 							</div>
 						</div>
 						<div className='flex flex-col gap-2 text-jmv_white sm:pl-4'>
 							<h3 className='font-semibold'>Exercices</h3>
 							<p>Voici quelques exercices qui m'ont bien été utiles comme échauffement et pour pratiquer ma technique instrumentale à la guitare.</p>
 							<div className=''>
-								<div className='before:content-["•"] flex'><a href='/partitions/Drop_2.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>Drop 2</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
+								<div className='before:content-["•"] flex'><a href='/partitions/Drop_2.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>Drop 2</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
 								</div>
-								<div className='before:content-["•"] flex'><a href='/partitions/Exercice_Sweep_TuneUp.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>Sweep de triades sur Tune Up</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href='/partitions/Exercices_Arpèges.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>Exercices d'argèges 7</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href='/partitions/Exercices_main_du_manche.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>Exercice pour main du manche</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Exercice_Sweep_TuneUp.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>Sweep de triades sur Tune Up</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Exercices_Arpèges.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>Exercices d'argèges 7</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Exercices_main_du_manche.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>Exercice pour main du manche</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
 							</div>
 						</div>
 						<div className='flex flex-col gap-2 text-jmv_white'>
 							<h3 className='font-semibold'>Compositions et arrangements</h3>
 							<p>Si vous souhaitez apprendre mes compositions ou mes arrangements que vous avez pu entendre sur cette page, les voici!</p>
 							<div className=''>
-								<div className='before:content-["•"] flex'><a href='/partitions/Like_Someone_In_Love-JMViel.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>Like Someone In Love</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
+								<div className='before:content-["•"] flex'><a href='/partitions/Like_Someone_In_Love-JMViel.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer" ><p className='w-[220px]'>Like Someone In Love</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a>
 								</div>
-								<div className='before:content-["•"] flex'><a href="/partitions/You_Don't_Know_What_Love_Is.pdf" className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>You Don't Know What Love Is</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href='/partitions/Entre_deux_villes.pdf' className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>Entre deux villes</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href="/partitions/L'Automnale.pdf" className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>L'Automnale</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
-								<div className='before:content-["•"] flex'><a href="/partitions/Renversements.pdf" className='hover:underline flex ml-1' target="_blank"><p className='w-[220px]'>Renversements</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href="/partitions/You_Don't_Know_What_Love_Is.pdf" className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>You Don't Know What Love Is</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href='/partitions/Entre_deux_villes.pdf' className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>Entre deux villes</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href="/partitions/L'Automnale.pdf" className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>L'Automnale</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
+								<div className='before:content-["•"] flex'><a href="/partitions/Renversements.pdf" className='hover:underline flex ml-1' target="_blank" rel="noreferrer"><p className='w-[220px]'>Renversements</p><ArrowTopRightOnSquareIcon className='w-6 ml-1' /></a></div>
 							</div>
 						</div>
 					</div>

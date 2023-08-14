@@ -3,11 +3,10 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 interface LayoutProps {
     children: React.ReactNode,
-    pageTitle?: string
 }
 
 
-const Layout = ( {pageTitle, children}:LayoutProps ) => {
+const Layout = ( {children}:LayoutProps ) => {
 
     return (
         <div className='flex bg-jmv_dark min-h-screen justify-center'>

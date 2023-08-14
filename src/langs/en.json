@@ -1,0 +1,16 @@
+{
+    "languages": {
+        "fr-CA": "FR",
+        "en-CA": "EN"
+    },
+    "pageTitles": {
+        "À propos": "About",
+        "Musique": "Music"
+    },
+    "pageDescritpions": {
+        "about-desc": "Guitar, teaching and programming; these are my three passions that have guided me to this day.",
+        "music-desc": "Music description."
+    }
+    
+
+}

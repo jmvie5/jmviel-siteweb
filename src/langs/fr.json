@@ -1,0 +1,14 @@
+{
+    "languages": {
+        "fr-CA": "FR",
+        "en-CA": "EN"
+    },
+    "pageTitles": {
+        "À propos": "À propos",
+        "Musique": "Musique"
+    },
+    "pageDescritpions": {
+        "about-desc": "La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui.",
+        "music-desc": "Je suis musicien à Québec depuis plus de 14 ans, diplômé du baccalauréat en interprétation jazz/pop et de la maitrise en didactique instrumentale de la Faculté de musique de l'Université Laval."
+    }
+}
