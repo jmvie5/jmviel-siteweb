@@ -11,7 +11,7 @@ type DataProps = {
     pageTitle: {
         message:string
     }
-    pageDescritption: {
+    pageDescription: {
         message:string
     }
 }
@@ -79,9 +79,8 @@ export default AProposPage
 
 
 export function Head(props: HeadProps<DataProps>) {
-    console.log(props.data)
     return (
-        <Seo title={props.data.pageTitle.message} description={props.data.pageDescritption.message}/>
+        <Seo title={props.data.pageTitle.message} description={props.data.pageDescription.message}/>
     )
 }
 
