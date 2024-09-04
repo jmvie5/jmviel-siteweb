@@ -1,16 +1,28 @@
 {
-    "languages": {
-        "fr-CA": "FR",
-        "en-CA": "EN"
-    },
-    "pageTitles": {
-        "À propos": "About",
-        "Musique": "Music"
-    },
-    "pageDescritpions": {
-        "about-desc": "Guitar, teaching and programming; these are my three passions that have guided me to this day.",
-        "music-desc": "Music description."
-    }
-    
+    "fr-CA": "Français",
+    "en-CA": "English",
 
+    "About": "About",
+    "Music": "Music",
+    "Computer Science": "Computer Science",
+    "Contact": "Contact",
+
+    "about-desc": "Guitar, teaching and programming; these are my three passions that have guided me to this day.",
+    "about-1": "In 2018, I completed my bachelor's degree with the Dean's Honors in jazz/pop performance, then went on to earn a master's degree in instrumental didactics, which I completed in 2021. My subject: Improvisation to foster learning among young guitarists.",
+    "about-2": "I started teaching music during my bachelor's degree in jazz performance. I still love teaching, so if you're looking for a guitar or improvisation teacher, please don't hesitate to ",
+    "contact-me": "contact me.",
+    "about-3": "My graduate studies introduced me to the world of academic research. I'm still active as a research professional for Jean-Philippe Després (Ph. D.), at Université Laval, as part of his project to research and develop playful teaching materials to support the learning of musical improvisation.",
+    "about-4": "Upon completing my Master's degree, I also joined the Canadian Armed Forces as a musician with HMCS Montcalm, a Naval Reserve Division located in Quebec City. Today, I'm mainly active with the National Band of the Naval Reserve, while also being present for HMCS Montcalm's band rehearsals and engagements.",
+    "about-5": "When I was finishing my master's degree in instrumental didactics, COVID-19 came along and completely disrupted the research project I was working on. It was impossible to test the analog musical improvisation game with participants who now only saw each other online. It was under this new reality that I migrated the tabletop game developed during the research project to",
+    "about-6": ". This enabled us to continue with the project, and gave me a head start in computer science.",
+    "about-7": "To expand my knowledge in the field, I enrolled in the computer science certificate program at Université Laval. With my job with the National Band of the Naval Reserve and Jean-Philippe Després' research project, I'm completing my training in slow motion, but it has enabled me to acquire several important skills in the field.",
+    "completed-courses": "Completed courses :",
+    "python": "Introduction to programming with Python",
+    "cpp": "Advanced programming in C++",
+    "osa": "Computers: structure and applications",
+    "algo": "Algorithms and data structures",
+    "about-8": "Right now, I'm most interested in web development. Although none of my certificate courses introduced me to this field, it's where I've done the majority of ",
+    "my-projects": "my projects",
+
+    "music-desc": "Music description."
 }
