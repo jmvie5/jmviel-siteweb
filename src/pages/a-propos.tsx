@@ -4,8 +4,7 @@ import NavBar from '../components/NavBar';
 import { Link, graphql, HeadProps } from 'gatsby';
 import Seo from '../components/Seo';
 import { StaticImage } from 'gatsby-plugin-image';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { LanguageSwitcher } from 'gatsby-plugin-i18n-l10n';
+import { FormattedMessage } from 'react-intl';
 
 type DataProps = {
     pageTitle: {
@@ -17,10 +16,9 @@ type DataProps = {
 };
 
 const AProposPage = () => {
-    const intl = useIntl();
     return (
         <Layout>
-            <div className="flex justfify-between bg-[url(../images/a-propos/JM_Lac_sm.webp)] xs:bg-[url(../images/a-propos/JM_Lac.webp)] bg-cover bg-[center_top] h-96 relative">
+            <div className="flex justfify-between bg-[url(../images/a-propos/JM_Lac_sm.webp)] xs:bg-[url(../images/a-propos/JM_Lac.webp)] bg-cover bg-[center_top] h-96">
                 <div className="grid grid-rows-3 justify-between text-jmv_dark h-96 xs:w-[50%]">
                     <div className="w-[50%] xs:w-full flex flex-col my-4">
                         <h1 className="text-2xl ml-4">Jean-Michel Viel</h1>
@@ -35,9 +33,6 @@ const AProposPage = () => {
                             <FormattedMessage id="about-desc" />
                         </p>
                     </div>
-                </div>
-                <div className="absolute right-0 m-4 hover:underline">
-                    <LanguageSwitcher resolveLanguageName={(locale) => intl.formatMessage({ id: `${locale}` })} />
                 </div>
             </div>
             <div className="bg-gradient-to-b from-black to bg-jmv_dark h-10"></div>

@@ -7,7 +7,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 const InformatiquePage = () => {
     return (
-        <Layout>
+        <Layout dark>
             <div className="bg-[url(../images/coding.webp)] bg-cover h-96">
                 <div className="grid grid-rows-3 justify-between text-jmv_white h-96 w-[61%] xs:w-[50%] ">
                     <div className="flex flex-col my-4 ">
