@@ -7,7 +7,6 @@
     "Computer Science": "Computer Science",
     "Contact": "Contact",
 
-<<<<<<< Updated upstream
     "about-desc": "Guitar, teaching and programming; these are my three passions that have guided me to this day.",
     "about-1": "In 2018, I completed my bachelor's degree with the Dean's Honors in jazz/pop performance, then went on to earn a master's degree in instrumental didactics, which I completed in 2021. My subject: Improvisation to foster learning among young guitarists.",
     "about-2": "I started teaching music during my bachelor's degree in jazz performance. I still love teaching, so if you're looking for a guitar or improvisation teacher, please don't hesitate to ",
@@ -24,24 +23,6 @@
     "algo": "Algorithms and data structures",
     "about-8": "Right now, I'm most interested in web development. Although none of my certificate courses introduced me to this field, it's where I've done the majority of ",
     "my-projects": "my projects",
-=======
-    "about-desc": "Guitar, teaching and programming; these are my three passions that havJ'ai complété, en 2018, mon baccalauréat avec mention d'honneur de la doyenne en interprétation jazz/pop, puis j'ai poursuivi à la maitrise en didactique instrumentale que j'ai complétée en 2021. Mon sujet : L’improvisation comme moteur d’apprentissage chez les jeunes guitaristes.e guided me to this day.",
-    "about-1": "",
-    "about-2": "J'ai commencé à enseigner la musique pendant mon baccalauréat en interprétation. L'enseignement est un domaine que j'aime encore énormément, si vous cherchez un professeur de guitare ou d'improvisation musicale, n'hésitez pas à me",
-    "contact me": "me contacter",
-    "about-3": "Mes études au deuxième cycle m'ont initié au monde de la recherche académique. J'y suis encore actif à titre de professionnel de recherche pour Jean-Philippe Després (Ph. D.), à l'Université Laval, dans le cadre de son projet de recherche-développement de matériel pédagogique ludique pour soutenir l'apprentissage de l'improvisation musicale.",
-    "about-4": "Mes études au deuxième cycle m'ont initié au monde de la recherche académique. J'y suis encore actif à titre de professionnel de recherche pour Jean-Philippe Després (Ph. D.), à l'Université Laval, dans le cadre de son projet de recherche-développement de matériel pédagogique ludique pour soutenir l'apprentissage de l'improvisation musicale.",
-    "about-5": "En finissant ma maitrise en didactique instrumentale, la COVID-19 est arrivée et a complètement perturbé le projet de recherche dans lequel je travaillais. Impossible de faire tester le jeu d'improvisation musicale analogique à des participants qui ne se voient désormais plus qu'en ligne. C'est sous cette nouvelle réalité que j'ai migré le jeu de table développé pendant le projet de recherche vers",
-    "about-6": ". Ce qui nous a permis de continuer le projet, et m'a fait faire le bond en informatique.",
-    "about-7": "Pour accroitre mes connaissances dans le domaine, je me suis inscrit au certificat en informatique de l'Université Laval. Avec mon emploi avec la Musique nationale de la Réserve navale et le projet de recherche de Jean-Philippe Després, je complète ma formation au ralenti, mais elle m'a permis d'acquérir plusieurs compétences importantes dans le domaine.",
-    "Completed courses :": "Cours complétés :",
-    "Introduction to programming with Python": "Introduction à la programmation avec Python",
-    "Advanced programming in C++": "Programmation avancée en C++",
-    "Computers: structure and applications": "Ordinateurs : structure et applications",
-    "Algorithms and data structures": "Algorithmes et structures de données",
-    "about-8": "Actuellement, ce qui m'intéresse le plus, c'est le développement web. Malgré qu'aucun de mes cours de certificats ne m'ait initié à ce domaine, c'est là où j'ai réalisé la majorité de",
-    "my projects": "mes projets",
->>>>>>> Stashed changes
 
     "music-desc": "Music description."
 }
