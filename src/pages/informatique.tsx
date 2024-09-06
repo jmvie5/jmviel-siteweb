@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Seo from '../components/Seo';
 import Siteweb from '../components/Siteweb';
 import { StaticImage } from 'gatsby-plugin-image';
+import { FormattedMessage } from 'react-intl';
 
 const InformatiquePage = () => {
     return (

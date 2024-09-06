@@ -6,6 +6,7 @@ import Seo from '../components/Seo';
 import { LiteYTEmbed } from '@justinribeiro/lite-youtube';
 import { StaticImage } from 'gatsby-plugin-image';
 import { ArrowTopRightOnSquareIcon, DocumentArrowDownIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import { FormattedMessage } from 'react-intl';
 
 type CustomElement<T> = Partial<T & React.DOMAttributes<T> & { children: any }>;
 
@@ -30,9 +31,7 @@ const MusiquePage = () => {
                     <div className="ml-4 row-span-2 -mt-4 sm:-mt-0 ">
                         <h2 className="text-xl sm:mb-4 mb-2">Musique</h2>
                         <p className="text-sm md:text-base">
-                            Je suis musicien à Québec depuis plus de 14 ans, diplômé du baccalauréat en interprétation
-                            jazz/pop et de la maitrise en didactique instrumentale de la Faculté de musique de
-                            l'Université Laval.
+                            <FormattedMessage id="music-desc" />
                         </p>
                         <div className="">
                             <p className="text-sm md:text-base my-4">
@@ -71,7 +70,7 @@ const MusiquePage = () => {
                                 seamless
                             >
                                 <a href="https://leduopichenotte.bandcamp.com/album/with-friends-for-christmas">
-                                    With friends, for Christmas de Le Duo Pichenotte
+                                    With friends, for Christmas - Le Duo Pichenotte
                                 </a>
                             </iframe>
                             <iframe
@@ -80,7 +79,7 @@ const MusiquePage = () => {
                                 seamless
                             >
                                 <a href="https://leduopichenotte.bandcamp.com/album/comme-un-manouche">
-                                    Comme Un Manouche de Le Duo Pichenotte
+                                    Comme Un Manouche - Le Duo Pichenotte
                                 </a>
                             </iframe>
                             <iframe
@@ -248,7 +247,7 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px] ">Conception, solo de Kurt Rosenwinkel</p>
+                                        <p className="w-[220px] ">Conception - Solo Kurt Rosenwinkel</p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
@@ -259,7 +258,7 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px] ">Have You Met Miss Jones?, Jonathan Kreisberg</p>
+                                        <p className="w-[220px] ">Have You Met Miss Jones? - Jonathan Kreisberg</p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
@@ -270,7 +269,7 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px] ">Sail Away, solo de Tom Harell</p>
+                                        <p className="w-[220px] ">Sail Away - Solo Tom Harell</p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
@@ -281,7 +280,7 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px] ">You Go To My Head, Kurt Rosenwinkel</p>
+                                        <p className="w-[220px] ">You Go To My Head - Kurt Rosenwinkel</p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
@@ -292,7 +291,7 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px] ">You'd Be So Nice To Come Home To, Jim Hall</p>
+                                        <p className="w-[220px] ">You'd Be So Nice To Come Home To - Jim Hall</p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
