@@ -5,8 +5,11 @@ import Seo from '../components/Seo';
 import Siteweb from '../components/Siteweb';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
+import { graphql, HeadProps } from 'gatsby';
+import { DataProps } from '../types';
 
 const InformatiquePage = () => {
+    
     return (
         <Layout dark>
             <div className="bg-[url(../images/coding.webp)] bg-cover h-96">
@@ -18,11 +21,10 @@ const InformatiquePage = () => {
 
                     <div className="ml-4 row-span-2">
                         <h2 className="text-xl my-4">
-                            <FormattedMessage id='Computer science' />
+                            <FormattedMessage id='Computer Science' />
                         </h2>
                         <p className="my-4">
-                            Spécialisé en développement web, j'aime aussi le développement de jeux vidéos et de
-                            programmes utilitaires.
+                        <FormattedMessage id='info-desc' />
                         </p>
                     </div>
                 </div>
@@ -32,23 +34,19 @@ const InformatiquePage = () => {
             <div className="grid grid-cols-1 max-w-7xl self-center">
                 <div className="space-y-4 mx-2 sm:mx-4">
                     <h2 id="info-web" className="text-xl text-jmv_light ">
-                        Développement web
+                    <FormattedMessage id='web-dev' />
                     </h2>
                     <Siteweb
                         name="Laurence bf, orthopédagogue"
                         description={
                             <div>
                                 <p className="mb-2">
-                                    Laurence bf est une orthopédagogue spécialisée en difficultés d’apprentissage en
-                                    français (lecture/écriture) auprès d’enfants de tous âges. Comme elle a le désir
-                                    d’aider le plus d’enfants possible à développer leurs compétences littéraciques
-                                    (lecture-écriture),{' '}
-                                    <strong>elle a décidé de créer l’espace Laurence bf, orthopédagogue</strong> pour
-                                    rejoindre les parents, les acteurs les plus importants dans la vie des enfants.
+                                    <FormattedMessage id='lbf-1' />{' '}
+                                    <strong><FormattedMessage id='lbf-2' /></strong>
+                                    <FormattedMessage id='lbf-3' />
                                 </p>
                                 <p>
-                                    Son but est de soutenir et d’aider les parents qui se questionnent sur les façons
-                                    d’intervenir auprès de leur enfant qui rencontre des difficultés en français.
+                                    <FormattedMessage id='lbf-4' />
                                 </p>
                             </div>
                         }
@@ -61,18 +59,14 @@ const InformatiquePage = () => {
                         />
                     </Siteweb>
                     <Siteweb
-                        name="Musique nationale de la Réserve Navale"
+                        name={"nbnr"}
                         description={
                             <div>
                                 <p className="mb-2">
-                                    La Musique nationale de la Réserve navale (MNRN), formée en 1976, est composée de
-                                    musiciens réservistes choisis parmi les six divisions de la Réserve navale du Canada
-                                    ayant une musique.
+                                <FormattedMessage id='nbnr-1' />
                                 </p>
                                 <p>
-                                    La MNRN s’entraine et se produit principalement pendant l’été afin d’appuyer la
-                                    mission de la Réserve navale qui est de représenter les Forces armées canadiennes et
-                                    de créer des liens avec les Canadiens.
+                                <FormattedMessage id='nbnr-2' />
                                 </p>
                             </div>
                         }
@@ -85,12 +79,9 @@ const InformatiquePage = () => {
                         name="Improvison"
                         description={
                             <div>
-                                Improvison est un projet de recherche développement dirigé par Jean-Philippe Després
-                                (Ph. D.) qui vise à développer du matériel pédagogique basé sur les principes de
-                                l’apprentissage par le jeu afin de faciliter l’acquisition, chez les instrumentistes de
-                                niveau débutant ou intermédiaire, de stratégies d’
-                                <strong>improvisation musicale</strong> qui sont mises en œuvre par les experts du
-                                domaine et à documenter les impacts perçus de ce matériel.
+                                <FormattedMessage id='improvison-1' />
+                                <strong><FormattedMessage id='improvison-2' /></strong> 
+                                <FormattedMessage id='improvison-3' />
                             </div>
                         }
                         siteName="improvison.ca"
@@ -103,10 +94,9 @@ const InformatiquePage = () => {
                         description={
                             <div>
                                 <p className="mb-2">
-                                    Réseau social personnel à petite échelle pour le partage de grains de café, de
-                                    recettes, de trucs et astuces, etc.
+                                <FormattedMessage id='cafe-social-1' />
                                 </p>
-                                <p>Projet en développement.</p>
+                                <p><FormattedMessage id='cafe-social-2' /></p>
                             </div>
                         }
                         github="https://github.com/charlotrudel/cafe_social"
@@ -115,7 +105,7 @@ const InformatiquePage = () => {
                     </Siteweb>
                     <Siteweb
                         name="Jean-Michel Viel, musicien et programmeur"
-                        description={<div>Ce site web!</div>}
+                        description={<div><FormattedMessage id='this-website' /></div>}
                         siteName="jeanmichelviel.ca"
                         github="https://github.com/jmvie5/jmviel-siteweb"
                     >
@@ -124,13 +114,11 @@ const InformatiquePage = () => {
                 </div>
                 <div className="flex flex-col my-4 mx-2 sm:mx-4">
                     <h2 id="info-jeux" className="text-jmv_light text-xl">
-                        Jeux vidéos
+                    <FormattedMessage id='games-title' />
                     </h2>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <p className="text-jmv_white ml-4 my-4">
-                            Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe
-                            Després (Ph. D.), j'ai créé le jeu au cœur de la recherche avec Roblox. Allez y jeter un
-                            coup d'oeil :
+                        <FormattedMessage id='games-desc' />
                         </p>
                         <a
                             title="Improvison"
@@ -143,7 +131,7 @@ const InformatiquePage = () => {
                     </div>
                 </div>
                 <div className="my-4 mx-2 sm:mx-4">
-                    <h2 className="text-jmv_light text-xl">Compétences :</h2>
+                    <h2 className="text-jmv_light text-xl"><FormattedMessage id='skills' /></h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
                         <a title="React" href="https://react.dev/">
                             <StaticImage
@@ -266,9 +254,17 @@ const InformatiquePage = () => {
 
 export default InformatiquePage;
 
-export const Head = () => (
-    <Seo
-        title="Informatique"
-        description="Spécialisé en développement web, j'aime aussi le développement de jeux vidéos et de programmes utilitaires."
-    />
-);
+export function Head(props: HeadProps<DataProps>) {
+    return <Seo title={props.data.pageTitle.message} description={props.data.pageDescription.message} />;
+}
+
+export const query = graphql`
+    query InformatiquePage($locale: String) {
+        pageTitle: translation(locale: { eq: $locale }, key: { eq: "Computer Science" }) {
+            message
+        }
+        pageDescription: translation(locale: { eq: $locale }, key: { eq: "info-desc" }) {
+            message
+        }
+    }
+`;

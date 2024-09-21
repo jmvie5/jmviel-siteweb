@@ -3,8 +3,10 @@ import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Layout from "../components/Layout";
 import NavBar from "../components/NavBar";
-import { navigate } from "gatsby";
+import { navigate, graphql, HeadProps } from 'gatsby';
 import Seo from "../components/Seo";
+import { FormattedMessage } from "react-intl";
+import { DataProps } from "../types";
 
 const ContactPage = () => {
   let [modalOpen, setModalOpen] = useState(false);
@@ -45,8 +47,7 @@ const ContactPage = () => {
           <div className="ml-4 row-span-2 min-[480px]:w-[360px] lg:w-[450px]">
             <h2 className="text-xl my-4">Contact</h2>
             <p className="my-4 mr-4">
-              Contactez-moi en remplissant ce formulaire ou en m'envoyant un
-              courriel à{" "}
+              <FormattedMessage id="contact-desc" />{" "}
               <a
                 className="hover:underline "
                 href="mailto:info@jeanmichelviel.ca"
@@ -77,7 +78,7 @@ const ContactPage = () => {
           <input type="hidden" name="form-name" value="contact" />
           <div className="flex flex-col xs:grid xs:grid-rows-2 gap-2 mb-2">
             <label className="block row-start-1 row-span-1">
-              <span className="block text-jmv_white">Nom</span>
+              <span className="block text-jmv_white"><FormattedMessage id="name" /></span>
               <input
                 type="text"
                 name="Nom"
@@ -87,7 +88,7 @@ const ContactPage = () => {
               />
             </label>
             <label className="block col-start-2 row-span-1">
-              <span className="block text-jmv_white">Courriel</span>
+              <span className="block text-jmv_white"><FormattedMessage id="email" /></span>
               <input
                 type="email"
                 name="Courriel"
@@ -97,7 +98,7 @@ const ContactPage = () => {
               />
             </label>
             <label className="block row-start-2">
-              <span className="block text-jmv_white">Service</span>
+              <span className="block text-jmv_white"><FormattedMessage id="need" /></span>
               <select
                 name="service"
                 className="mt-1 block w-full px-3 py-2 bg-jmv_white border border-jmv_light rounded-md text-sm shadow-sm placeholder-jmv_light focus:outline-none focus:border-jmv_light focus:ring-1 focus:ring-jmv_light"
@@ -105,17 +106,17 @@ const ContactPage = () => {
               >
                 <option disabled selected value="">
                   {" "}
-                  -- Sélectionnez --{" "}
+                  <FormattedMessage id="select" />{" "}
                 </option>
-                <option value="Musicien">Musicien</option>
-                <option value="Professeur">Professeur</option>
-                <option value="Développeur web">Développeur web</option>
-                <option value="Programmeur">Programmeur</option>
+                <option value="Musicien"><FormattedMessage id="musician" /></option>
+                <option value="Professeur"><FormattedMessage id="teacher" /></option>
+                <option value="Développeur web"><FormattedMessage id="web-developper" /></option>
+                <option value="Programmeur"><FormattedMessage id="programmer" /></option>
               </select>
             </label>
           </div>
           <label className="pb-2">
-            <span className="text-jmv_white">Message</span>
+            <span className="text-jmv_white"><FormattedMessage id="message" /></span>
             <textarea
               className="mt-1 block w-full px-3 py-2 bg-jmv_white border border-jmv_light rounded-md text-sm shadow-sm placeholder-jmv_light focus:outline-none focus:border-jmv_light focus:ring-1 focus:ring-jmv_light resize-y"
               name="message"
@@ -127,7 +128,7 @@ const ContactPage = () => {
             type="submit"
             className="bg-jmv_white hover:bg-gray-50 hover:ring-1 hover:ring-jmv_light active:bg-jmv_white focus:outline-none focus:ring-1 focus:ring-jmv_light rounded-md p-2 mt-2 col-start-2 col-span-1 w-32 self-center"
           >
-            Envoyer
+            <FormattedMessage id="send" />
           </button>
         </form>
       </div>
@@ -162,12 +163,11 @@ const ContactPage = () => {
                     as="h3"
                     className="text-lg font-medium leading-6 text-jmv_dark"
                   >
-                    Merci!
+                    <FormattedMessage id="modal-title" />
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-jmv_lessDark">
-                      Votre message a été envoyé avec succès. Je vous répondrai
-                      dans les plus brefs délais.
+                    <FormattedMessage id="modal-desc" />
                     </p>
                   </div>
 
@@ -177,7 +177,7 @@ const ContactPage = () => {
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-jmv_lessDark hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:jmv_light focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                      Fermer
+                      <FormattedMessage id="modal-close" />
                     </button>
                   </div>
                 </Dialog.Panel>
@@ -192,9 +192,17 @@ const ContactPage = () => {
 
 export default ContactPage;
 
-export const Head = () => (
-  <Seo
-    title="Contact"
-    description="Contactez-moi en remplissant ce formulaire ou en m'envoyant un courriel à info@jeanmichelviel.ca"
-  />
-);
+export function Head(props: HeadProps<DataProps>) {
+  return <Seo title={props.data.pageTitle.message} description={props.data.pageDescription.message} />;
+}
+
+export const query = graphql`
+  query ContactPage($locale: String) {
+      pageTitle: translation(locale: { eq: $locale }, key: { eq: "Contact" }) {
+          message
+      }
+      pageDescription: translation(locale: { eq: $locale }, key: { eq: "contact-desc-head" }) {
+          message
+      }
+  }
+`;

@@ -62,9 +62,11 @@
     "skills" : "Skills :",
 
     "contact-desc" : "Contact me by filling in this form or by sending an e-mail to",
+    "contact-desc-head" : "Contact me by filling in this form or by sending an e-mail to info@jeanmichelviel.ca",
     "name" : "Name",
     "email" : "Email",
     "need" : "Need",
+    "select" : "-- Select --",
     "musician" : "Musician",
     "teacher" : "Teacher",
     "web-developper" : "Web developper",

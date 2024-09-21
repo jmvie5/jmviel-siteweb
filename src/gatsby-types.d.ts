@@ -3081,6 +3081,13 @@ type AProposPageQueryVariables = Exact<{
 
 type AProposPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
 
+type ContactPageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type ContactPageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
@@ -3106,6 +3113,13 @@ type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: n
 type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: string | null, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
+
+type InformatiquePageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type InformatiquePageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
 
 type MusiquePageQueryVariables = Exact<{
   locale: InputMaybe<Scalars['String']>;

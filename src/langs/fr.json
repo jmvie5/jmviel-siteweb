@@ -4,7 +4,7 @@
 
     "About": "À propos",
     "Music": "Musique",
-    "Computer science": "Informatique",
+    "Computer Science": "Informatique",
     "Contact": "Contact",
 
     "about-desc": "La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui.",
@@ -62,9 +62,11 @@
     "skills" : "Compétences :",
 
     "contact-desc" : "Contactez-moi en remplissant ce formulaire ou en m'envoyant un courriel à",
+    "contact-desc-head" : "Contact me by filling in this form or by sending an e-mail to info@jeanmichelviel.ca",
     "name" : "Nom",
     "email" : "Courriel",
     "need" : "Besoin",
+    "select" : "-- Selectionnez --",
     "musician" : "Musicien",
     "teacher" : "Professeur",
     "web-developper" : "Développeur web",

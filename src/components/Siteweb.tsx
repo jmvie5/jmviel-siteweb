@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image';
+import { FormattedMessage } from 'react-intl';
 
 interface SitewebProps {
     name: string,
@@ -20,7 +21,7 @@ const Siteweb = ({ name, id, siteName, description, github, children }: SitewebP
                     {children}
                 </div>
                 <div className='flex flex-col justify-between gap-2'>
-                    <div className='text-xl font-bold'>{name}</div>
+                    <div className='text-xl font-bold'><FormattedMessage id={name}/></div>
                     <div className='flex gap-3'>
                         <a href={link} className='hover:underline'>{siteName}</a>
                         <a href={github} className='hover:underline'>
