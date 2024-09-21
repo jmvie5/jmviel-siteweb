@@ -1,12 +1,13 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
-import { Link } from 'gatsby';
+import { Link, graphql, HeadProps } from 'gatsby';
 import NavBar from '../components/NavBar';
 import Seo from '../components/Seo';
 import { LiteYTEmbed } from '@justinribeiro/lite-youtube';
 import { StaticImage } from 'gatsby-plugin-image';
 import { ArrowTopRightOnSquareIcon, DocumentArrowDownIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { FormattedMessage } from 'react-intl';
+import { DataProps } from '../types';
 
 type CustomElement<T> = Partial<T & React.DOMAttributes<T> & { children: any }>;
 
@@ -35,16 +36,16 @@ const MusiquePage = () => {
                         </p>
                         <div className="">
                             <p className="text-sm md:text-base my-4">
-                                Besoin d'un musicien ou d'un groupe pour votre évènement?{' '}
+                                <FormattedMessage id="need-musician" />
                                 <Link to="/contact" className="font-medium underline hover:text-jmv_light flex">
-                                    Contactez-moi <EnvelopeIcon className="ml-1 w-6" />
+                                    <FormattedMessage id="contact" /><EnvelopeIcon className="ml-1 w-6" />
                                 </Link>
                             </p>
                         </div>
 
                         <div className="text-sm md:text-base hidden lg:flex">
                             <a href="#mus-partitions" className="flex font-medium underline hover:text-jmv_light">
-                                Partitions à télécharger <DocumentArrowDownIcon className="w-6" />
+                                <FormattedMessage id="sheet-music-download" /><DocumentArrowDownIcon className="w-6" />
                             </a>
                         </div>
                     </div>
@@ -121,7 +122,7 @@ const MusiquePage = () => {
                 </div>
                 <div className="space-y-2 mx-2 sm:mx-4">
                     <h2 id="mus-solo" className="text-xl text-jmv_light ">
-                        Récital de fin de maitrise
+                        <FormattedMessage id="master-recital" />
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         <div>
@@ -156,7 +157,7 @@ const MusiquePage = () => {
                 </div>
                 <div className="space-y-2 mx-2 sm:mx-4">
                     <h2 id="mus-solo" className="text-xl text-jmv_light ">
-                        Guitare solo
+                        <FormattedMessage id='solo-guitar' />
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         <StaticImage src="../images/musique/Solo.webp" alt="Jean-Michel Viel, soliste" className="" />
@@ -204,7 +205,7 @@ const MusiquePage = () => {
                     </div>
                 </div>
                 <div className="space-y-2 mx-2 sm:mx-4">
-                    <h2 className="text-xl text-jmv_light">Musique nationale de la Réserve navale</h2>
+                    <h2 className="text-xl text-jmv_light"><FormattedMessage id='nbnr' /></h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         <div className="aspect-video w-full">
                             <lite-youtube videoId="HrFHISfk81I" title="Cantina Band"></lite-youtube>
@@ -224,11 +225,11 @@ const MusiquePage = () => {
                     </div>
                 </div>
                 <div className="space-y-2 mx-2 sm:mx-4" id="mus-partitions">
-                    <h2 className="text-xl text-jmv_light">Transcriptions, exercices et autres partitions</h2>
+                    <h2 className="text-xl text-jmv_light"><FormattedMessage id='music-downloads' /></h2>
                     <p className="text-jmv_white">
-                        Cherchez-vous un professeur de guitare pour apprendre les pièces suivantes?{' '}
+                        <FormattedMessage id='need-a-teacher' />{' '}
                         <Link to="/contact" className="font-medium underline hover:text-jmv_light">
-                            Contactez-moi
+                        <FormattedMessage id='contact' />
                         </Link>{' '}
                         !
                     </p>
@@ -236,8 +237,7 @@ const MusiquePage = () => {
                         <div className="flex flex-col gap-2 text-jmv_white">
                             <h3 className="font-semibold">Transcriptions</h3>
                             <p>
-                                J'ai fait de nombreuses transcriptions pendant mes études en musique, en voici
-                                quelques-unes, n'hésitez pas à les télécharger et à les jouer!
+                            <FormattedMessage id='transcription-desc' />
                             </p>
                             <div className="">
                                 <div className='before:content-["•"] flex'>
@@ -300,8 +300,7 @@ const MusiquePage = () => {
                         <div className="flex flex-col gap-2 text-jmv_white sm:pl-4">
                             <h3 className="font-semibold">Exercices</h3>
                             <p>
-                                Voici quelques exercices qui m'ont bien été utiles comme échauffement et pour pratiquer
-                                ma technique instrumentale à la guitare.
+                            <FormattedMessage id='exercices-desc' />
                             </p>
                             <div className="">
                                 <div className='before:content-["•"] flex'>
@@ -322,7 +321,7 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px]">Sweep de triades sur Tune Up</p>
+                                        <p className="w-[220px]"><FormattedMessage id='exercice-sweep' /></p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
@@ -333,7 +332,7 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px]">Exercices d'argèges 7</p>
+                                        <p className="w-[220px]"><FormattedMessage id='exercice-arpeggio' /></p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
@@ -344,17 +343,16 @@ const MusiquePage = () => {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        <p className="w-[220px]">Exercice pour main du manche</p>
+                                        <p className="w-[220px]"><FormattedMessage id='exercice-neck-hand' /></p>
                                         <ArrowTopRightOnSquareIcon className="w-6 ml-1" />
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div className="flex flex-col gap-2 text-jmv_white">
-                            <h3 className="font-semibold">Compositions et arrangements</h3>
+                            <h3 className="font-semibold"><FormattedMessage id='compo-title' /></h3>
                             <p>
-                                Si vous souhaitez apprendre mes compositions ou mes arrangements que vous avez pu
-                                entendre sur cette page, les voici!
+                            <FormattedMessage id='compo-desc' />
                             </p>
                             <div className="">
                                 <div className='before:content-["•"] flex'>
@@ -423,9 +421,17 @@ const MusiquePage = () => {
 
 export default MusiquePage;
 
-export const Head = () => (
-    <Seo
-        title="Musique"
-        description="Je suis musicien à Québec depuis plus de 14 ans, diplômé du baccalauréat en interprétation jazz/pop et de la maitrise en didactique instrumentale de la Faculté de musique de l'Université Laval."
-    />
-);
+export function Head(props: HeadProps<DataProps>) {
+    return <Seo title={props.data.pageTitle.message} description={props.data.pageDescription.message} />;
+}
+
+export const query = graphql`
+    query MusiquePage($locale: String) {
+        pageTitle: translation(locale: { eq: $locale }, key: { eq: "Music" }) {
+            message
+        }
+        pageDescription: translation(locale: { eq: $locale }, key: { eq: "music-desc" }) {
+            message
+        }
+    }
+`;

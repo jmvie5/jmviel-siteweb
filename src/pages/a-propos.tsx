@@ -5,15 +5,7 @@ import { Link, graphql, HeadProps } from 'gatsby';
 import Seo from '../components/Seo';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
-
-type DataProps = {
-    pageTitle: {
-        message: string;
-    };
-    pageDescription: {
-        message: string;
-    };
-};
+import { DataProps } from '../types';
 
 const AProposPage = () => {
     return (

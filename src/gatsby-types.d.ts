@@ -3107,5 +3107,12 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: st
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
 
+type MusiquePageQueryVariables = Exact<{
+  locale: InputMaybe<Scalars['String']>;
+}>;
+
+
+type MusiquePageQuery = { readonly pageTitle: { readonly message: string | null } | null, readonly pageDescription: { readonly message: string | null } | null };
+
 
 }

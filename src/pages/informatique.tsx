@@ -17,7 +17,9 @@ const InformatiquePage = () => {
                     </div>
 
                     <div className="ml-4 row-span-2">
-                        <h2 className="text-xl my-4">Informatique</h2>
+                        <h2 className="text-xl my-4">
+                            <FormattedMessage id='Computer science' />
+                        </h2>
                         <p className="my-4">
                             Spécialisé en développement web, j'aime aussi le développement de jeux vidéos et de
                             programmes utilitaires.
