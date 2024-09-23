@@ -2,6 +2,7 @@
     "fr-CA": "Français",
     "en-CA": "English",
 
+    "Home" : "Accueil",
     "About": "À propos",
     "Music": "Musique",
     "Computer Science": "Informatique",
@@ -54,6 +55,7 @@
     "improvison-3" : "qui sont mises en œuvre par les experts du domaine et à documenter les impacts perçus de ce matériel.",
     "cafe-social-1" : "Réseau social personnel à petite échelle pour le partage de grains de café, de recettes, de trucs et astuces, etc.",
     "cafe-social-2" : "Projet en développement.",
+    "this-website-title" : "Jean-Michel Viel, musicien, pédagogue et programmeur",
     "this-website" : "Ce site web!",
 
     "games-title" : "Jeux vidéos",

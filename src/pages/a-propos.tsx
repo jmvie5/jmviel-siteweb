@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
-import { Link, graphql, HeadProps } from 'gatsby';
+import { graphql, HeadProps } from 'gatsby';
 import Seo from '../components/Seo';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage } from 'react-intl';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 import { DataProps } from '../types';
 
 const AProposPage = () => {
@@ -31,7 +32,7 @@ const AProposPage = () => {
 
             <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 text-jmv_white max-w-7xl self-center">
                 <div className="">
-                    <h2 className="text-xl text-jmv_light mb-2">Musique</h2>
+                    <h2 className="text-xl text-jmv_light mb-2"><FormattedMessage id="Music"/></h2>
                     <div className="space-y-2 flex flex-col xs:inline">
                         <StaticImage
                             src="../images/a-propos/ComboJazzMTMBateau.webp"
@@ -43,9 +44,9 @@ const AProposPage = () => {
                         </p>
                         <p>
                             <FormattedMessage id="about-2" />
-                            <Link to="/contact" className="font-medium hover:underline">
+                            <LocalizedLink to="/contact" className="font-medium hover:underline">
                                 <FormattedMessage id="contact-me" />
-                            </Link>
+                            </LocalizedLink>
                             !
                         </p>
                         <p>
@@ -57,7 +58,7 @@ const AProposPage = () => {
                     </div>
                 </div>
                 <div>
-                    <h2 className="text-xl text-jmv_light mb-2">Informatique</h2>
+                    <h2 className="text-xl text-jmv_light mb-2"><FormattedMessage id="Computer Science"/></h2>
                     <div className="space-y-2">
                         <p>
                             <FormattedMessage id="about-5" />{' '}
@@ -88,9 +89,9 @@ const AProposPage = () => {
                         </ul>
                         <p>
                             <FormattedMessage id="about-8" />
-                            <a href="/informatique#info-web" className="font-medium hover:underline">
+                            <LocalizedLink to="/informatique#info-web" className="font-medium hover:underline">
                                 <FormattedMessage id="my-projects" />
-                            </a>
+                            </LocalizedLink>
                             .
                         </p>
                     </div>

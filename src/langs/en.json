@@ -2,6 +2,7 @@
     "fr-CA": "Français",
     "en-CA": "English",
 
+    "Home" : "Home",
     "About": "About",
     "Music": "Music",
     "Computer Science": "Computer Science",
@@ -54,6 +55,7 @@
     "improvison-3" : "",
     "cafe-social-1" : "Small-scale personal social network for sharing coffee beans, recipes, tips and tricks, etc.",
     "cafe-social-2" : "Project under development.",
+    "this-website-title" : "Jean-Michel Viel, musician, educator and programmer",
     "this-website" : "This website!",
 
     "games-title" : "Video games",

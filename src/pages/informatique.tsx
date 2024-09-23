@@ -104,7 +104,7 @@ const InformatiquePage = () => {
                         <StaticImage src="../images/informatique/cafesocial.webp" alt="Logo Café social" />
                     </Siteweb>
                     <Siteweb
-                        name="Jean-Michel Viel, musicien et programmeur"
+                        name="this-website-title"
                         description={<div><FormattedMessage id='this-website' /></div>}
                         siteName="jeanmichelviel.ca"
                         github="https://github.com/jmvie5/jmviel-siteweb"

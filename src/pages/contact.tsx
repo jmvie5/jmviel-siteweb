@@ -83,7 +83,6 @@ const ContactPage = () => {
                 type="text"
                 name="Nom"
                 className="mt-1 block w-full px-3 py-2 bg-jmv_white border border-jmv_light rounded-md text-sm shadow-sm placeholder-jmv_light focus:outline-none focus:border-jmv_light focus:ring-1 focus:ring-jmv_light"
-                placeholder="Votre nom complet"
                 required
               />
             </label>
@@ -93,7 +92,6 @@ const ContactPage = () => {
                 type="email"
                 name="Courriel"
                 className="mt-1 block w-full px-3 py-2 bg-jmv_white border border-jmv_light rounded-md text-sm shadow-sm placeholder-jmv_light focus:outline-none focus:border-jmv_light focus:ring-1 focus:ring-jmv_light"
-                placeholder="Votre adresse courriel"
                 required
               />
             </label>
@@ -120,7 +118,6 @@ const ContactPage = () => {
             <textarea
               className="mt-1 block w-full px-3 py-2 bg-jmv_white border border-jmv_light rounded-md text-sm shadow-sm placeholder-jmv_light focus:outline-none focus:border-jmv_light focus:ring-1 focus:ring-jmv_light resize-y"
               name="message"
-              placeholder="Décrivez vos besoins"
               required
             />
           </label>

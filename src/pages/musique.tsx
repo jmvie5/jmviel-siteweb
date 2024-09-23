@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
-import { Link, graphql, HeadProps } from 'gatsby';
+import { graphql, HeadProps } from 'gatsby';
 import NavBar from '../components/NavBar';
 import Seo from '../components/Seo';
 import { LiteYTEmbed } from '@justinribeiro/lite-youtube';
@@ -8,6 +8,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { ArrowTopRightOnSquareIcon, DocumentArrowDownIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { FormattedMessage } from 'react-intl';
 import { DataProps } from '../types';
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
 
 type CustomElement<T> = Partial<T & React.DOMAttributes<T> & { children: any }>;
 
@@ -30,16 +31,16 @@ const MusiquePage = () => {
                     </div>
 
                     <div className="ml-4 row-span-2 -mt-4 sm:-mt-0 ">
-                        <h2 className="text-xl sm:mb-4 mb-2">Musique</h2>
+                        <h2 className="text-xl sm:mb-4 mb-2"><FormattedMessage id='Music'/></h2>
                         <p className="text-sm md:text-base">
                             <FormattedMessage id="music-desc" />
                         </p>
                         <div className="">
                             <p className="text-sm md:text-base my-4">
                                 <FormattedMessage id="need-musician" />
-                                <Link to="/contact" className="font-medium underline hover:text-jmv_light flex">
+                                <LocalizedLink to="/contact" className="font-medium underline hover:text-jmv_light flex">
                                     <FormattedMessage id="contact" /><EnvelopeIcon className="ml-1 w-6" />
-                                </Link>
+                                </LocalizedLink>
                             </p>
                         </div>
 
@@ -228,9 +229,9 @@ const MusiquePage = () => {
                     <h2 className="text-xl text-jmv_light"><FormattedMessage id='music-downloads' /></h2>
                     <p className="text-jmv_white">
                         <FormattedMessage id='need-a-teacher' />{' '}
-                        <Link to="/contact" className="font-medium underline hover:text-jmv_light">
+                        <LocalizedLink to="/contact" className="font-medium underline hover:text-jmv_light">
                         <FormattedMessage id='contact' />
-                        </Link>{' '}
+                        </LocalizedLink>{' '}
                         !
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

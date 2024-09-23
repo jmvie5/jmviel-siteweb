@@ -14,19 +14,19 @@ module.exports = {
     previewImage: "./src/images/mascaradePreview.webp",
     menuLinks: [
       {
-        name: "Accueil",
+        name: "Home",
         link: "/",
       },
       {
-        name: "À propos",
+        name: "About",
         link: "/a-propos",
       },
       {
-        name: "Musique",
+        name: "Music",
         link: "/musique",
       },
       {
-        name: "Informatique",
+        name: "Computer Science",
         link: "/informatique",
       },
       {
@@ -103,9 +103,9 @@ module.exports = {
             locale: `en-CA`,
             prefix: `en`,
             slugs: {
-              "/a-propos": "/about",
-              "/musique": "/music",
-              "/informatique": "/computerscience",
+            //   "/a-propos": "/about",
+            //   "/musique": "/music",
+            //   "/informatique": "/computerscience",
             },
             messages: messagesEN,
           },
