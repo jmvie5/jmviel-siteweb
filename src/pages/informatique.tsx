@@ -25,6 +25,7 @@ const InformatiquePage = () => {
                         </h2>
                         <p className="my-4">
                         <FormattedMessage id='info-desc' />
+                        <p>Je travaille comme développeur chez <a href='https://www.edumedia.com' className='hover:underline font-medium'>Édumedia</a>, ainsi que leur filiale <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>. [LOGO LINK VERS ALEC] [LOGO LINK VERS EDUMEDIA]</p>
                         </p>
                     </div>
                 </div>
@@ -129,10 +130,22 @@ const InformatiquePage = () => {
                             <p className="text-jmv_white text-2xl font-bold font-josefin">Improvison</p>
                         </a>
                     </div>
+                    <div>
+                        <p className="text-jmv_white ml-4 my-4">
+                            En travaillant pour ÉduMedia, je développe aussi des jeux pour leur filiale <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> [LOGO ALEC]
+                        </p>
+                    </div>
                 </div>
                 <div className="my-4 mx-2 sm:mx-4">
                     <h2 className="text-jmv_light text-xl"><FormattedMessage id='skills' /></h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
+                        <a title="Remix" href="https://remix.run/">
+                            <StaticImage
+                                className="w-44 transition duration-300 ease-in hover:scale-110 "
+                                alt="Remix logo"
+                                src="../images/informatique/remix-glowing.svg"
+                            />
+                        </a>
                         <a title="React" href="https://react.dev/">
                             <StaticImage
                                 className="w-24 transition duration-300 ease-in hover:scale-110 "
@@ -140,6 +153,16 @@ const InformatiquePage = () => {
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
                             />
                         </a>
+                        <a>NEXTUI</a>
+                        <a>FRAMER MOTION</a>
+                        <a title="Vite" href="https://vitejs.dev/">
+                            <StaticImage
+                                className="w-24 transition duration-300 ease-in hover:scale-110 "
+                                alt="Vite logo"
+                                src="../images/informatique/Vitejs-logo.svg.png"
+                            />
+                        </a>
+                        <a>CREATEJS</a>
                         <a title="MongoDB" href="https://www.mongodb.com/">
                             <StaticImage
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
@@ -161,6 +184,8 @@ const InformatiquePage = () => {
                                 src="https://upload.wikimedia.org/wikipedia/commons/6/67/NodeJS.png"
                             />
                         </a>
+                        <a>PHP</a>
+                        <a>SYMFONY</a>
                         <a title="GatsbyJS" href="https://gastbyjs.com">
                             <StaticImage
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
@@ -175,6 +200,8 @@ const InformatiquePage = () => {
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png"
                             />
                         </a>
+                        <a>VUE</a>
+                        <a>NUXT</a>
                         <a title="Netlify" href="https://www.netlify.com/">
                             <StaticImage
                                 className="w-44 transition duration-300 ease-in hover:scale-110"

@@ -31,6 +31,11 @@ const AProposPage = () => {
             <div className="bg-gradient-to-b from-black to bg-jmv_dark h-10"></div>
 
             <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 text-jmv_white max-w-7xl self-center">
+                <div className='space-y-4'>
+                    <h2 className="text-xl text-jmv_light mb-2">Où j'en suis</h2>
+                    <p>Je suis actuellement développeur pour la société <a href='https://www.edumedia.com' className='hover:underline font-medium'>ÉduMedia</a>. Spécialisé en frontend et en création de jeu pour leur filiale <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>, je touche aussi au backend de nos différent services pour de la maitenance ou l'ajout de certaines fonctionnalités.</p>
+                    <p>J'ai un parcours un peu atypique, j'en conviens. Le voici :</p>
+                </div>
                 <div className="">
                     <h2 className="text-xl text-jmv_light mb-2"><FormattedMessage id="Music"/></h2>
                     <div className="space-y-2 flex flex-col xs:inline">
