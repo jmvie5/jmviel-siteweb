@@ -153,8 +153,20 @@ const InformatiquePage = () => {
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
                             />
                         </a>
-                        <a>NEXTUI</a>
-                        <a>FRAMER MOTION</a>
+                        <a title="Next UI" href='https://nextui.org/'>
+                            <StaticImage
+                                className="w-24 transition duration-300 ease-in hover:scale-110 "
+                                alt="NextUI-icon"
+                                src='../images/informatique/nextui.png'
+                            />
+                        </a>
+                        <a title="Framer motion" href='https://www.framer.com/motion/'>
+                            <StaticImage
+                                className="w-44 transition duration-300 ease-in hover:scale-110 "
+                                alt="Framer-icon"
+                                src='../images/informatique/framer.svg'
+                            />
+                        </a>
                         <a title="Vite" href="https://vitejs.dev/">
                             <StaticImage
                                 className="w-24 transition duration-300 ease-in hover:scale-110 "
@@ -162,7 +174,13 @@ const InformatiquePage = () => {
                                 src="../images/informatique/Vitejs-logo.svg.png"
                             />
                         </a>
-                        <a>CREATEJS</a>
+                        <a title="CreateJS" href="https://createjs.com/">
+                            <StaticImage
+                                className="w-24 transition duration-300 ease-in hover:scale-110 "
+                                alt="CreateJS logo"
+                                src="../images/informatique/createjs.svg"
+                            />
+                        </a>
                         <a title="MongoDB" href="https://www.mongodb.com/">
                             <StaticImage
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
@@ -184,8 +202,20 @@ const InformatiquePage = () => {
                                 src="https://upload.wikimedia.org/wikipedia/commons/6/67/NodeJS.png"
                             />
                         </a>
-                        <a>PHP</a>
-                        <a>SYMFONY</a>
+                        <a title="PHP" href="https://www.php.net/">
+                            <StaticImage
+                                className="w-44 transition duration-300 ease-in hover:scale-110"
+                                alt="PHP-logo"
+                                src="../images/informatique/php-logo.svg"
+                            />
+                        </a>
+                        <a title="Symfony" href="https://symfony.com/">
+                            <StaticImage
+                                className="w-24 transition duration-300 ease-in hover:scale-110 bg-white rounded-full"
+                                alt="Symfony-logo"
+                                src="../images/informatique/symfony.png"
+                            />
+                        </a>
                         <a title="GatsbyJS" href="https://gastbyjs.com">
                             <StaticImage
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
