@@ -24,8 +24,13 @@ const InformatiquePage = () => {
                             <FormattedMessage id='Computer Science' />
                         </h2>
                         <p className="my-4">
-                        <FormattedMessage id='info-desc' />
-                        <p>Je travaille comme développeur chez <a href='https://www.edumedia.com' className='hover:underline font-medium'>Édumedia</a>, ainsi que leur filiale <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>. [LOGO LINK VERS ALEC] [LOGO LINK VERS EDUMEDIA]</p>
+                            <FormattedMessage id='info-desc' />{' '}
+                        </p>
+                        <p>
+                            <FormattedMessage id='work' />{" "}
+                            <a href='https://www.edumedia.com' className='hover:underline font-medium'>Edumedia</a>
+                            <FormattedMessage id='work-2' />{" "}
+                            <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>. 
                         </p>
                     </div>
                 </div>
@@ -117,7 +122,7 @@ const InformatiquePage = () => {
                     <h2 id="info-jeux" className="text-jmv_light text-xl">
                     <FormattedMessage id='games-title' />
                     </h2>
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                         <p className="text-jmv_white ml-4 my-4">
                         <FormattedMessage id='games-desc' />
                         </p>
@@ -130,10 +135,17 @@ const InformatiquePage = () => {
                             <p className="text-jmv_white text-2xl font-bold font-josefin">Improvison</p>
                         </a>
                     </div>
-                    <div>
-                        <p className="text-jmv_white ml-4 my-4">
-                            En travaillant pour ÉduMedia, je développe aussi des jeux pour leur filiale <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> [LOGO ALEC]
+                    <div className="flex flex-col sm:flex-row gap-4 w-full  items-center justify-between">
+                        <p className="text-jmv_white ml-4 my-4" >
+                        <FormattedMessage id='dev-alec' />{" "}<a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> 
                         </p>
+                        <a
+                            title="Alec"
+                            href="https://alec-edu.com/"
+                            className="flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110"
+                        >
+                            <StaticImage src='../images/informatique/alec-logo.svg' alt='Logo Alec'/> 
+                        </a>
                     </div>
                 </div>
                 <div className="my-4 mx-2 sm:mx-4">
@@ -206,7 +218,7 @@ const InformatiquePage = () => {
                             <StaticImage
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
                                 alt="PHP-logo"
-                                src="../images/informatique/php-logo.svg"
+                                src="../images/informatique/PHP-logo.svg"
                             />
                         </a>
                         <a title="Symfony" href="https://symfony.com/">
@@ -230,8 +242,20 @@ const InformatiquePage = () => {
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png"
                             />
                         </a>
-                        <a>VUE</a>
-                        <a>NUXT</a>
+                        <a title="Vue" href="https://vuejs.org/">
+                            <StaticImage
+                                className="w-24 transition duration-300 ease-in hover:scale-110"
+                                alt="Vue Logo"
+                                src="../images/informatique/Vue.js_Logo_2.svg"
+                            />
+                        </a>
+                        <a title="Nuxt" href="https://nuxt.com/">
+                            <StaticImage
+                                className="w-24 transition duration-300 ease-in hover:scale-110"
+                                alt="Vue Logo"
+                                src="../images/informatique/nuxt.svg"
+                            />
+                        </a>
                         <a title="Netlify" href="https://www.netlify.com/">
                             <StaticImage
                                 className="w-44 transition duration-300 ease-in hover:scale-110"

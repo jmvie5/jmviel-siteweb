@@ -9,6 +9,11 @@
     "Contact": "Contact",
 
     "about-desc": "Guitar, teaching and programming; these are my three passions that have guided me to this day.",
+    "where-I-Am": "Where I am",
+    "where-I-Am-1": "I am currently a developer at ",
+    "where-I-Am-2": ". Specialized in frontend and in game development for their branch ",
+    "where-I-Am-3": ". I also work on the backend of our different services for maintenance or adding new features.",
+    "my-background": "I have a rather atypical background, I admit. Here it is:",
     "about-1": "In 2018, I completed my bachelor's degree with the Dean's Honors in jazz/pop performance, then went on to earn a master's degree in instrumental didactics, which I completed in 2021. My subject: Improvisation to foster learning among young guitarists.",
     "about-2": "I started teaching music during my bachelor's degree in jazz performance. I still love teaching, so if you're looking for a guitar or improvisation teacher, please don't hesitate to ",
     "contact-me": "contact me.",
@@ -22,7 +27,7 @@
     "cpp": "Advanced programming in C++",
     "osa": "Computers: structure and applications",
     "algo": "Algorithms and data structures",
-    "about-8": "Right now, I'm most interested in web development. Although none of my certificate courses introduced me to this field, it's where I've done the majority of ",
+    "about-8": "The highlight of my computer science certificate was an internship at EduMedia. Afterwards, I was lucky enough to be hired as a full-time developer. When I have free time, I spend it on ",
     "my-projects": "my projects",
 
     "music-desc": "I've been a musician in Quebec City for over 14 years, with a bachelor's degree in jazz/pop performance and a master's degree in instrumental didactics from Université Laval's Faculty of Music.",
@@ -43,6 +48,8 @@
     "compo-desc": "If you'd like to learn any of the compositions or arrangements you've heard on this page, here they are!",
 
     "info-desc" : "Specialized in web development, I also enjoy developing video games and utility programs.",
+    "work": "I work as a developer at ",
+    "work-2": ", and their subsidiary ",
     "web-dev" : "Web development",
     "lbf-1" : "Laurence bf is an orthopedagogue specializing in French learning difficulties (reading/writing) with children of all ages. She is passionate about helping as many children as possible develop their literacy skills,",
     "lbf-2" : "she decided to create the space Laurence bf, orthopedagogue",
@@ -60,14 +67,15 @@
 
     "games-title" : "Video games",
     "games-desc" : "As part of the Improvison R&D project, directed by Jean-Philippe Després (Ph. D.), I created the game at the heart of the research using Roblox. Check it out:",
-
+    "dev-alec": "Working for EduMedia, I also develop games for their branch ",
+    
     "skills" : "Skills :",
 
     "contact-desc" : "Contact me by filling in this form or by sending an e-mail to",
     "contact-desc-head" : "Contact me by filling in this form or by sending an e-mail to info@jeanmichelviel.ca",
     "name" : "Name",
     "email" : "Email",
-    "need" : "Need",
+    "need" : "Your needs",
     "select" : "-- Select --",
     "musician" : "Musician",
     "teacher" : "Teacher",
