@@ -2,6 +2,8 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { Menu, Transition } from '@headlessui/react'
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { FormattedMessage } from 'react-intl'
+import { LocalizedLink } from 'gatsby-plugin-i18n-l10n'
 
 interface NavbarProps {
     dark?: boolean
@@ -35,10 +37,10 @@ export default function NavBar( {dark, more}: NavbarProps) {
                         {siteMetadata.menuLinks.map(link => (
                             <Menu.Item key={link.name}>
                                 {() => (
-                                    <Link to={link.link} className='hover:bg-gradient-to-r from-jmv_light hover:text-jmv_dark text-jmv_lessDark block rounded-l-full ml-2 px-4 py-2 text-sm'
+                                    <LocalizedLink to={link.link} className='hover:bg-gradient-to-r from-jmv_light hover:text-jmv_dark text-jmv_lessDark block rounded-l-full ml-2 px-4 py-2 text-sm'
                                     >
-                                    {link.name}
-                                    </Link>
+                                        <FormattedMessage id={link.name}/>
+                                    </LocalizedLink>
                                 )}
                             </Menu.Item>
                         ))}
@@ -52,20 +54,20 @@ export default function NavBar( {dark, more}: NavbarProps) {
             <ul className='flex gap-4 py-4 ml-4 pr-4 divide-x divide-jmv_light border-b border-jmv_light max-w-fit'>
                 {siteMetadata.menuLinks.map(link => (
                     <li key={link.name}>
-                        <Link to={link.link} className='hover:text-jmv_medium text-jmv_dark block xl:text-lg text-md ml-4'
+                        <LocalizedLink to={link.link} className='hover:text-jmv_medium text-jmv_dark block xl:text-lg text-md ml-4'
                         >
-                        {link.name}
-                        </Link>
+                        <FormattedMessage id={link.name}/>
+                        </LocalizedLink>
                     </li>
                 ))}
             </ul> : 
             <ul className='flex gap-4 py-4 ml-4 pr-4 divide-x divide-jmv_light border-b max-w-fit'>
                 {siteMetadata.menuLinks.map(link => (
                     <li key={link.name}>
-                        <Link to={link.link} className='hover:text-jmv_light text-jmv_white block xl:text-lg text-md ml-4'
+                        <LocalizedLink to={link.link} className='hover:text-jmv_light text-jmv_white block xl:text-lg text-md ml-4'
                         >
-                        {link.name}
-                        </Link>
+                        <FormattedMessage id={link.name}/>
+                        </LocalizedLink>
                     </li>
                 ))}
             </ul>
