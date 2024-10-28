@@ -7,6 +7,7 @@
     "Music": "Musique",
     "Computer Science": "Informatique",
     "Contact": "Contact",
+    "Games" : "Jeux",
 
     "about-desc": "La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui.",
     "where-I-Am": "Où j'en suis",
@@ -85,5 +86,7 @@
     "send" : "Envoyer",
     "modal-title" : "Merci!",
     "modal-desc" : "Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.",
-    "modal-close" : "Fermer"
+    "modal-close" : "Fermer",
+
+    "Games-desc" : "Quelques jeux que j'ai fais pour le plaisir"
 }
