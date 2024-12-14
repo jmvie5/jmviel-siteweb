@@ -172,11 +172,11 @@ const InformatiquePage = () => {
                                 src='../images/informatique/nextui.png'
                             />
                         </a>
-                        <a title="Framer motion" href='https://www.framer.com/motion/'>
+                        <a title="Motion" href='https://motion.dev/'>
                             <StaticImage
-                                className="w-44 transition duration-300 ease-in hover:scale-110 "
-                                alt="Framer-icon"
-                                src='../images/informatique/framer.svg'
+                                className="w-24 transition duration-300 ease-in hover:scale-110 "
+                                alt="Motion-icon"
+                                src='../images/informatique/motion.webp'
                             />
                         </a>
                         <a title="Vite" href="https://vitejs.dev/">
