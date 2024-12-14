@@ -95,7 +95,7 @@ const InformatiquePage = () => {
                     >
                         <StaticImage src="../images/informatique/improvison.webp" alt="Logo Improvison" />
                     </Siteweb>
-                    <Siteweb
+                    {/* <Siteweb
                         name="Café social"
                         description={
                             <div>
@@ -108,7 +108,7 @@ const InformatiquePage = () => {
                         github="https://github.com/charlotrudel/cafe_social"
                     >
                         <StaticImage src="../images/informatique/cafesocial.webp" alt="Logo Café social" />
-                    </Siteweb>
+                    </Siteweb> */}
                     <Siteweb
                         name="this-website-title"
                         description={<div><FormattedMessage id='this-website' /></div>}
