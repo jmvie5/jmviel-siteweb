@@ -24,9 +24,9 @@ const Siteweb = ({
     return (
         <div className='flex flex-col rounded-xl bg-gradient-to-r from-jmv_medium to-jmv_lessDark p-4 text-jmv_white'>
             <div className='flex items-center gap-4'>
-                <div className='w-24'>
+                <a href={link} className='w-24'>
                     {children}
-                </div>
+                </a>
                 <div className='flex flex-col justify-between gap-2'>
                     <div className='text-xl font-bold'><FormattedMessage id={name}/></div>
                     <div className='flex gap-3'>
