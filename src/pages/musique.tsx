@@ -89,6 +89,7 @@ const MusiquePage = () => {
                                 className="border-0 aspect-video overflow-hidden w-full"
                                 allowFullScreen={true}
                                 allow="web-share"
+                                // c'est si bon RDV classique
                             />
                         </div>
                     </div>
@@ -106,18 +107,15 @@ const MusiquePage = () => {
                             </iframe>
                         </div>
                         <div className="flex flex-col gap-2 justify-between w-full">
-                            <iframe
-                                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F2600890786839713%2F&show_text=false&width=560&t=0"
-                                className="border-0 aspect-video overflow-hidden "
-                                allowFullScreen={true}
-                                allow="web-share"
-                            ></iframe>
-                            <iframe
-                                src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLaRevoir%2Fvideos%2F268978514085998%2F&show_text=false&width=560&t=0"
-                                className="border-0 aspect-video overflow-hidden "
-                                allowFullScreen={true}
-                                allow="web-share"
-                            ></iframe>
+                            <div>
+                                <video controls className="border-0 aspect-video overflow-hidden "><source src='/videos/emily-fijq.webm'/></video>
+                                <h3 className=" text-sm text-jmv_white text-center">Emily</h3>
+                            </div>
+                            <div>
+                                <video controls className="border-0 aspect-video overflow-hidden " poster="/videos/thumb-entre-deux-villes.png"><source src='/videos/entre-deux-villes.webm'/></video>
+                                <h3 className=" text-sm text-jmv_white text-center">Entre deux villes</h3>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
