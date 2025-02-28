@@ -1,21 +1,29 @@
-import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import mascaradeImgSrc from "~/assets/images/mascarade.webp"
+import type { Route } from "./+types/index";
+
+export async function loader({ request, params }: Route.LoaderArgs) {
+
+    const title =  "Jean-Michel Viel"
+    const description = "Jean-Michel Viel, musicien, pédagogue et programmeur."
+  
+  
+    return { title, description };
+  }
+  
+  
+  export const meta = () => {
+  
+    return [
+      { title: "Jean-Michel Viel" },
+      { name: "description", content: "Jean-Michel Viel, musicien, pédagogue et programmeur." },
+      { property: "og:title", content:"Jean-Michel Viel" },
+      { property: "og:type", content:"website" },
+  
+    ];
+  };
 
 const IndexPage = () => {
     return (
         <>
-            <img
-                src={mascaradeImgSrc}
-                className='absolute object-cover object-center h-dvh w-full'
-            />
-            <div className="h-dvh z-10 py-4 text-black">
-                <div className="flex flex-col ">
-                    <h1 className="text-2xl ml-4 ">Jean-Michel Viel</h1>
-                    <NavBar dark more />
-                </div>
-            </div>
-            <div className=" bg-gradient-to-b from-black to bg-jmv_dark h-10"></div>
         </>
     );
 };
