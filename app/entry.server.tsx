@@ -2,6 +2,12 @@ import type { AppLoadContext, EntryContext } from "react-router";
 import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
 import { renderToReadableStream } from "react-dom/server";
+import {createInstance} from "i18next";
+import i18nextServer from "./i18next.server";
+import {I18nextProvider, initReactI18next} from "react-i18next";
+import Backend from "i18next-fs-backend/cjs";
+import {resolve as resolvePath} from "node:path";
+import i18n from "./i18n"; // your i18n configuration file
 
 export default async function handleRequest(
   request: Request,
@@ -10,11 +16,26 @@ export default async function handleRequest(
   routerContext: EntryContext,
   _loadContext: AppLoadContext
 ) {
+    let i18nextInstance = createInstance();
+    let lng = await i18nextServer.getLocale(request);
+    let namespaces = i18nextServer.getRouteNamespaces(routerContext);
+
+    await i18nextInstance.use(initReactI18next).use(Backend).init({
+        ...i18n,
+        lng,
+        ns: namespaces,
+        backend: {
+            loadPath: resolvePath("./public/locales/{{lng}}/{{ns}}.json"),
+        }
+    })
+
   let shellRendered = false;
   const userAgent = request.headers.get("user-agent");
 
   const body = await renderToReadableStream(
-    <ServerRouter context={routerContext} url={request.url} />,
+    <I18nextProvider i18n={i18nextInstance}>
+        <ServerRouter context={routerContext} url={request.url}/>,
+    </I18nextProvider>,
     {
       onError(error: unknown) {
         responseStatusCode = 500;

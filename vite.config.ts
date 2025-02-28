@@ -5,7 +5,13 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ isSsrBuild }) => ({
+  optimizeDeps: {
+    esbuildOptions: {
+      target: "esnext"
+    }
+  },
   build: {
+    target: "esnext",
     rollupOptions: isSsrBuild
       ? {
           input: "./workers/app.ts",
