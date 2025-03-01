@@ -1,3 +1,5 @@
+import type { Route } from "./+types/musique";
+import i18nServer from "~/i18next.server";
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import duo_pichenotte_img from "~/assets/images/musique/Duo_Pichenotte.webp"
 import solo_img from "~/assets/images/musique/Solo.webp"
@@ -6,6 +8,38 @@ import { openInNewIcon } from '~/assets/icons';
 import emily_video from "~/assets/videos/emily-fijq.webm"
 import entre2villes_video from "~/assets/videos/entre-deux-villes.webm"
 import entre2Villes_thumbnail from "~/assets/videos/thumb-entre-deux-villes.png"
+
+export async function loader({ request, params }: Route.LoaderArgs) {
+
+    const locale = params.lang 
+        ? params.lang 
+        : await i18nServer.getLocale(request)
+
+    const t = await i18nServer.getFixedT(locale)
+
+    const title = t("Music")
+    const description = t("music-desc")
+
+    return { title, description }
+}
+
+export function meta({ matches }: Route.MetaArgs) {
+
+    type LoaderDataType = {
+        title:string,
+        description: string
+    }
+
+    const loaderData:LoaderDataType = matches[matches.length-1]?.data as LoaderDataType
+
+    return [
+        { title: loaderData.title },
+        { name: "description", content: loaderData.description },
+        { property: "og:title", content: loaderData.title},
+        { property: "og:type", content:"website" },
+
+    ];
+};
 
 export default function MusicPage() {
     return (

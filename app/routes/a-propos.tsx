@@ -1,6 +1,6 @@
-import NavBar from '../components/NavBar';
 import type { Route } from './+types/a-propos';
 import {t} from "i18next"
+import i18nServer from '~/i18next.server';
 import { Link } from 'react-router';
 import edumediaLogo from "../assets/images/informatique/edumedia-logo.svg"
 import alecLogo from "../assets/images/informatique/alec-logo.svg"
@@ -8,15 +8,21 @@ import comboJazzBoat from "../assets/images/a-propos/ComboJazzMTMBateau.webp"
 
 export async function loader({ request, params }: Route.LoaderArgs) {
 
-    const title =  "Jean-Michel Viel | À propos"
-    const description = "La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui."
-  
+    const locale = params.lang 
+        ? params.lang 
+        : await i18nServer.getLocale(request)
+
+    const t = await i18nServer.getFixedT(locale)
+
+    const title = t("About")
+    const description = t("about-desc")
+
   
     return { title, description };
-  }
-  
-  
-  export function meta({ matches }: Route.MetaArgs) {
+}
+
+
+export function meta({ matches }: Route.MetaArgs) {
 
     type LoaderDataType = {
         title:string,
@@ -24,15 +30,15 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     }
 
     const loaderData:LoaderDataType = matches[matches.length-1]?.data as LoaderDataType
-  
+
     return [
-      { title: loaderData.title },
-      { name: "description", content: loaderData.description },
-      { property: "og:title", content: loaderData.title},
-      { property: "og:type", content:"website" },
-  
+        { title: loaderData.title },
+        { name: "description", content: loaderData.description },
+        { property: "og:title", content: loaderData.title},
+        { property: "og:type", content:"website" },
+
     ];
-  };
+};
 
 const AProposPage = () => {
     return (

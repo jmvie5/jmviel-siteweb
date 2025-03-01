@@ -31,27 +31,22 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 
     const allPageData : { [id: string] : {
         img:string,
-        desc:string,
         isDark:boolean
     }; } = {
         "" : {
             img: indexImage,
-            desc: "",
             isDark: true
         },
         "a-propos" : {
             img: aboutImage,
-            desc: "",
             isDark: true
         },
         "informatique" : {
             img: informatiqueImage,
-            desc: "",
             isDark: false
         },
         "musique" : {
             img: musicImage,
-            desc: "",
             isDark: false
         }, 
     }
@@ -80,7 +75,11 @@ export default function Layout({
     matches,
   }: Route.ComponentProps) {
 
-    
+    type Matches = {
+        title:string,
+        description:string
+    }
+    const matchesData:Matches = matches[matches.length-1]?.data as Matches
 
     const locale = loaderData.locale
     const page = loaderData.page
@@ -94,7 +93,7 @@ export default function Layout({
                         src={pageData.img}
                         className={twMerge('absolute object-cover w-full object-[center_top]', page === "" ? "h-dvh" : "h-96")}
                     />
-                    <div className={twMerge(" z-10 py-4 text-black", page === "" ? "h-dvh" : "h-96")}>
+                    <div className={twMerge(" z-10 py-4 text-black w-[50%]", page === "" ? "h-dvh" : "h-96")}>
                         <div className="flex flex-col ">
                             <h1 className={twMerge("text-2xl ml-4 ", !pageData.isDark && "text-white")}>Jean-Michel Viel</h1>
                             <NavBar locale={locale} dark={pageData.isDark} more />
@@ -102,10 +101,10 @@ export default function Layout({
                         {page !== "" && 
                             <div className="m-4 row-span-2 bg-jmv_white/50 p-2 rounded-lg">
                                 <h2 className="text-xl mb-4">
-                                    Page Title
+                                    {matchesData.title}
                                 </h2>
                                 <p className="mt-4">
-                                    Page description
+                                    {matchesData.description}
                                 </p>
                             </div>
                         }

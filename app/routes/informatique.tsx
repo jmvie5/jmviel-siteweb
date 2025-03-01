@@ -1,7 +1,43 @@
-import Siteweb from "~/components/Siteweb";
+import type { Route } from "./+types/informatique";
 import {t} from "i18next"
+import i18nServer from "~/i18next.server";
+import Siteweb from "~/components/Siteweb";
 import jmvie5Logo from "~/assets/images/icon.webp"
 import * as infoImages from "~/assets/images/informatique"
+
+export async function loader({ request, params }: Route.LoaderArgs) {
+
+    const locale = params.lang 
+        ? params.lang 
+        : await i18nServer.getLocale(request)
+
+    const t = await i18nServer.getFixedT(locale)
+
+    const title = t("Computer Science")
+    const description = t("info-desc")
+
+  
+    return { title, description };
+}
+
+
+export function meta({ matches }: Route.MetaArgs) {
+
+    type LoaderDataType = {
+        title:string,
+        description: string
+    }
+
+    const loaderData:LoaderDataType = matches[matches.length-1]?.data as LoaderDataType
+
+    return [
+        { title: loaderData.title },
+        { name: "description", content: loaderData.description },
+        { property: "og:title", content: loaderData.title},
+        { property: "og:type", content:"website" },
+
+    ];
+};
 
 const InformatiquePage = () => {
     
