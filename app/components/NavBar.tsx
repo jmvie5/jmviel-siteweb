@@ -3,13 +3,16 @@
 // import { LocalizedLink } from 'gatsby-plugin-i18n-l10n'
 import { Link } from "react-router"
 import { twMerge } from 'tailwind-merge'
+import { urlTranslationSearchString } from "~/i18n"
+import {t} from "i18next"
 
 interface NavbarProps {
+    locale: string,
     dark?: boolean
     more?: boolean
 }
 
-export default function NavBar( {dark, more}: NavbarProps) {
+export default function NavBar({locale, dark, more}: NavbarProps) {
 
     // const navButton =
     //     <Menu as="div" className="flex justify-center relative mt-4 z-10">
@@ -48,25 +51,21 @@ export default function NavBar( {dark, more}: NavbarProps) {
 
     const menuLinks = [
         {
-          name: "Home",
-          link: "/",
+          name: t("Home"),
+          link: `/${locale}/`,
         },
         {
-          name: "About",
-          link: "/a-propos",
+          name: t("About"),
+          link: `/${locale}/${t(urlTranslationSearchString['en']['about'])}`,
         },
         {
-          name: "Music",
-          link: "/musique",
+          name: t("Music"),
+          link: `/${locale}/${t(urlTranslationSearchString['en']['music'])}`,
         },
         {
-          name: "Computer Science",
-          link: "/informatique",
-        },
-        {
-          name: "Contact",
-          link: "/contact",
-        },
+          name: t("Computer Science"),
+          link: `/${locale}/${t(urlTranslationSearchString['en']['computer-science'])}`,
+        }
     ]
 
     const navFull = 

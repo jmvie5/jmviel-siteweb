@@ -2,6 +2,10 @@
     "fr-CA": "Français",
     "en-CA": "English",
 
+    "about-url": "a-propos",
+    "music-url": "musique",
+    "computer-science-url": "informatique",
+
     "Home" : "Accueil",
     "About": "À propos",
     "Music": "Musique",

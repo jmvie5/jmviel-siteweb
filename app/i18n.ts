@@ -7,3 +7,19 @@ export default {
     // The default namespace of i18next is "translation", but you can customize it here
     defaultNS: "translations",
   };
+
+  export const urlTranslationSearchString:{[locale:string]:{[url:string]:string}} = {
+    "en" : {
+      '' : '',
+      about : "about-url",
+      music : "music-url",
+      "computer-science": 'computer-science-url',
+    },
+    "fr" : {
+      '' : '',
+      "a-propos" : "about-url",
+      musique : "music-url",
+      informatique: 'computer-science-url',
+  
+    }
+  }

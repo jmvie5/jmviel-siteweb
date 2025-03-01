@@ -1,7 +1,10 @@
 import NavBar from '../components/NavBar';
 import type { Route } from './+types/a-propos';
-// import { FormattedMessage } from 'react-intl';
-// import { LocalizedLink } from 'gatsby-plugin-i18n-l10n';
+import {t} from "i18next"
+import { Link } from 'react-router';
+import edumediaLogo from "../assets/images/informatique/edumedia-logo.svg"
+import alecLogo from "../assets/images/informatique/alec-logo.svg"
+import comboJazzBoat from "../assets/images/a-propos/ComboJazzMTMBateau.webp"
 
 export async function loader({ request, params }: Route.LoaderArgs) {
 
@@ -37,23 +40,23 @@ const AProposPage = () => {
         <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 text-jmv_white max-w-7xl self-center">
             <div className='space-y-4'>
                 <h2 className="text-xl text-jmv_light mb-2">
-                {/* <FormattedMessage id='where-I-Am' />{' '} */}
+                {t('where-I-Am')}
                 </h2>
                 <div className='flex flex-col justify-between lg:flex-row-reverse'>
                     <div className='w-full flex items-center justify-around p-2'>
-                        <a href='https://www.edumedia.com'><img src='../images/informatique/edumedia-logo.svg' alt='Logo EduMedia' className='w-fit lg:float-left'/></a>
-                        <a href='https://alec-edu.com'><img src='../images/informatique/alec-logo.svg' alt='Logo Alec' className='w-fit lg:float-right'/> </a>
+                        <a href='https://www.edumedia.com'><img src={edumediaLogo} alt='Logo EduMedia' className='w-fit lg:float-left'/></a>
+                        <a href='https://alec-edu.com'><img src={alecLogo} alt='Logo Alec' className='w-fit lg:float-right'/> </a>
                     </div>
                     
                     <div className='space-y-4'>
                     <p className=''>
-                        {/* <FormattedMessage id='where-I-Am-1' />{' '} */}
+                        {t('where-I-Am-1')}
                         <a href='https://www.edumedia.com' className='hover:underline font-medium'>EduMedia</a>
-                        {/* <FormattedMessage id='where-I-Am-2' />{' '} */}
+                        {t('where-I-Am-2')}
                         <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>
-                        {/* <FormattedMessage id='where-I-Am-3' /> */}
+                        {t('where-I-Am-3')}
                     </p>
-                    {/* <p><FormattedMessage id='my-background' /></p> */}
+                    <p>{t('my-background')}</p>
                     </div>
                     
                     
@@ -62,69 +65,66 @@ const AProposPage = () => {
             </div>
             
             <div className="">
-                {/* <h2 className="text-xl text-jmv_light mb-2"><FormattedMessage id="Music"/></h2> */}
+                <h2 className="text-xl text-jmv_light mb-2">{t("Music")}</h2>
                 <div className="space-y-2 flex flex-col xs:inline">
                     <img
-                        src="../images/a-propos/ComboJazzMTMBateau.webp"
+                        src={comboJazzBoat}
                         alt="Spectacle sur le HMS PROTECTOR"
                         className="float-right aspect-square w-72 sm:w-96 mx-4 mb-2 self-center"
                     />
                     <p>
-                        {/* <FormattedMessage id="about-1" /> */}
+                        {t("about-1")}
                     </p>
                     <p>
-                        {/* <FormattedMessage id="about-2" />
-                        <LocalizedLink to="/contact" className="font-medium hover:underline">
-                            <FormattedMessage id="contact-me" />
-                        </LocalizedLink> */}
-                        !
+                        {t("about-2")}
+                        <a href='mailto:info@jeanmichelviel.ca' className="font-medium hover:underline">{t("contact-me")}</a>
                     </p>
                     <p>
-                        {/* <FormattedMessage id="about-3" /> */}
+                        {t("about-3")}
                     </p>
                     <p>
-                        {/* <FormattedMessage id="about-4" /> */}
+                        {t("about-4")}
                     </p>
                 </div>
             </div>
             <div>
-                {/* <h2 className="text-xl text-jmv_light mb-2"><FormattedMessage id="Computer Science"/></h2>
+                <h2 className="text-xl text-jmv_light mb-2">{t("Computer Science")}</h2>
                 <div className="space-y-2">
                     <p>
-                        <FormattedMessage id="about-5" />{' '}
+                        {t("about-5")}{" "}
                         <a href="/informatique#info-jeux" className="font-medium hover:underline">
                             Roblox
                         </a>
-                        <FormattedMessage id="about-6" />
+                        {t("about-6")}
                     </p>
                     <p>
-                        <FormattedMessage id="about-7" />
+                        {t("about-7")}
                     </p>
                     <p className="mt-2">
-                        <FormattedMessage id="completed-courses" />
+                        {t("completed-courses")}
                     </p>
                     <ul className="list-disc ml-6">
                         <li>
-                            <FormattedMessage id="python" />
+                            {t("python")}
                         </li>
                         <li>
-                            <FormattedMessage id="cpp" />
+                            {t("cpp")}
                         </li>
                         <li>
-                            <FormattedMessage id="osa" />
+                            {t("osa")}
                         </li>
                         <li>
-                            <FormattedMessage id="algo" />
+                            {t("algo")}
                         </li>
                     </ul>
                     <p>
-                        <FormattedMessage id="about-8" />
-                        <LocalizedLink to="/informatique#info-web" className="font-medium hover:underline">
-                            <FormattedMessage id="my-projects" />
-                        </LocalizedLink>
+                    {t("about-8")}
+                        <Link to="/informatique#info-web" className="font-medium hover:underline">
+                            {t("my-projects")}
+                        </Link>
                         .
                     </p>
-                </div> */}
+                </div>
             </div>
         </div>
     );

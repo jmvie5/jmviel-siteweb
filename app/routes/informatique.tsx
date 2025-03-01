@@ -1,66 +1,36 @@
-import * as React from 'react';
-import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import Seo from '../components/Seo';
-import Siteweb from '../components/Siteweb';
-import { StaticImage } from 'gatsby-plugin-image';
-import { FormattedMessage } from 'react-intl';
-import { graphql, HeadProps } from 'gatsby';
-import { DataProps } from '../types';
+import Siteweb from "~/components/Siteweb";
+import {t} from "i18next"
+import jmvie5Logo from "~/assets/images/icon.webp"
+import * as infoImages from "~/assets/images/informatique"
 
 const InformatiquePage = () => {
     
     return (
-        <Layout dark>
-            <div className="bg-[url(../images/coding.webp)] bg-cover h-96">
-                <div className="grid grid-rows-3 justify-between text-jmv_white h-96 w-[61%] xs:w-[50%] ">
-                    <div className="flex flex-col my-4 ">
-                        <h1 className="text-2xl ml-4">Jean-Michel Viel</h1>
-                        <NavBar />
-                    </div>
-
-                    <div className="ml-4 row-span-2">
-                        <h2 className="text-xl my-4">
-                            <FormattedMessage id='Computer Science' />
-                        </h2>
-                        <p className="my-4">
-                            <FormattedMessage id='info-desc' />{' '}
-                        </p>
-                        <p>
-                            <FormattedMessage id='work' />{" "}
-                            <a href='https://www.edumedia.com' className='hover:underline font-medium'>Edumedia</a>
-                            <FormattedMessage id='work-2' />{" "}
-                            <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>. 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className=" bg-gradient-to-b from-black to bg-jmv_dark h-10"></div>
-
+        <div>
             <div className="grid grid-cols-1 max-w-7xl self-center">
                 <div className="space-y-4 mx-2 sm:mx-4">
                     <h2 id="info-web" className="text-xl text-jmv_light ">
-                    <FormattedMessage id='web-dev' />
+                        {t("web-dev")}
                     </h2>
                     <Siteweb
                         name="Laurence bf, orthopédagogue"
                         description={
                             <div>
                                 <p className="mb-2">
-                                    <FormattedMessage id='lbf-1' />{' '}
-                                    <strong><FormattedMessage id='lbf-2' /></strong>
-                                    <FormattedMessage id='lbf-3' />
+                                    {t("lbf-1")}{' '}
+                                    <strong>{t("lbf-2")}</strong>
+                                    {t("lbf-3")}
                                 </p>
                                 <p>
-                                    <FormattedMessage id='lbf-4' />
+                                    {t("lbf-4")}
                                 </p>
                             </div>
                         }
                         siteName="laurencebf.ca"
                         github="https://github.com/jmvie5/laurence-orthopedagogue"
                     >
-                        <StaticImage
-                            src="../images/informatique/laurencebf.webp"
+                        <img
+                            src={infoImages.laurencebf}
                             alt="Logo Laurence bf, orthopédagogue"
                         />
                     </Siteweb>
@@ -69,258 +39,259 @@ const InformatiquePage = () => {
                         description={
                             <div>
                                 <p className="mb-2">
-                                <FormattedMessage id='nbnr-1' />
+                                {t("nbnr-1")}
                                 </p>
                                 <p>
-                                <FormattedMessage id='nbnr-2' />
+                                {t("nbnr-2")}
                                 </p>
                             </div>
                         }
                         siteName="nbnr.ca"
                         github="https://github.com/jmvie5/nbnr-mnrn"
                     >
-                        <StaticImage src="../images/informatique/nbnr.webp" alt="Logo NBNR" />
+                        <img src={infoImages.nbnr} alt="Logo NBNR" />
                     </Siteweb>
                     <Siteweb
                         name="Improvison"
                         description={
                             <div>
-                                <FormattedMessage id='improvison-1' />
-                                <strong><FormattedMessage id='improvison-2' /></strong> 
-                                <FormattedMessage id='improvison-3' />
+                                {t("improvison-1")}
+                                <strong>{t('improvison-2')}</strong> 
+                                
+                                {t('improvison-3')}
                             </div>
                         }
                         siteName="improvison.ca"
                         github="https://github.com/jmvie5/improvison"
                     >
-                        <StaticImage src="../images/informatique/improvison.webp" alt="Logo Improvison" />
+                        <img src={infoImages.improvison} alt="Logo Improvison" />
                     </Siteweb>
-                    {/* <Siteweb
+                    <Siteweb
                         name="Café social"
                         description={
                             <div>
                                 <p className="mb-2">
-                                <FormattedMessage id='cafe-social-1' />
+                                {t('cafe-social-1')}
                                 </p>
-                                <p><FormattedMessage id='cafe-social-2' /></p>
+                                <p>{t('cafe-social-2')}</p>
                             </div>
                         }
                         github="https://github.com/charlotrudel/cafe_social"
                     >
-                        <StaticImage src="../images/informatique/cafesocial.webp" alt="Logo Café social" />
-                    </Siteweb> */}
+                        <img src={infoImages.cafesocial} alt="Logo Café social" />
+                    </Siteweb>
                     <Siteweb
                         name="this-website-title"
-                        description={<div><FormattedMessage id='this-website' /></div>}
+                        description={<div>{t('this-website')}</div>}
                         siteName="jeanmichelviel.ca"
                         github="https://github.com/jmvie5/jmviel-siteweb"
                     >
-                        <StaticImage src="../images/icon.webp" alt="Logo JM Viel" />
+                        <img src={jmvie5Logo} alt="Logo JM Viel" />
                     </Siteweb>
                 </div>
                 <div className="flex flex-col my-4 mx-2 sm:mx-4">
                     <h2 id="info-jeux" className="text-jmv_light text-xl">
-                    <FormattedMessage id='games-title' />
+                    {t('games-title')}
                     </h2>
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                         <p className="text-jmv_white ml-4 my-4">
-                        <FormattedMessage id='games-desc' />
+                        {t('games-desc')}
                         </p>
                         <a
                             title="Improvison"
                             href="https://www.roblox.com/games/5984084686/Improvison"
                             className="flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110"
                         >
-                            <StaticImage src="../images/informatique/roblox.svg" alt="Roblox logo" className="w-12" />
+                            <img src={infoImages.roblox} alt="Roblox logo" className="w-12" />
                             <p className="text-jmv_white text-2xl font-bold font-josefin">Improvison</p>
                         </a>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 w-full  items-center justify-between">
                         <p className="text-jmv_white ml-4 my-4" >
-                        <FormattedMessage id='dev-alec' />{" "}<a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> 
+                        {t('dev-alec')}{" "}<a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> 
                         </p>
                         <a
                             title="Alec"
                             href="https://alec-edu.com/"
                             className="flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110"
                         >
-                            <StaticImage src='../images/informatique/alec-logo.svg' alt='Logo Alec'/> 
+                            <img src={infoImages.alec_logo} alt='Logo Alec'/> 
                         </a>
                     </div>
                 </div>
                 <div className="my-4 mx-2 sm:mx-4">
-                    <h2 className="text-jmv_light text-xl"><FormattedMessage id='skills' /></h2>
+                    <h2 className="text-jmv_light text-xl">{t('skills')}</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
                         <a title="Remix" href="https://remix.run/">
-                            <StaticImage
+                            <img
                                 className="w-44 transition duration-300 ease-in hover:scale-110 "
                                 alt="Remix logo"
-                                src="../images/informatique/remix-glowing.svg"
+                                src={infoImages.remix_glowing}
                             />
                         </a>
                         <a title="React" href="https://react.dev/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110 "
                                 alt="React-icon"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
                             />
                         </a>
                         <a title="Next UI" href='https://nextui.org/'>
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110 "
                                 alt="NextUI-icon"
-                                src='../images/informatique/nextui.png'
+                                src={infoImages.nextui}
                             />
                         </a>
                         <a title="Motion" href='https://motion.dev/'>
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110 "
                                 alt="Motion-icon"
-                                src='../images/informatique/motion.webp'
+                                src={infoImages.motion}
                             />
                         </a>
                         <a title="Vite" href="https://vitejs.dev/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110 "
                                 alt="Vite logo"
-                                src="../images/informatique/Vitejs-logo.svg.png"
+                                src={infoImages.Vitejs_logo_svg}
                             />
                         </a>
                         <a title="CreateJS" href="https://createjs.com/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110 "
                                 alt="CreateJS logo"
-                                src="../images/informatique/createjs.svg"
+                                src={infoImages.createjs}
                             />
                         </a>
                         <a title="MongoDB" href="https://www.mongodb.com/">
-                            <StaticImage
+                            <img
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
                                 alt="MongoDB Logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png"
                             />
                         </a>
                         <a title="expressjs" href="https://expressjs.com/">
-                            <StaticImage
+                            <img
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
                                 alt="Expressjs"
                                 src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"
                             />
                         </a>
                         <a title="NodeJS" href="https://nodejs.org">
-                            <StaticImage
+                            <img
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
                                 alt="NodeJS"
                                 src="https://upload.wikimedia.org/wikipedia/commons/6/67/NodeJS.png"
                             />
                         </a>
                         <a title="PHP" href="https://www.php.net/">
-                            <StaticImage
+                            <img
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
                                 alt="PHP-logo"
-                                src="../images/informatique/PHP-logo.svg"
+                                src={infoImages.PHP_logo}
                             />
                         </a>
                         <a title="Symfony" href="https://symfony.com/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110 bg-white rounded-full"
                                 alt="Symfony-logo"
-                                src="../images/informatique/symfony.png"
+                                src={infoImages.symfony}
                             />
                         </a>
                         <a title="GatsbyJS" href="https://gastbyjs.com">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="GatsbyJS logo"
-                                src="../images/informatique/gatsbyjs.webp"
+                                src={infoImages.gatsbyjs}
                             />
                         </a>
                         <a title="GraphQL" href="https://graphql.org/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="GraphQL Logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png"
                             />
                         </a>
                         <a title="Vue" href="https://vuejs.org/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="Vue Logo"
-                                src="../images/informatique/Vue.js_Logo_2.svg"
+                                src={infoImages.Vue_js_Logo_2}
                             />
                         </a>
                         <a title="Nuxt" href="https://nuxt.com/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="Vue Logo"
-                                src="../images/informatique/nuxt.svg"
+                                src={infoImages.nuxt}
                             />
                         </a>
                         <a title="Netlify" href="https://www.netlify.com/">
-                            <StaticImage
+                            <img
                                 className="w-44 transition duration-300 ease-in hover:scale-110"
                                 alt="Netlify logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/512px-Netlify_logo_%282%29.svg.png"
                             />
                         </a>
                         <a title="Tailwind CSS" href="https://tailwindcss.com">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="Tailwind CSS Logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png"
                             />
                         </a>
                         <a title="JavaScript" href="https://www.javascript.com/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="JavaScript-logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png"
                             />
                         </a>
                         <a title="TypeScript" href="https://www.typescriptlang.org/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="Typescript logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png"
                             />
                         </a>
                         <a title="HTML5" href="https://html.spec.whatwg.org/multipage/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="HTML5 logo"
-                                src="../images/informatique/html5.webp"
+                                src={infoImages.html5}
                             />
                         </a>
                         <a title="CSS3" href="https://www.w3.org/Style/CSS/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="CSS3 logo and wordmark"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/256px-CSS3_logo_and_wordmark.svg.png"
                             />
                         </a>
                         <a title="Python" href="https://www.python.org/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="Python logo"
-                                src="../images/informatique/python.webp"
+                                src={infoImages.python}
                             />
                         </a>
                         <a title="C++" href="https://cplusplus.com/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="C++ Logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/256px-ISO_C%2B%2B_Logo.svg.png"
                             />
                         </a>
                         <a title="Lua" href="https://www.lua.org/">
-                            <StaticImage
+                            <img
                                 className="w-24 transition duration-300 ease-in hover:scale-110"
                                 alt="Lua-Logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/512px-Lua-Logo.svg.png"
                             />
                         </a>
                         <a title="Git" href="https://git-scm.com/">
-                            <StaticImage
+                            <img
                                 className="w-32 transition duration-300 ease-in hover:scale-110"
                                 alt="Git-logo"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png"
@@ -329,23 +300,9 @@ const InformatiquePage = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </div>
     );
 };
 
 export default InformatiquePage;
 
-export function Head(props: HeadProps<DataProps>) {
-    return <Seo title={props.data.pageTitle.message} description={props.data.pageDescription.message} />;
-}
-
-export const query = graphql`
-    query InformatiquePage($locale: String) {
-        pageTitle: translation(locale: { eq: $locale }, key: { eq: "Computer Science" }) {
-            message
-        }
-        pageDescription: translation(locale: { eq: $locale }, key: { eq: "info-desc" }) {
-            message
-        }
-    }
-`;

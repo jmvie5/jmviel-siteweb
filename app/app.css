@@ -8,14 +8,14 @@
   --font-poppins: Poppins, sans-serif;
   --font-josefin: "Josepfin Sans", sans-serif;
 
-  --breakpoint-xss: "430px";
-  --breakpoint-xs: "500px";
+  --breakpoint-xss: 20rem;
+  --breakpoint-xs: 30rem;
 
-  --color-jmv_dark: "#0d1b2a";
-  --color-jmv_lessDark: "#1b263b";
-  --color-jmv_medium: "#415a77";
-  --color-jmv_light: "#778da9";
-  --color-jmv_white: "#e0e1dd";
+  --color-jmv_dark: #0d1b2a;
+  --color-jmv_lessDark: #1b263b;
+  --color-jmv_medium: #415a77;
+  --color-jmv_light: #778da9;
+  --color-jmv_white: #e0e1dd;
 }
 
 html,

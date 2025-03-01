@@ -1,7 +1,5 @@
-import * as React from 'react'
-import { StaticImage } from 'gatsby-plugin-image';
-import { FormattedMessage } from 'react-intl';
-
+import {t} from "i18next"
+import githubLogo from "../assets/images/informatique/github.webp"
 interface SitewebProps {
   name: string;
   id?: string;
@@ -28,12 +26,12 @@ const Siteweb = ({
                     {children}
                 </a>
                 <div className='flex flex-col justify-between gap-2'>
-                    <div className='text-xl font-bold'><FormattedMessage id={name}/></div>
+                    <div className='text-xl font-bold'>{t(name)}</div>
                     <div className='flex gap-3'>
                         <a href={link} className='hover:underline'>{siteName}</a>
                         <a href={github} className='hover:underline'>
                             <div className='flex gap-1'>
-                                <StaticImage src="../images/informatique/github.webp" alt="Github logo" className="w-6"/>
+                                <img src={githubLogo} alt="Github logo" className="w-6"/>
                                 <p>GitHub</p>
                             </div>
                         </a>

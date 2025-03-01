@@ -5,7 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData
+  useLoaderData,
+  redirect
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -14,9 +15,87 @@ import "./app.css";
 import { useChangeLanguage } from "remix-i18next/react";
 import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
+import i18nConfig, { urlTranslationSearchString } from "./i18n";
 
-export async function loader({ request }: Route.LoaderArgs) {
-  let locale = await i18next.getLocale(request);
+export async function loader({ request, params }: Route.LoaderArgs) {
+  
+  const {supportedLngs} = i18nConfig
+  
+  let locale = params.lang
+    ? params.lang 
+    : await i18next.getLocale(request)
+
+  if (!supportedLngs.includes(locale)) {
+    locale = await i18next.getLocale(request)
+  }
+
+  const t = await i18next.getFixedT(locale)
+  
+  const url = new URL(request.url)
+
+  const page = url.pathname.split('/')[url.pathname.split('/').length - 1]
+  const searchParams = url.searchParams
+
+  // check if route exists across lng and redirect with the good url if necessary (/locale/route)
+  if (page && !supportedLngs.includes(page)) {
+    let pageFound = false
+    for (const [searchLocale, pages] of Object.entries(urlTranslationSearchString)) {
+      for (const [url, tString] of Object.entries(pages)) {
+
+        if (page === url) {
+          pageFound = true
+          // redirect only if page was found in another locale
+          // if page found in current local no redirect is necessary
+          if (params.lang && supportedLngs.includes(params.lang)) {
+            // to avoid multiple redirection if a page is in both locales (i.e. /fractions, /legal)
+            // we redirect only if transation with current lang param is different from current page url
+            if (t(tString) !== page){
+              // user tried to go to a valid page in the wrong locale in the url,
+              // locale in url is king so we redirect 301 (Moved Permanently)
+              if (searchParams.size) {
+                return redirect(`/${params.lang}/${t(tString)}?${searchParams.toString()}`, 301)
+              } else {
+                return redirect(`/${params.lang}/${t(tString)}`, 301)
+              }
+            }
+          } else {
+            // user went to the page without the /locale/, we add the locale = redirect 302
+            if (searchParams.size) {
+              return redirect(`/${searchLocale}/${url}?${searchParams.toString()}`, 302)
+            } else {
+              return redirect(`/${searchLocale}/${url}`, 302)
+            }
+            
+          }
+
+          break
+        }
+      }
+      if (pageFound) break;
+    }
+    if (!pageFound) {
+      // this redirect works when user goes to a page not found without locale
+      // if user goes to a page not found with a locale provided it goes through splat route (/routes/$.tsx)
+      if (searchParams.size) {
+        throw redirect(`/${locale}?${searchParams.toString()}`, 302)
+      } else {
+        throw redirect(`/${locale}`, 302)
+      }
+      
+    }
+    
+  } else {
+    // user went to landing page without locale
+    if (!params.lang) {
+      if (searchParams.size) {
+        return redirect(`/${locale}?${searchParams.toString()}`, 302)
+      } else {
+        return redirect(`/${locale}`, 302)
+      }
+      
+    }
+  }
+
   return { locale };
 }
 
@@ -52,7 +131,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   // language, this locale will change and i18next will load the correct
   // translation files
   useChangeLanguage(locale);
-  console.log("root locale : ", locale)
+
   return (
     <html lang={locale} dir={i18n.dir()}>
       <head>
