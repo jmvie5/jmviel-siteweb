@@ -5,8 +5,8 @@ import duo_pichenotte_img from "~/assets/images/musique/Duo_Pichenotte.webp"
 import solo_img from "~/assets/images/musique/Solo.webp"
 import {t} from "i18next"
 import { openInNewIcon } from '~/assets/icons';
-import emily_video from "~/assets/videos/emily-fijq.webm"
-import entre2villes_video from "~/assets/videos/entre-deux-villes.webm"
+import emily_video from "~/assets/videos/half_emily.webm"
+import entre2villes_video from "~/assets/videos/half_entre-deux-villes.webm"
 import entre2Villes_thumbnail from "~/assets/videos/thumb-entre-deux-villes.png"
 
 export async function loader({ request, params }: Route.LoaderArgs) {

@@ -5,7 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
+  useRouteLoaderData,
   redirect
 } from "react-router";
 
@@ -122,9 +122,9 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   // Get the locale from the loader
-  let { locale } = useLoaderData<typeof loader>();
-
-  let { i18n } = useTranslation();
+  const loaderData = useRouteLoaderData<typeof loader>("root");
+  const locale = loaderData?.locale || "fr"
+  const { i18n } = useTranslation();
 
   // This hook will change the i18n instance language to the current locale
   // detected by the loader, this way, when we do something to change the

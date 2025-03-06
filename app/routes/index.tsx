@@ -1,25 +1,39 @@
 import type { Route } from "./+types/index";
+import i18nServer from "~/i18next.server";
 
-export async function loader({ request, params }: Route.LoaderArgs) {
+  export async function loader({ request, params }: Route.LoaderArgs) {
 
-    const title =  "Jean-Michel Viel"
-    const description = "Jean-Michel Viel, musicien, pédagogue et programmeur."
-  
+    const locale = params.lang 
+        ? params.lang 
+        : await i18nServer.getLocale(request)
+
+    const t = await i18nServer.getFixedT(locale)
+
+    const title = "Jean-Michel Viel"
+    const description = t("index-desc")
+
   
     return { title, description };
-  }
-  
-  
-  export const meta = () => {
-  
+}
+
+
+export function meta({ matches }: Route.MetaArgs) {
+
+    type LoaderDataType = {
+        title:string,
+        description: string
+    }
+
+    const loaderData:LoaderDataType = matches[matches.length-1]?.data as LoaderDataType
+
     return [
-      { title: "Jean-Michel Viel" },
-      { name: "description", content: "Jean-Michel Viel, musicien, pédagogue et programmeur." },
-      { property: "og:title", content:"Jean-Michel Viel" },
-      { property: "og:type", content:"website" },
-  
+        { title: loaderData.title },
+        { name: "description", content: loaderData.description },
+        { property: "og:title", content: loaderData.title},
+        { property: "og:type", content:"website" },
+
     ];
-  };
+};
 
 const IndexPage = () => {
     return (

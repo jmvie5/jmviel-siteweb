@@ -10,6 +10,7 @@ import roblox from "./roblox.svg"
 import cafesocial from "./cafesocial.webp"
 import gatsbyjs from "./gatsbyjs.webp"
 import github from "./github.webp"
+import github_white from "./github-mark-white.svg"
 import html5 from "./html5.webp"
 import improvison from "./improvison.webp"
 import laurencebf from "./laurencebf.webp"
@@ -34,6 +35,7 @@ export {
     cafesocial,
     gatsbyjs,
     github,
+    github_white,
     html5,
     improvison,
     laurencebf,

@@ -343,7 +343,7 @@ const InformatiquePage = () => {
                     <h2 className="text-jmv_light text-xl">{t('skills')}</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
                         {skills.map((skill) => (
-                            <a title={skill.title} href={skill.url}>
+                            <a title={skill.title} href={skill.url} key={skill.title}>
                                 <img
                                     className={twMerge("transition duration-300 ease-in hover:scale-110 ", skill.width)}
                                     alt={skill.alt}

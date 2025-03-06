@@ -6,7 +6,7 @@ import {createInstance} from "i18next";
 import i18nextServer from "./i18next.server";
 import {I18nextProvider, initReactI18next} from "react-i18next";
 import Backend from "i18next-fs-backend/cjs";
-import {resolve as resolvePath} from "node:path";
+import { resolve } from "node:path";
 import i18n from "./i18n"; // your i18n configuration file
 
 export default async function handleRequest(
@@ -25,7 +25,7 @@ export default async function handleRequest(
         lng,
         ns: namespaces,
         backend: {
-            loadPath: resolvePath("./public/locales/{{lng}}/{{ns}}.json"),
+            loadPath: resolve("./public/locales/{{lng}}/{{ns}}.json"),
         }
     })
 

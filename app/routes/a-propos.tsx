@@ -76,7 +76,7 @@ const AProposPage = () => {
                     <img
                         src={comboJazzBoat}
                         alt="Spectacle sur le HMS PROTECTOR"
-                        className="float-right aspect-square w-72 sm:w-96 mx-4 mb-2 self-center"
+                        className="float-right w-72 sm:w-96 mx-4 mb-2 self-center"
                     />
                     <p>
                         {t("about-1")}

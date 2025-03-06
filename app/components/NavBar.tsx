@@ -1,18 +1,16 @@
-// import { Menu, Transition } from '@headlessui/react'
-// import { FormattedMessage } from 'react-intl'
-// import { LocalizedLink } from 'gatsby-plugin-i18n-l10n'
 import { Link } from "react-router"
 import { twMerge } from 'tailwind-merge'
 import { urlTranslationSearchString } from "~/i18n"
 import {t} from "i18next"
 
 interface NavbarProps {
-    locale: string,
-    dark?: boolean
-    more?: boolean
+    locale: string;
+    dark?: boolean;
+    more?: boolean;
+    menuLinks: {name:string, url:string}[]
 }
 
-export default function NavBar({locale, dark, more}: NavbarProps) {
+export default function NavBar({locale, menuLinks, dark, more}: NavbarProps) {
 
     // const navButton =
     //     <Menu as="div" className="flex justify-center relative mt-4 z-10">
@@ -49,33 +47,17 @@ export default function NavBar({locale, dark, more}: NavbarProps) {
     //         </Transition>
     //     </Menu>
 
-    const menuLinks = [
-        {
-          name: t("Home"),
-          link: `/${locale}/`,
-        },
-        {
-          name: t("About"),
-          link: `/${locale}/${t(urlTranslationSearchString['en']['about'])}`,
-        },
-        {
-          name: t("Music"),
-          link: `/${locale}/${t(urlTranslationSearchString['en']['music'])}`,
-        },
-        {
-          name: t("Computer Science"),
-          link: `/${locale}/${t(urlTranslationSearchString['en']['computer-science'])}`,
-        }
-    ]
+    
 
     const navFull = 
             <ul className='flex py-4 ml-4 divide-x divide-jmv_light border-b border-jmv_light max-w-fit'>
                 {menuLinks.map(link => (
-                    <Link 
-                        key={link.name}
-                        to={link.link}
-                        className={twMerge('block xl:text-lg text-md ml-4 pr-4', dark ? "hover:text-jmv_medium text-jmv_dark" : "hover:text-jmv_light text-jmv_white")}
-                    >{link.name}</Link>
+                    <li key={link.name}>
+                        <Link 
+                            to={link.url}
+                            className={twMerge('block xl:text-lg text-md ml-4 pr-4', dark ? "hover:text-jmv_medium text-jmv_dark" : "hover:text-jmv_light text-jmv_white")}
+                        >{link.name}</Link>
+                    </li>
                 ))}
             </ul> 
 
