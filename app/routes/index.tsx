@@ -1,5 +1,6 @@
 import type { Route } from "./+types/index";
 import i18nServer from "~/i18next.server";
+import {t} from "i18next"
 
   export async function loader({ request, params }: Route.LoaderArgs) {
 

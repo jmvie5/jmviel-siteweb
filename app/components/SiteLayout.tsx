@@ -66,7 +66,6 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             isDark: false
         }, 
     }
-
     const pageData = allPageData[t(urlTranslationSearchString[locale][page], {lng:"fr"})]
     
     return { page, locale, pageData, menuLinks};

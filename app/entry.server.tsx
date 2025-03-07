@@ -5,8 +5,6 @@ import { renderToReadableStream } from "react-dom/server";
 import {createInstance} from "i18next";
 import i18nextServer from "./i18next.server";
 import {I18nextProvider, initReactI18next} from "react-i18next";
-import Backend from "i18next-fs-backend/cjs";
-import { resolve } from "node:path";
 import i18n from "./i18n"; // your i18n configuration file
 
 export default async function handleRequest(
@@ -16,17 +14,16 @@ export default async function handleRequest(
   routerContext: EntryContext,
   _loadContext: AppLoadContext
 ) {
-    let i18nextInstance = createInstance();
-    let lng = await i18nextServer.getLocale(request);
-    let namespaces = i18nextServer.getRouteNamespaces(routerContext);
+    const i18nextInstance = createInstance();
+    const lng = await i18nextServer.getLocale(request);
+    const ns = i18nextServer.getRouteNamespaces(routerContext);
 
-    await i18nextInstance.use(initReactI18next).use(Backend).init({
+    await i18nextInstance
+      .use(initReactI18next)
+      .init({
         ...i18n,
         lng,
-        ns: namespaces,
-        backend: {
-            loadPath: resolve("./public/locales/{{lng}}/{{ns}}.json"),
-        }
+        ns
     })
 
   let shellRendered = false;
