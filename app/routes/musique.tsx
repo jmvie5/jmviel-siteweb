@@ -6,6 +6,8 @@ import duo_pichenotte_img from "~/assets/images/musique/Duo_Pichenotte.webp"
 import solo_img from "~/assets/images/musique/Solo.webp"
 import {t} from "i18next"
 import { openInNewIcon } from '~/assets/icons';
+import * as partitions from "~/assets/partitions"
+import SheetMusicLink from "~/components/SheetMusicLink";
 
 
 export async function loader({ request, params }: Route.LoaderArgs) {
@@ -41,6 +43,73 @@ export function meta({ matches }: Route.MetaArgs) {
 };
 
 export default function MusicPage() {
+
+    const exercicesLinks = [
+        {
+            name: "Drop 2",
+            url: partitions.Drop_2
+        },
+        {
+            name: t('exercice-sweep'),
+            url: partitions.Exercice_Sweep_TuneUp
+        },
+        {
+            name: t('exercice-arpeggio'),
+            url: partitions.Exercices_Arpèges
+        },
+        {
+            name: t('exercice-neck-hand'),
+            url: partitions.Exercices_main_du_manche
+        }
+    ]
+
+    const transcriptionsLinks = [
+        {
+            name: "Conception - Solo Kurt Rosenwinkel",
+            url: partitions.Conception_Kurt,
+        },
+        {
+            name: "Have You Met Miss Jones? - Jonathan Kreisberg",
+            url: partitions.Have_you_met_miss_Jones_Kreisberg,
+        },
+        {
+            name: "Sail Away - Solo Tom Harell",
+            url: partitions.Sail_Away_Tom_Harell,
+        },
+        {
+            name: "You Go To My Head - Kurt Rosenwinkel",
+            url: partitions.You_Go_To_My_Head_Kurt,
+        },
+        {
+            name: "You'd Be So Nice To Come Home To - Jim Hall",
+            url: partitions.Youd_Be_So_Nice_To_Come_Home_To_Jim_Hall,
+        },
+    ]
+
+
+    const composLinks = [
+        {
+            name: "Entre deux villes",
+            url: partitions.Entre_deux_villes
+        },
+        {
+            name: "Like Someone In Love",
+            url: partitions.Like_Someone_In_Love_JMViel
+        },
+        {
+            name: "You Don't Know What Love Is",
+            url: partitions.You_Dont_Know_What_Love_Is
+        },
+        {
+            name: "L'automnale",
+            url: partitions.LAutomnale
+        },
+        {
+            name: "Renversements",
+            url: partitions.Renversements
+        },
+    ]
+
     return (
 
         <div className="flex flex-col max-w-7xl self-center gap-4">
@@ -232,61 +301,9 @@ export default function MusicPage() {
                         {t('transcription-desc')}
                         </p>
                         <div className="">
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Conception-Kurt.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px] ">Conception - Solo Kurt Rosenwinkel</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex '>
-                                <a
-                                    href="/partitions/Have_you_met_miss_Jones-Kreisberg.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px] ">Have You Met Miss Jones? - Jonathan Kreisberg</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Sail_Away-Tom_Harell.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px] ">Sail Away - Solo Tom Harell</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/You_Go_To_My_Head-Kurt.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px] ">You Go To My Head - Kurt Rosenwinkel</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/You'd_Be_So_Nice_To_Come_Home_To-Jim_Hall.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px] ">You'd Be So Nice To Come Home To - Jim Hall</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
+                            {transcriptionsLinks.map((link) => (
+                                <SheetMusicLink name={link.name} url={link.url} />
+                            ))}
                         </div>
                     </div>
                     <div className="flex flex-col gap-2 text-jmv_white sm:pl-4">
@@ -295,50 +312,9 @@ export default function MusicPage() {
                         {t('exercices-desc')}
                         </p>
                         <div className="">
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Drop_2.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">Drop 2</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Exercice_Sweep_TuneUp.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">{t('exercice-sweep')}</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Exercices_Arpèges.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">{t('exercice-arpeggio')}</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Exercices_main_du_manche.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">{t('exercice-neck-hand')}</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
+                            {exercicesLinks.map((link) => (
+                                <SheetMusicLink name={link.name} url={link.url} />
+                            ))}
                         </div>
                     </div>
                     <div className="flex flex-col gap-2 text-jmv_white">
@@ -347,61 +323,9 @@ export default function MusicPage() {
                         {t('compo-desc')}
                         </p>
                         <div className="">
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Like_Someone_In_Love-JMViel.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">Like Someone In Love</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/You_Don't_Know_What_Love_Is.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">You Don't Know What Love Is</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Entre_deux_villes.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">Entre deux villes</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/L'Automnale.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">L'Automnale</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
-                            <div className='before:content-["•"] flex'>
-                                <a
-                                    href="/partitions/Renversements.pdf"
-                                    className="hover:underline flex ml-1"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <p className="w-[220px]">Renversements</p>
-                                    <span className="ml-1">{openInNewIcon}</span>
-                                </a>
-                            </div>
+                            {composLinks.map((link) => (
+                                <SheetMusicLink name={link.name} url={link.url} />
+                            ))}
                         </div>
                     </div>
                 </div>

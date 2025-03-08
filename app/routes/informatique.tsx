@@ -129,21 +129,21 @@ const InformatiquePage = () => {
         },
         {
             title: "Hero UI",
-            url: "https://heroui.com/'",
+            url: "https://heroui.com/",
             width: "w-24",
             alt: "HeroUI-icon",
             src: infoImages.nextui
         },
         {
             title: "Motion",
-            url: "https://motion.dev/'",
+            url: "https://motion.dev/",
             width: "w-24",
             alt: "Motion-icon",
             src: infoImages.motion
         },
         {
             title: "Vite",
-            url: "https://vitejs.dev/'",
+            url: "https://vitejs.dev/",
             width: "w-24",
             alt: "Vite Logo",
             src: infoImages.Vitejs_logo_svg
@@ -320,7 +320,7 @@ const InformatiquePage = () => {
                         <a
                             title="Improvison"
                             href="https://www.roblox.com/games/5984084686/Improvison"
-                            className="flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110"
+                            className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
                         >
                             <img src={infoImages.roblox} alt="Roblox logo" className="w-12" />
                             <p className="text-jmv_white text-2xl font-bold font-josefin">Improvison</p>
@@ -333,7 +333,7 @@ const InformatiquePage = () => {
                         <a
                             title="Alec"
                             href="https://alec-edu.com/"
-                            className="flex self-center items-center gap-2 transition duration-300 ease-in hover:scale-110"
+                            className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
                         >
                             <img src={infoImages.alec_logo} alt='Logo Alec'/> 
                         </a>
@@ -345,7 +345,7 @@ const InformatiquePage = () => {
                         {skills.map((skill) => (
                             <a title={skill.title} href={skill.url} key={skill.title}>
                                 <img
-                                    className={twMerge("transition duration-300 ease-in hover:scale-110 ", skill.width)}
+                                    className={twMerge("transition duration-200 ease-in hover:scale-110 ", skill.width)}
                                     alt={skill.alt}
                                     src={skill.src}
                                 />
