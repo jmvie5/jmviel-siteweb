@@ -1,8 +1,8 @@
 import type { Route } from "./+types/index";
 import i18nServer from "~/i18next.server";
-import {t} from "i18next"
 
-  export async function loader({ request, params }: Route.LoaderArgs) {
+
+export async function loader({ request, params }: Route.LoaderArgs) {
 
     const locale = params.lang 
         ? params.lang 
@@ -13,7 +13,7 @@ import {t} from "i18next"
     const title = "Jean-Michel Viel"
     const description = t("index-desc")
 
-  
+
     return { title, description };
 }
 

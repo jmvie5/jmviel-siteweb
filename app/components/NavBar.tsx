@@ -1,7 +1,5 @@
 import { Link } from "react-router"
 import { twMerge } from 'tailwind-merge'
-import { urlTranslationSearchString } from "~/i18n"
-import {t} from "i18next"
 
 interface NavbarProps {
     locale: string;

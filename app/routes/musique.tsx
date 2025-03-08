@@ -5,7 +5,6 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import duo_pichenotte_img from "~/assets/images/musique/Duo_Pichenotte.webp"
 import solo_img from "~/assets/images/musique/Solo.webp"
 import {t} from "i18next"
-import { openInNewIcon } from '~/assets/icons';
 import * as partitions from "~/assets/partitions"
 import SheetMusicLink from "~/components/SheetMusicLink";
 
@@ -302,7 +301,7 @@ export default function MusicPage() {
                         </p>
                         <div className="">
                             {transcriptionsLinks.map((link) => (
-                                <SheetMusicLink name={link.name} url={link.url} />
+                                <SheetMusicLink key={link.name} name={link.name} url={link.url} />
                             ))}
                         </div>
                     </div>
@@ -313,7 +312,7 @@ export default function MusicPage() {
                         </p>
                         <div className="">
                             {exercicesLinks.map((link) => (
-                                <SheetMusicLink name={link.name} url={link.url} />
+                                <SheetMusicLink key={link.name} name={link.name} url={link.url}  />
                             ))}
                         </div>
                     </div>
@@ -324,7 +323,7 @@ export default function MusicPage() {
                         </p>
                         <div className="">
                             {composLinks.map((link) => (
-                                <SheetMusicLink name={link.name} url={link.url} />
+                                <SheetMusicLink key={link.name} name={link.name} url={link.url} />
                             ))}
                         </div>
                     </div>

@@ -9,7 +9,7 @@ interface SitewebProps {
   logoSrc?:string;
   logoAlt?:string;
 }
-//children = static image of website icon
+
 const Siteweb = ({
   name,
   id,
