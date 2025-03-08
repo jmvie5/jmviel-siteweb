@@ -1,13 +1,12 @@
 import type { Route } from "./+types/musique";
 import i18nServer from "~/i18next.server";
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import duo_pichenotte_img from "~/assets/images/musique/Duo_Pichenotte.webp"
 import solo_img from "~/assets/images/musique/Solo.webp"
 import {t} from "i18next"
 import { openInNewIcon } from '~/assets/icons';
-import emily_video from "~/assets/videos/half_emily.webm"
-import entre2villes_video from "~/assets/videos/half_entre-deux-villes.webm"
-import entre2Villes_thumbnail from "~/assets/videos/thumb-entre-deux-villes.png"
+
 
 export async function loader({ request, params }: Route.LoaderArgs) {
 
@@ -98,11 +97,17 @@ export default function MusicPage() {
                     </div>
                     <div className="flex flex-col gap-2 justify-between w-full">
                         <div>
-                            <video controls className="border-0 aspect-video overflow-hidden "><source src={emily_video}/></video>
+                            <LiteYouTubeEmbed
+                                id="y_wisU9jzxo"
+                                title="Emily"
+                            ></LiteYouTubeEmbed>
                             <h3 className=" text-sm text-jmv_white text-center">Emily</h3>
                         </div>
                         <div>
-                            <video controls className="border-0 aspect-video overflow-hidden " poster={entre2Villes_thumbnail}><source src={entre2villes_video}/></video>
+                            <LiteYouTubeEmbed
+                                id="ehngWe59Pi4"
+                                title="Entre deux villes"
+                            ></LiteYouTubeEmbed>
                             <h3 className=" text-sm text-jmv_white text-center">Entre deux villes</h3>
                         </div>
                         
