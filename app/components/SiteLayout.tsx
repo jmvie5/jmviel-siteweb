@@ -4,13 +4,17 @@ import linkedinLogo from "~/assets/images/informatique/linkedin.webp"
 import type { Route } from "./+types/SiteLayout";
 import { twMerge } from "tailwind-merge";
 import indexImage from "../assets/images/mascarade.webp"
-import aboutImage from "../assets/images/a-propos/JM_Lac_sm.webp"
+import aboutImageSM from "../assets/images/a-propos/JM_Lac_sm.webp"
+import aboutImage from "../assets/images/a-propos/JM_Lac.webp"
 import informatiqueImage from "../assets/images/coding.webp"
 import musicImage from "../assets/images/guitar.webp"
 import NavBar from "./NavBar";
 import i18nConfig from "~/i18n";
 import i18nServer from "~/i18next.server";
 import { urlTranslationSearchString } from "~/i18n";
+import {t} from "i18next"
+import useWindowSize from "~/hooks/useWindowSize";
+import LocaleSwitch from "./LocaleSwitch";
 
 
 export async function loader({ request, params }: Route.LoaderArgs) {
@@ -89,22 +93,29 @@ export default function SiteLayout({
     const page = loaderData.page
     const pageData = loaderData.pageData
     const menuLinks = loaderData.menuLinks
+    const wSize = useWindowSize()
+
+    // If we are on about page and on mobile we need to use to sm version of the header image
+    let headerImage = pageData.img
+    if (page === t("about-url", {lng:locale}) && wSize?.width && wSize.width < 500) {
+        headerImage = aboutImageSM
+    }
 
     return (
         <div className="flex min-h-dvh justify-center">
-            <div className=" flex flex-col justify-between w-full">
+            <div className="flex flex-col justify-between w-full">
                 <main className="flex flex-col h-full">
                     <img
-                        src={pageData.img}
+                        src={headerImage}
                         className={twMerge('absolute object-cover w-full object-[center_top]', page === "" ? "h-dvh" : "h-96")}
                     />
-                    <div className={twMerge(" z-10 py-4 text-black w-[50%]", page === "" ? "h-dvh" : "h-96")}>
+                    <div className={twMerge("flex flex-col  z-10 py-4 text-black w-full min-[500px]:w-[50%] ", page === "" ? "h-dvh" : "h-96")}>
                         <div className="flex flex-col ">
                             <h1 className={twMerge("text-2xl ml-4 ", !pageData.isDark && "text-white")}>Jean-Michel Viel</h1>
                             <NavBar locale={locale} menuLinks={menuLinks} dark={pageData.isDark} more />
                         </div>
                         {page !== "" && 
-                            <div className="m-4 row-span-2 bg-jmv_white/50 p-2 rounded-lg">
+                            <div className="m-4 row-span-2 bg-jmv_white/80 p-2 rounded-lg grow ">
                                 <h2 className="text-xl mb-4">
                                     {matchesData.title}
                                 </h2>
@@ -114,8 +125,8 @@ export default function SiteLayout({
                             </div>
                         }
                     </div>
-                    <div className="absolute right-0 m-4 hover:underline z-10 text-black">
-                        LNG
+                    <div className={twMerge("absolute right-0 m-4 hover:underline z-1")}>
+                        <LocaleSwitch/>
                     </div>
                     <div className="bg-gradient-to-b from-black to bg-slate-950 h-10"></div>
                     <Outlet/>
