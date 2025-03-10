@@ -111,7 +111,7 @@ export default function MusicPage() {
 
     return (
 
-        <div className="flex flex-col max-w-7xl self-center gap-4">
+        <div className="space-y-12">
             <div className="space-y-2 mx-2 sm:mx-4">
                 <h2 id="mus-duo" className="text-xl text-jmv_light ">
                     Duo Pichenotte
@@ -152,9 +152,9 @@ export default function MusicPage() {
                 </div>
             </div>
             <div className="space-y-2 mx-2 sm:mx-4">
+                <h2 className="text-xl text-jmv_light mb-2">La Revoir</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <div className="flex flex-col w-full justify-between">
-                        <h2 className="text-xl text-jmv_light mb-2">La Revoir</h2>
                         <iframe
                             className="w-full aspect-square"
                             src="https://bandcamp.com/EmbeddedPlayer/track=809649105/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"

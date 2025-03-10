@@ -5,6 +5,7 @@ import Siteweb from "~/components/Siteweb";
 import jmvie5Logo from "~/assets/images/icon.webp"
 import * as infoImages from "~/assets/images/informatique"
 import { twMerge } from "tailwind-merge";
+import { pikado_full } from "~/assets/images/informatique/pikado_icons";
 
 export async function loader({ request, params }: Route.LoaderArgs) {
 
@@ -186,7 +187,7 @@ const InformatiquePage = () => {
         {
             title: "Symfony",
             url: "https://symfony.com/",
-            width: "w-44",
+            width: "w-24",
             alt: "Symfony logo",
             src: infoImages.symfony
         },
@@ -291,67 +292,82 @@ const InformatiquePage = () => {
     ]
     
     return (
-        <div className="flex justify-center">
-            <div className="grid grid-cols-1 max-w-7xl self-center">
-                <div className="space-y-4 mx-2 sm:mx-4">
-                    <h2 id="info-web" className="text-xl text-jmv_light ">
-                        {t("web-dev")}
-                    </h2>
-                    {webProjects.map((project)=> (
-                        <Siteweb
-                            key={project.name}
-                            name={project.name}
-                            description={project.description}
-                            url={project.url}
-                            github={project.github}
-                            logoSrc={project.logoSrc}
-                            logoAlt={project.logoAlt}
-                        />
-                    ))}
+        <div className="">
+            <div className="space-y-4 mx-2 sm:mx-4">
+                <h2 id="info-web" className="text-xl text-jmv_light ">
+                    {t("web-dev")}
+                </h2>
+                {webProjects.map((project)=> (
+                    <Siteweb
+                        key={project.name}
+                        name={project.name}
+                        description={project.description}
+                        url={project.url}
+                        github={project.github}
+                        logoSrc={project.logoSrc}
+                        logoAlt={project.logoAlt}
+                    />
+                ))}
+            </div>
+            <div className="my-4 px-2 sm:px-4">
+                <h2 className="text-jmv_light text-xl">
+                    EduMedia
+                </h2>
+                <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <p className="text-jmv_white ml-4 my-4">
+                        Dev pour Pikado
+                    </p>
+                    <a
+                        title="Pikado"
+                        href="https://www.roblox.com/games/5984084686/Improvison"
+                        className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
+                    >
+                        {pikado_full}
+                    </a>
                 </div>
-                <div className="flex flex-col my-4 mx-2 sm:mx-4">
-                    <h2 id="info-jeux" className="text-jmv_light text-xl">
-                    {t('games-title')}
-                    </h2>
-                    <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-                        <p className="text-jmv_white ml-4 my-4">
+                <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <p className="text-jmv_white ml-4 my-4" >
+                    {t('dev-alec')}{" "}<a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> 
+                    </p>
+                    <a
+                        title="Alec"
+                        href="https://alec-edu.com/"
+                        className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
+                    >
+                        <img src={infoImages.alec_logo} alt='Logo Alec' className="p-4"/> 
+                    </a>
+                </div>
+            </div>
+            <div className="my-4 px-2 sm:px-4 ">
+                <h2 id="info-jeux" className="text-jmv_light text-xl">
+                    Université Laval
+                </h2>
+                <div className="flex  flex-col w-full sm:flex-row gap-4 items-center justify-between">
+                    <p className="flex grow text-jmv_white ml-4 my-4">
                         {t('games-desc')}
-                        </p>
-                        <a
-                            title="Improvison"
-                            href="https://www.roblox.com/games/5984084686/Improvison"
-                            className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
-                        >
-                            <img src={infoImages.roblox} alt="Roblox logo" className="w-12" />
-                            <p className="text-jmv_white text-2xl font-bold font-josefin">Improvison</p>
-                        </a>
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-4 w-full  items-center justify-between">
-                        <p className="text-jmv_white ml-4 my-4" >
-                        {t('dev-alec')}{" "}<a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> 
-                        </p>
-                        <a
-                            title="Alec"
-                            href="https://alec-edu.com/"
-                            className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
-                        >
-                            <img src={infoImages.alec_logo} alt='Logo Alec'/> 
-                        </a>
-                    </div>
+                    </p>
+                    <a
+                        title="Improvison"
+                        href="https://www.roblox.com/games/5984084686/Improvison"
+                        className="flex min-w-max  self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
+                    >
+                        <img src={infoImages.roblox} alt="Roblox logo" className="w-12 " />
+                        <span className="text-jmv_white text-2xl font-bold font-josefin ">Improvison</span>
+                    </a>
                 </div>
-                <div className="my-4 mx-2 sm:mx-4">
-                    <h2 className="text-jmv_light text-xl">{t('skills')}</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
-                        {skills.map((skill) => (
-                            <a title={skill.title} href={skill.url} key={skill.title}>
-                                <img
-                                    className={twMerge("transition duration-200 ease-in hover:scale-110 ", skill.width)}
-                                    alt={skill.alt}
-                                    src={skill.src}
-                                />
-                            </a>
-                        ))}
-                    </div>
+            </div>
+            <div className="my-4 mx-2 sm:mx-4">
+                <h2 className="text-jmv_light text-xl">{t('skills')}</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
+                    {skills.map((skill) => (
+                        <a title={skill.title} href={skill.url} key={skill.title}>
+                            <img
+                                className={twMerge("transition duration-200 ease-in hover:scale-110 ", skill.width)}
+                                alt={skill.alt}
+                                src={skill.src}
+                            />
+                        </a>
+                    ))}
                 </div>
             </div>
         </div>

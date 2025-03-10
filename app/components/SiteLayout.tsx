@@ -129,7 +129,9 @@ export default function SiteLayout({
                         <LocaleSwitch/>
                     </div>
                     <div className="bg-gradient-to-b from-black to bg-slate-950 h-10"></div>
-                    <Outlet/>
+                    <div className="max-w-7xl self-center">
+                        <Outlet/>
+                    </div>
                 </main>
                 <footer className="flex flex-col xs:flex-row gap-4 justify-around text-jmv_white m-4 pt-4 border-t border-jmv_light">
                     <a href="mailto:info@jeanmichelviel.ca" className="hover:underline self-center">
