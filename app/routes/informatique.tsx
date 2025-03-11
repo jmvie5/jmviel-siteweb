@@ -315,12 +315,12 @@ const InformatiquePage = () => {
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                     <p className="text-jmv_white ml-4 my-4">
-                        Dev pour Pikado
+                        {t("dev-pikado")}
                     </p>
                     <a
                         title="Pikado"
-                        href="https://www.roblox.com/games/5984084686/Improvison"
-                        className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
+                        href="https://pikado.education"
+                        className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-105"
                     >
                         {pikado_full}
                     </a>

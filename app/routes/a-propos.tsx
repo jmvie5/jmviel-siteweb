@@ -4,6 +4,7 @@ import i18nServer from '~/i18next.server';
 import { Link } from 'react-router';
 import edumediaLogo from "../assets/images/informatique/edumedia-logo.svg"
 import alecLogo from "../assets/images/informatique/alec-logo.svg"
+import { pikado_p } from '~/assets/images/informatique/pikado_icons';
 import comboJazzBoat from "../assets/images/a-propos/ComboJazzMTMBateau.webp"
 
 export async function loader({ request, params }: Route.LoaderArgs) {
@@ -48,11 +49,8 @@ const AProposPage = () => {
                 <h2 className="text-xl text-jmv_light mb-2">
                 {t('where-I-Am')}
                 </h2>
-                <div className='flex flex-col justify-between lg:flex-row-reverse'>
-                    <div className='w-full flex items-center justify-around p-2'>
-                        <a href='https://www.edumedia.com'><img src={edumediaLogo} alt='Logo EduMedia' className='w-fit lg:float-left'/></a>
-                        <a href='https://alec-edu.com'><img src={alecLogo} alt='Logo Alec' className='w-fit lg:float-right'/> </a>
-                    </div>
+                <div className='flex flex-col justify-between lg:flex-row'>
+                    
                     
                     <div className='space-y-4'>
                     <p className=''>
@@ -61,9 +59,16 @@ const AProposPage = () => {
                         {t('where-I-Am-2')}
                         <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>
                         {t('where-I-Am-3')}
+                        <a href='https://pikado.education' className='hover:underline font-medium'>Pikado</a>{"."}
                     </p>
-                    <p>{t('my-background')}</p>
+                    <p className='hidden lg:inline'>{t('my-background')}</p>
                     </div>
+                    <div className='w-full flex items-center justify-around lg-float-right p-2'>
+                        <a href='https://www.edumedia.com'><img src={edumediaLogo} alt='Logo EduMedia' className='w-fit'/></a>
+                        <a href='https://pikado.education' className='w-fit pl-2 pr-1'>{pikado_p}</a>
+                        <a href='https://alec-edu.com'><img src={alecLogo} alt='Logo Alec' className='w-fit'/> </a>
+                    </div>
+                    <p className='lg:hidden'>{t('my-background')}</p>
                     
                     
                 </div>
