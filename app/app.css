@@ -16,6 +16,11 @@
   --color-jmv_medium: #415a77;
   --color-jmv_light: #778da9;
   --color-jmv_white: #e0e1dd;
+
+}
+
+.hover-scale {
+  @apply transition duration-200 ease-in hover:scale-105
 }
 
 html,

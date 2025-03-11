@@ -55,18 +55,18 @@ const AProposPage = () => {
                     <div className='space-y-4'>
                     <p className=''>
                         {t('where-I-Am-1')}
-                        <a href='https://www.edumedia.com' className='hover:underline font-medium'>EduMedia</a>
+                        <a href='https://www.edumedia.com' className='hover:underline font-semibold '>EduMedia</a>
                         {t('where-I-Am-2')}
-                        <a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a>
+                        <a href='https://alec-edu.com' className='hover:underline font-semibold '>Alec</a>
                         {t('where-I-Am-3')}
-                        <a href='https://pikado.education' className='hover:underline font-medium'>Pikado</a>{"."}
+                        <a href='https://pikado.education' className='hover:underline font-semibold '>Pikado</a>{"."}
                     </p>
                     <p className='hidden lg:inline'>{t('my-background')}</p>
                     </div>
                     <div className='w-full flex items-center justify-around lg-float-right p-2'>
-                        <a href='https://www.edumedia.com'><img src={edumediaLogo} alt='Logo EduMedia' className='w-fit'/></a>
-                        <a href='https://pikado.education' className='w-fit pl-2 pr-1'>{pikado_p}</a>
-                        <a href='https://alec-edu.com'><img src={alecLogo} alt='Logo Alec' className='w-fit'/> </a>
+                        <a href='https://www.edumedia.com'><img src={edumediaLogo} alt='Logo EduMedia' className='w-fit hover-scale '/></a>
+                        <a href='https://pikado.education' className='w-fit pl-2 pr-1 hover-scale'>{pikado_p}</a>
+                        <a href='https://alec-edu.com'><img src={alecLogo} alt='Logo Alec' className='w-fit hover-scale'/> </a>
                     </div>
                     <p className='lg:hidden'>{t('my-background')}</p>
                     

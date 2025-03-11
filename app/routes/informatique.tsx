@@ -320,7 +320,7 @@ const InformatiquePage = () => {
                     <a
                         title="Pikado"
                         href="https://pikado.education"
-                        className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-105"
+                        className="flex self-center items-center gap-2 hover-scale"
                     >
                         {pikado_full}
                     </a>
@@ -332,7 +332,7 @@ const InformatiquePage = () => {
                     <a
                         title="Alec"
                         href="https://alec-edu.com/"
-                        className="flex self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
+                        className="flex self-center items-center gap-2 hover-scale"
                     >
                         <img src={infoImages.alec_logo} alt='Logo Alec' className="p-4"/> 
                     </a>
@@ -349,7 +349,7 @@ const InformatiquePage = () => {
                     <a
                         title="Improvison"
                         href="https://www.roblox.com/games/5984084686/Improvison"
-                        className="flex min-w-max  self-center items-center gap-2 transition duration-200 ease-in hover:scale-110"
+                        className="flex min-w-max  self-center items-center gap-2 hover-scale"
                     >
                         <img src={infoImages.roblox} alt="Roblox logo" className="w-12 " />
                         <span className="text-jmv_white text-2xl font-bold font-josefin ">Improvison</span>
@@ -362,7 +362,7 @@ const InformatiquePage = () => {
                     {skills.map((skill) => (
                         <a title={skill.title} href={skill.url} key={skill.title}>
                             <img
-                                className={twMerge("transition duration-200 ease-in hover:scale-110 ", skill.width)}
+                                className={twMerge("hover-scale ", skill.width)}
                                 alt={skill.alt}
                                 src={skill.src}
                             />
