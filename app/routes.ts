@@ -8,7 +8,8 @@ export default [
         route("musique", "./routes/musique.tsx", {id: "music-fr"}),
         route("music", "./routes/musique.tsx", {id: "music-en"}),
         route("informatique", "./routes/informatique.tsx", {id: "cs-fr"}),
-        route("computer-science", "./routes/informatique.tsx", {id: "cs-en"})
+        route("computer-science", "./routes/informatique.tsx", {id: "cs-en"}),
     ]),
+    route(":lang/*", "./routes/splat.tsx"),
     
 ] satisfies RouteConfig;
