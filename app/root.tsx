@@ -17,6 +17,11 @@ import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
 import i18nConfig, { urlTranslationSearchString } from "./i18n";
 
+import aboutImage from "~/assets/images/a-propos/JM_Lac.webp"
+import aboutImageSm from "~/assets/images/a-propos/JM_Lac_sm.webp"
+import musicImage from "~/assets/images/guitar.webp"
+import infoImage from "~/assets/images/coding.webp"
+
 export async function loader({ request, params }: Route.LoaderArgs) {
   
   const {supportedLngs} = i18nConfig
@@ -114,6 +119,32 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  {
+    rel:"preload",
+    href: aboutImage,
+    as:"image"
+  },
+  {
+    rel:"preload",
+    href: aboutImageSm,
+    as:"image"
+  },
+  {
+    rel:"preload",
+    href: musicImage,
+    as:"image"
+  },
+  {
+    rel:"preload",
+    href: musicImage,
+    as:"image"
+  },
+  {
+    rel:"preload",
+    href: infoImage,
+    as:"image"
+  },
+  
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
