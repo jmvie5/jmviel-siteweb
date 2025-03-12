@@ -1,11 +1,11 @@
 import type { Route } from "./+types/informatique";
-import {t} from "i18next"
 import i18nServer from "~/i18next.server";
 import Siteweb from "~/components/Siteweb";
 import jmvie5Logo from "~/assets/images/icon.webp"
 import * as infoImages from "~/assets/images/informatique"
 import { twMerge } from "tailwind-merge";
 import { pikado_full } from "~/assets/images/informatique/pikado_icons";
+import { useLoaderData } from "react-router";
 
 export async function loader({ request, params }: Route.LoaderArgs) {
 
@@ -18,8 +18,35 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     const title = t("Computer Science")
     const description = t("info-desc")
 
+    const translations = {
+        "work": t("work"),
+        "work-2": t("work-2"),
+        "web-dev" : t("web-dev"),
+        "lbf-1" : t("lbf-1"),
+        "lbf-2" : t("lbf-2"),
+        "lbf-3" : t("lbf-3"),
+        "lbf-4" : t("lbf-4"),
+        "nbnr" : t("nbnr"),
+        "nbnr-1" : t("nbnr-1"),
+        "nbnr-2" : t("nbnr-2"),
+        "improvison-1" : t("improvison-1"),
+        "improvison-2" : t("improvison-2"),
+        "improvison-3" : t("improvison-3"),
+        "cafe-social-1" : t("cafe-social-1"),
+        "cafe-social-2" : t("cafe-social-2"),
+        "this-website-title" : t("this-website-title"),
+        "this-website" : t("this-website"),
+
+        "games-title" : t("games-title"),
+        "games-desc" : t("games-desc"),
+        "dev-pikado" : t("dev-pikado"),
+        "dev-alec": t("dev-alec"),
+        
+        "skills" : t("skills"),
+    }
+
   
-    return { title, description };
+    return { title, description, translations };
 }
 
 
@@ -43,17 +70,19 @@ export function meta({ matches }: Route.MetaArgs) {
 
 const InformatiquePage = () => {
 
+    const translations = useLoaderData<typeof loader>().translations
+
     const webProjects = [
         {
             name:"Laurence bf, orthopédagogue",
             description: <div>
                 <p className="mb-2">
-                    {t("lbf-1")}{' '}
-                    <strong>{t("lbf-2")}</strong>
-                    {t("lbf-3")}
+                    {translations["lbf-1"]}{' '}
+                    <strong>{translations["lbf-2"]}</strong>
+                    {translations["lbf-3"]}
                 </p>
                 <p>
-                    {t("lbf-4")}
+                    {translations["lbf-4"]}
                 </p>
             </div>,
             url:"laurencebf.ca",
@@ -62,13 +91,13 @@ const InformatiquePage = () => {
             logoAtl:"Logo Laurence bf, orthopédagogue"
         },
         {
-            name:"nbnr",
+            name:translations.nbnr,
             description: <div>
                 <p className="mb-2">
-                {t("nbnr-1")}
+                {translations["nbnr-1"]}
                 </p>
                 <p>
-                {t("nbnr-2")}
+                {translations["nbnr-2"]}
                 </p>
             </div>,
             url:"nbnr.ca",
@@ -80,10 +109,10 @@ const InformatiquePage = () => {
             name:"Improvison",
             description:
                 <div>
-                    {t("improvison-1")}
-                    <strong>{t('improvison-2')}</strong> 
+                    {translations["improvison-1"]}
+                    <strong>{translations['improvison-2']}</strong> 
                     
-                    {t('improvison-3')}
+                    {translations['improvison-3']}
                 </div>,
             url:"improvison.ca",
             github:"https://github.com/jmvie5/improvison",
@@ -95,17 +124,17 @@ const InformatiquePage = () => {
             description:
                 <div>
                     <p className="mb-2">
-                    {t('cafe-social-1')}
+                    {translations['cafe-social-1']}
                     </p>
-                    <p>{t('cafe-social-2')}</p>
+                    <p>{translations['cafe-social-2']}</p>
                 </div>,
             github:"https://github.com/charlotrudel/cafe_social",
             logoSrc:infoImages.cafesocial,
             logoAlt:"Logo Café social"
         },
         {
-            name:"this-website-title",
-            description: <div>{t('this-website')}</div>,
+            name:translations["this-website-title"],
+            description: <div>{translations['this-website']}</div>,
             url:"jeanmichelviel.ca",
             github:"https://github.com/jmvie5/jmviel-siteweb",
             logoSrc:jmvie5Logo,
@@ -295,7 +324,7 @@ const InformatiquePage = () => {
         <div className="">
             <div className="space-y-4 mx-2 sm:mx-4">
                 <h2 id="info-web" className="text-xl text-jmv_light ">
-                    {t("web-dev")}
+                    {translations["web-dev"]}
                 </h2>
                 {webProjects.map((project)=> (
                     <Siteweb
@@ -315,7 +344,7 @@ const InformatiquePage = () => {
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                     <p className="text-jmv_white ml-4 my-4">
-                        {t("dev-pikado")}
+                        {translations["dev-pikado"]}
                     </p>
                     <a
                         title="Pikado"
@@ -327,7 +356,7 @@ const InformatiquePage = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                     <p className="text-jmv_white ml-4 my-4" >
-                    {t('dev-alec')}{" "}<a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> 
+                    {translations['dev-alec']}{" "}<a href='https://alec-edu.com' className='hover:underline font-medium'>Alec</a> 
                     </p>
                     <a
                         title="Alec"
@@ -344,7 +373,7 @@ const InformatiquePage = () => {
                 </h2>
                 <div className="flex  flex-col w-full sm:flex-row gap-4 items-center justify-between">
                     <p className="flex grow text-jmv_white ml-4 my-4">
-                        {t('games-desc')}
+                        {translations['games-desc']}
                     </p>
                     <a
                         title="Improvison"
@@ -357,7 +386,7 @@ const InformatiquePage = () => {
                 </div>
             </div>
             <div className="my-4 mx-2 sm:mx-4">
-                <h2 className="text-jmv_light text-xl">{t('skills')}</h2>
+                <h2 className="text-jmv_light text-xl">{translations['skills']}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
                     {skills.map((skill) => (
                         <a title={skill.title} href={skill.url} key={skill.title}>

@@ -4,9 +4,9 @@ import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import duo_pichenotte_img from "~/assets/images/musique/Duo_Pichenotte.webp"
 import solo_img from "~/assets/images/musique/Solo.webp"
-import {t} from "i18next"
 import * as partitions from "~/assets/partitions"
 import SheetMusicLink from "~/components/SheetMusicLink";
+import { useLoaderData } from "react-router";
 
 
 export async function loader({ request, params }: Route.LoaderArgs) {
@@ -20,7 +20,25 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     const title = t("Music")
     const description = t("music-desc")
 
-    return { title, description }
+    const translations = {
+        "need-musician": t("need-musician"),
+        "contact": t("contact"),
+        "sheet-music-download": t("sheet-music-download"),
+        "master-recital": t("master-recital"),
+        "solo-guitar" : t("solo-guitar"),
+        "nbnr": t("nbnr"),
+        "music-downloads": t("music-downloads"),
+        "need-a-teacher": t("need-a-teacher"),
+        "transcription-desc": t("transcription-desc"),
+        "exercices-desc": t("exercices-desc"),
+        "exercice-sweep": t("exercices-sweep"),
+        "exercice-arpeggio": t("exercices-arpeggio"),
+        "exercice-neck-hand": t("exercices-neck-hand"),
+        "compo-title": t("compo-title"),
+        "compo-desc": t("compo-desc"),
+    }
+
+    return { title, description, translations }
 }
 
 export function meta({ matches }: Route.MetaArgs) {
@@ -43,21 +61,23 @@ export function meta({ matches }: Route.MetaArgs) {
 
 export default function MusicPage() {
 
+    const translations = useLoaderData<typeof loader>().translations
+
     const exercicesLinks = [
         {
             name: "Drop 2",
             url: partitions.Drop_2
         },
         {
-            name: t('exercice-sweep'),
+            name: translations['exercice-sweep'],
             url: partitions.Exercice_Sweep_TuneUp
         },
         {
-            name: t('exercice-arpeggio'),
+            name: translations['exercice-arpeggio'],
             url: partitions.Exercices_Arpèges
         },
         {
-            name: t('exercice-neck-hand'),
+            name: translations['exercice-neck-hand'],
             url: partitions.Exercices_main_du_manche
         }
     ]
@@ -184,7 +204,7 @@ export default function MusicPage() {
             </div>
             <div className="space-y-2 mx-2 sm:mx-4">
                 <h2 id="mus-solo" className="text-xl text-jmv_light ">
-                    {t("master-recital")}
+                    {translations["master-recital"]}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <div>
@@ -218,7 +238,7 @@ export default function MusicPage() {
             </div>
             <div className="space-y-2 mx-2 sm:mx-4">
                 <h2 id="mus-solo" className="text-xl text-jmv_light ">
-                    {t('solo-guitar')}
+                    {translations['solo-guitar']}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <img src={solo_img} alt="Jean-Michel Viel, soliste" className="" />
@@ -265,7 +285,7 @@ export default function MusicPage() {
                 </div>
             </div>
             <div className="space-y-2 mx-2 sm:mx-4">
-                <h2 className="text-xl text-jmv_light">{t('nbnr')}</h2>
+                <h2 className="text-xl text-jmv_light">{translations['nbnr']}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <div className="aspect-video w-full">
                         <LiteYouTubeEmbed id="HrFHISfk81I" title="Cantina Band"></LiteYouTubeEmbed>
@@ -285,11 +305,11 @@ export default function MusicPage() {
                 </div>
             </div>
             <div className="space-y-2 mx-2 sm:mx-4" id="mus-partitions">
-                <h2 className="text-xl text-jmv_light">{t('music-downloads')}</h2>
+                <h2 className="text-xl text-jmv_light">{translations['music-downloads']}</h2>
                 <p className="text-jmv_white">
-                    {t('need-a-teacher')}{' '}
+                    {translations['need-a-teacher']}{' '}
                     <a href="mailto:info@jeanmichelviel.ca" className="font-medium underline hover:text-jmv_light">
-                    {t('contact')}
+                    {translations['contact']}
                     </a>{' '}
                     !
                 </p>
@@ -297,7 +317,7 @@ export default function MusicPage() {
                     <div className="flex flex-col gap-2 text-jmv_white">
                         <h3 className="font-semibold">Transcriptions</h3>
                         <p>
-                        {t('transcription-desc')}
+                        {translations['transcription-desc']}
                         </p>
                         <div className="">
                             {transcriptionsLinks.map((link) => (
@@ -308,7 +328,7 @@ export default function MusicPage() {
                     <div className="flex flex-col gap-2 text-jmv_white sm:pl-4">
                         <h3 className="font-semibold">Exercices</h3>
                         <p>
-                        {t('exercices-desc')}
+                        {translations['exercices-desc']}
                         </p>
                         <div className="">
                             {exercicesLinks.map((link) => (
@@ -317,9 +337,9 @@ export default function MusicPage() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-2 text-jmv_white">
-                        <h3 className="font-semibold">{t('compo-title')}</h3>
+                        <h3 className="font-semibold">{translations['compo-title']}</h3>
                         <p>
-                        {t('compo-desc')}
+                        {translations['compo-desc']}
                         </p>
                         <div className="">
                             {composLinks.map((link) => (

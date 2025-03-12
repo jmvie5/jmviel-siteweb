@@ -1,4 +1,3 @@
-import {t} from "i18next"
 import githubLogo from "../assets/images/informatique/github.webp"
 interface SitewebProps {
   name: string;
@@ -28,7 +27,7 @@ const Siteweb = ({
                     <img src={logoSrc} alt={logoAlt}></img>
                 </a>
                 <div className='flex flex-col justify-between gap-2'>
-                    <div className='text-xl font-bold'>{t(name)}</div>
+                    <div className='text-xl font-bold'>{name}</div>
                     <div className='flex gap-3'>
                         <a href={link} className='hover:underline'>{url}</a>
                         <a href={github} className='hover:underline'>

@@ -24,7 +24,7 @@ export default function LocaleSwitch() {
   return (
 
     <Link 
-      to={`/${otherLng[locale]}/${t(urlTranslationSearchString[locale][locationNoLng], {lng: otherLng[locale]})}`}
+      to={`/${otherLng[locale]}/${t(urlTranslationSearchString[locale][locationNoLng], {lng: otherLng[locale]}) || ""}`}
       className='flex gap-1 rounded bg-jmv_white/80 p-2 text-black transition hover:bg-jmv_white/90 focus-visible:bg-jmv_white/95 active:scale-[97%]'
     >
       {langIcon}{t(locale)}
