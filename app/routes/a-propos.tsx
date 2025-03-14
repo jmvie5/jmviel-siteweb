@@ -19,7 +19,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 
     const translations = {
         "about-desc": t("about-desc"),
-        "where-I-am": t("where-I-am"),
+        "where-I-Am": t("where-I-Am"),
         "where-I-Am-1": t("where-I-Am-1"),
         "where-I-Am-2": t("where-I-Am-2"),
         "where-I-Am-3": t("where-I-Am-3"),
@@ -75,7 +75,7 @@ const AProposPage = () => {
         <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 text-jmv_white max-w-7xl self-center">
             <div className='space-y-4'>
                 <h2 className="text-xl text-jmv_light mb-2">
-                {translations["where-I-am"]}
+                {translations["where-I-Am"]}
                 </h2>
                 <div className='flex flex-col justify-between lg:flex-row'>
                     

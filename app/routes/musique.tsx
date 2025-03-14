@@ -31,9 +31,9 @@ export async function loader({ request, params }: Route.LoaderArgs) {
         "need-a-teacher": t("need-a-teacher"),
         "transcription-desc": t("transcription-desc"),
         "exercices-desc": t("exercices-desc"),
-        "exercice-sweep": t("exercices-sweep"),
-        "exercice-arpeggio": t("exercices-arpeggio"),
-        "exercice-neck-hand": t("exercices-neck-hand"),
+        "exercice-sweep": t("exercice-sweep"),
+        "exercice-arpeggio": t("exercice-arpeggio"),
+        "exercice-neck-hand": t("exercice-neck-hand"),
         "compo-title": t("compo-title"),
         "compo-desc": t("compo-desc"),
     }
@@ -306,7 +306,7 @@ export default function MusicPage() {
             </div>
             <div className="space-y-2 mx-2 sm:mx-4" id="mus-partitions">
                 <h2 className="text-xl text-jmv_light">{translations['music-downloads']}</h2>
-                <p className="text-jmv_white">
+                <p className="text-jmv_white pb-4">
                     {translations['need-a-teacher']}{' '}
                     <a href="mailto:info@jeanmichelviel.ca" className="font-medium underline hover:text-jmv_light">
                     {translations['contact']}
@@ -319,7 +319,7 @@ export default function MusicPage() {
                         <p>
                         {translations['transcription-desc']}
                         </p>
-                        <div className="">
+                        <div className="pl-4">
                             {transcriptionsLinks.map((link) => (
                                 <SheetMusicLink key={link.name} name={link.name} url={link.url} />
                             ))}
@@ -330,7 +330,7 @@ export default function MusicPage() {
                         <p>
                         {translations['exercices-desc']}
                         </p>
-                        <div className="">
+                        <div className="pl-4">
                             {exercicesLinks.map((link) => (
                                 <SheetMusicLink key={link.name} name={link.name} url={link.url}  />
                             ))}
@@ -341,7 +341,7 @@ export default function MusicPage() {
                         <p>
                         {translations['compo-desc']}
                         </p>
-                        <div className="">
+                        <div className="pl-4">
                             {composLinks.map((link) => (
                                 <SheetMusicLink key={link.name} name={link.name} url={link.url} />
                             ))}

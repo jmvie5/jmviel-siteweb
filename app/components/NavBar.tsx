@@ -15,7 +15,7 @@ export default function NavBar({locale, menuLinks, dark, more}: NavbarProps) {
 
     const navButton =
         <Menu>
-            <MenuButton className="text-jmv_dark bg-jmv_white hover:bg-gray-300 hover:ring-1 hover:ring-jmv_light active:bg-jmv_white focus:outline-none focus:ring-1 focus:ring-jmv_light rounded-md p-2 ml-4 w-32 self-center">
+            <MenuButton className="text-jmv_dark bg-jmv_white hover:bg-gray-300 hover:ring-1 hover:ring-jmv_light active:bg-jmv_white focus:outline-none focus:ring-1 focus:ring-jmv_light rounded-md p-2 ml-4 mt-2 w-32 self-center">
             Menu
             </MenuButton>
             <MenuItems

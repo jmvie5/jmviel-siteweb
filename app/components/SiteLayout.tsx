@@ -138,7 +138,7 @@ export default function SiteLayout({
                             </div>
                         }
                     </div>
-                    <div className={twMerge("absolute right-0 m-4 hover:underline z-1")}>
+                    <div className={twMerge("absolute right-0 m-4 hover:underline z-20")}>
                         {/* <LocaleSwitch/> */}
                         <Link 
                             to={langSwitcherUrl}
