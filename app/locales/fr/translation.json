@@ -70,6 +70,9 @@
     "cafe-social-2" : "Projet en développement.",
     "this-website-title" : "Jean-Michel Viel, musicien, pédagogue et programmeur",
     "this-website" : "Ce site web!",
+    "remplismonordidebits-title" : "Remplis mon ordi de bits",
+    "remplismonordidebits": "Application web démontrant la possible nécessité de réguler IndexedDB. ",
+    "remplismonordidebits-2" : "Ce site remplit automatiquement votre disque dur de données impertinentes, n'oubliez pas de videz votre cache!",
 
     "games-title" : "Jeux vidéos",
     "games-desc" : "Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au cœur de la recherche avec Roblox. Allez y jeter un coup d'oeil :",

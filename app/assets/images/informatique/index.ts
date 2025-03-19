@@ -17,6 +17,7 @@ import laurencebf from "./laurencebf.webp"
 import linkedin from "./linkedin.webp"
 import motion from "./motion.webp"
 import nbnr from "./nbnr.webp"
+import remplismonordidebits from "./remplismonordidebits.svg"
 import python from "./python.webp"
 import Vitejs_logo_svg from "./Vitejs-logo.svg.png"
 import nextui from "./nextui.png"
@@ -42,6 +43,7 @@ export {
     linkedin,
     motion,
     nbnr,
+    remplismonordidebits,
     python,
     Vitejs_logo_svg,
     nextui,

@@ -157,7 +157,12 @@ export default function SiteLayout({
                         info@jeanmichelviel.ca
                     </a>
                     <div className="flex flex-col md:flex-row self-center gap-4">
-                        <a href="https://www.github.com/jmvie5/" className="flex space-x-1.5 group">
+                        <a 
+                            href="https://www.github.com/jmvie5/" 
+                            className="flex space-x-1.5 group"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img
                                 src={github_white}
                                 alt="GitHub Logo"
@@ -167,7 +172,12 @@ export default function SiteLayout({
                             />
                             <span className="group-hover:underline self-center">@jmvie5</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/jeanmichelviel/" className="flex space-x-1.5 group">
+                        <a 
+                            href="https://www.linkedin.com/in/jeanmichelviel/" 
+                            className="flex space-x-1.5 group"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img
                                 src={linkedinLogo}
                                 alt="LinkedIn Logo"

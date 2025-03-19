@@ -36,6 +36,9 @@ export async function loader({ request, params }: Route.LoaderArgs) {
         "cafe-social-2" : t("cafe-social-2"),
         "this-website-title" : t("this-website-title"),
         "this-website" : t("this-website"),
+        "remplismonordidebits-title" : t("remplismonordidebits-title"),
+        "remplismonordidebits" : t("remplismonordidebits"),
+        "remplismonordidebits-2" : t("remplismonordidebits-2"),
 
         "games-title" : t("games-title"),
         "games-desc" : t("games-desc"),
@@ -139,6 +142,21 @@ const InformatiquePage = () => {
             github:"https://github.com/jmvie5/jmviel-siteweb",
             logoSrc:jmvie5Logo,
             logoAlt:"Logo JM Viel"
+        },
+        {
+            name:translations["remplismonordidebits-title"],
+            description: <div>
+                <p className="mb-2">
+                {translations["remplismonordidebits"]}
+                </p>
+                <p>
+                {translations["remplismonordidebits-2"]}
+                </p>
+            </div>,
+            url:"www.remplismonordidebits.xyz",
+            github:"https://github.com/jmvie5/remplismonordidebits",
+            logoSrc:infoImages.remplismonordidebits,
+            logoAlt:"Logo Remplis mon ordi de bits"
         }
     ]
 
@@ -350,6 +368,8 @@ const InformatiquePage = () => {
                         title="Pikado"
                         href="https://pikado.education"
                         className="flex self-center items-center gap-2 hover-scale"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         {pikado_full}
                     </a>
@@ -362,6 +382,8 @@ const InformatiquePage = () => {
                         title="Alec"
                         href="https://alec-edu.com/"
                         className="flex self-center items-center gap-2 hover-scale"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <img src={infoImages.alec_logo} alt='Logo Alec' className="p-4"/> 
                     </a>
@@ -379,6 +401,8 @@ const InformatiquePage = () => {
                         title="Improvison"
                         href="https://www.roblox.com/games/5984084686/Improvison"
                         className="flex min-w-max  self-center items-center gap-2 hover-scale"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <img src={infoImages.roblox} alt="Roblox logo" className="w-12 " />
                         <span className="text-jmv_white text-2xl font-bold font-josefin ">Improvison</span>
@@ -389,7 +413,12 @@ const InformatiquePage = () => {
                 <h2 className="text-jmv_light text-xl">{translations['skills']}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
                     {skills.map((skill) => (
-                        <a title={skill.title} href={skill.url} key={skill.title}>
+                        <a 
+                            title={skill.title} href={skill.url} 
+                            key={skill.title}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img
                                 className={twMerge("hover-scale ", skill.width)}
                                 alt={skill.alt}

@@ -83,18 +83,46 @@ const AProposPage = () => {
                     <div className='space-y-4'>
                     <p className=''>
                         {translations['where-I-Am-1']}
-                        <a href='https://www.edumedia.com' className='hover:underline font-semibold '>EduMedia</a>
+                        <a 
+                            href='https://www.edumedia.com' 
+                            className='hover:underline font-semibold ' 
+                            target="_blank"
+                            rel="noreferrer"
+                        >EduMedia</a>
                         {translations['where-I-Am-2']}
-                        <a href='https://alec-edu.com' className='hover:underline font-semibold '>Alec</a>
+                        <a 
+                            href='https://alec-edu.com' 
+                            className='hover:underline font-semibold '
+                            target="_blank"
+                            rel="noreferrer"
+                        >Alec</a>
                         {translations['where-I-Am-3']}
-                        <a href='https://pikado.education' className='hover:underline font-semibold '>Pikado</a>{"."}
+                        <a 
+                            href='https://pikado.education' 
+                            className='hover:underline font-semibold '
+                            target="_blank"
+                            rel="noreferrer"
+                        >Pikado</a>{"."}
                     </p>
                     <p className='hidden lg:inline'>{translations['my-background']}</p>
                     </div>
                     <div className='w-full flex items-center justify-around lg-float-right p-2'>
-                        <a href='https://www.edumedia.com'><img src={edumediaLogo} alt='Logo EduMedia' className='w-fit hover-scale '/></a>
-                        <a href='https://pikado.education' className='w-fit pl-2 pr-1 hover-scale'>{pikado_p}</a>
-                        <a href='https://alec-edu.com'><img src={alecLogo} alt='Logo Alec' className='w-fit hover-scale'/> </a>
+                        <a 
+                            href='https://www.edumedia.com'
+                            target="_blank"
+                            rel="noreferrer"
+                        ><img src={edumediaLogo} alt='Logo EduMedia' className='w-fit hover-scale '/></a>
+                        <a 
+                            href='https://pikado.education' 
+                            className='w-fit pl-2 pr-1 hover-scale'
+                            target="_blank"
+                            rel="noreferrer"
+                        >{pikado_p}</a>
+                        <a 
+                            href='https://alec-edu.com'
+                            target="_blank"
+                            rel="noreferrer"
+                        ><img src={alecLogo} alt='Logo Alec' className='w-fit hover-scale'/> </a>
                     </div>
                     <p className='lg:hidden'>{translations['my-background']}</p>
                     
