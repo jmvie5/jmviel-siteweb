@@ -7,11 +7,13 @@
     "about-url": "a-propos",
     "music-url": "musique",
     "computer-science-url": "informatique",
+    "games-url": "jeux",
 
     "Home" : "Accueil",
     "About": "À propos",
     "Music": "Musique",
     "Computer Science": "Informatique",
+    "Games": "Jeux",
     "Contact": "Contact",
 
     "about-desc": "La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui.",
@@ -71,8 +73,8 @@
     "this-website-title" : "Jean-Michel Viel, musicien, pédagogue et programmeur",
     "this-website" : "Ce site web!",
 
-    "games-title" : "Jeux vidéos",
-    "games-desc" : "Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au cœur de la recherche avec Roblox. Allez y jeter un coup d'oeil :",
+    "video-games" : "Jeux vidéos",
+    "video-games-desc" : "Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au cœur de la recherche avec Roblox. Allez y jeter un coup d'oeil :",
     "dev-pikado" : "J'ai été un des développeurs principaux pour Pikado. Une collection d'applications web qui facilite le quotidien des enseignants du primaire.",
     "dev-alec": "Je développe aussi des jeux éducatifs pour leur filiale ",
     
@@ -92,5 +94,8 @@
     "send" : "Envoyer",
     "modal-title" : "Merci!",
     "modal-desc" : "Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.",
-    "modal-close" : "Fermer"
+    "modal-close" : "Fermer",
+
+    "games-title" : "Jeux",
+    "games-desc" : "Collection de petits jeux inspirés de ma vie de père."
 }

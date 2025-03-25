@@ -25,12 +25,14 @@ export const urlTranslationSearchString:{[locale:string]:{[url:string]:string}} 
     about : "about-url",
     music : "music-url",
     "computer-science": 'computer-science-url',
+    "games": "games-url"
   },
   "fr" : {
     '' : '',
     "a-propos" : "about-url",
     musique : "music-url",
     informatique: 'computer-science-url',
+    "jeux": "games-url"
 
   }
 }

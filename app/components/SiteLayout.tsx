@@ -6,8 +6,9 @@ import { twMerge } from "tailwind-merge";
 import indexImage from "../assets/images/mascarade.webp"
 import aboutImageSM from "../assets/images/a-propos/JM_Lac_sm.webp"
 import aboutImage from "../assets/images/a-propos/JM_Lac.webp"
-import informatiqueImage from "../assets/images/coding.webp"
 import musicImage from "../assets/images/guitar.webp"
+import informatiqueImage from "../assets/images/coding.webp"
+import gamesImage from "../assets/images/game_chess.jpeg"
 import NavBar from "./NavBar";
 import i18nConfig from "~/i18n";
 import i18nServer from "~/i18next.server";
@@ -47,7 +48,11 @@ export async function loader({ request, params }: Route.LoaderArgs) {
         {
           name: t("Computer Science"),
           url: `/${locale}/${t(urlTranslationSearchString['en']['computer-science'])}`,
-        }
+        },
+        {
+            name: t("Games"),
+            url: `/${locale}/${t(urlTranslationSearchString['en']['games'])}`,
+          }
     ]
 
     const otherLng:{ [locale: string]: string; }  = {
@@ -69,14 +74,20 @@ export async function loader({ request, params }: Route.LoaderArgs) {
             img: aboutImage,
             isDark: true
         },
-        "informatique" : {
-            img: informatiqueImage,
-            isDark: false
-        },
         "musique" : {
             img: musicImage,
             isDark: false
         }, 
+        "informatique" : {
+            img: informatiqueImage,
+            isDark: false
+        },
+        "jeux" : {
+            img: gamesImage,
+            isDark: false
+        }, 
+        
+
     }
     const pageData = allPageData[t(urlTranslationSearchString[locale][page], {lng:"fr"})]
 

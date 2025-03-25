@@ -9,6 +9,8 @@ export default [
         route("music", "./routes/musique.tsx", {id: "music-en"}),
         route("informatique", "./routes/informatique.tsx", {id: "cs-fr"}),
         route("computer-science", "./routes/informatique.tsx", {id: "cs-en"}),
+        route("jeux", "./routes/games.tsx", {id:"games-fr"}),
+        route("games", "./routes/games.tsx", {id:"games-en"})
     ]),
     route(":lang/*", "./routes/splat.tsx"),
     

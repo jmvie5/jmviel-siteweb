@@ -37,8 +37,8 @@ export async function loader({ request, params }: Route.LoaderArgs) {
         "this-website-title" : t("this-website-title"),
         "this-website" : t("this-website"),
 
-        "games-title" : t("games-title"),
-        "games-desc" : t("games-desc"),
+        "video-games" : t("video-games"),
+        "video-games-desc" : t("video-games-desc"),
         "dev-pikado" : t("dev-pikado"),
         "dev-alec": t("dev-alec"),
         
@@ -373,7 +373,7 @@ const InformatiquePage = () => {
                 </h2>
                 <div className="flex  flex-col w-full sm:flex-row gap-4 items-center justify-between">
                     <p className="flex grow text-jmv_white ml-4 my-4">
-                        {translations['games-desc']}
+                        {translations['video-games-desc']}
                     </p>
                     <a
                         title="Improvison"
