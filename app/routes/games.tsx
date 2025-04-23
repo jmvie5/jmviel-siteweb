@@ -1,5 +1,6 @@
 import type { Route } from "./+types/index";
 import i18nServer from "~/i18next.server";
+import DadScrabble from "~/games/dadScrabble/DadScrabble";
 
 
 export async function loader({ request, params }: Route.LoaderArgs) {
@@ -39,6 +40,7 @@ export function meta({ matches }: Route.MetaArgs) {
 export default function GamesPage() {
     return (
         <>
+            <DadScrabble/>
         </>
     );
 };
