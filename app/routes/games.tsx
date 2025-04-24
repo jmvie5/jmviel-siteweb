@@ -1,7 +1,7 @@
 import type { Route } from "./+types/index";
 import i18nServer from "~/i18next.server";
 import DadScrabble from "~/games/dadScrabble/DadScrabble";
-
+import MazeView from "~/games/maze/MazeView";
 
 export async function loader({ request, params }: Route.LoaderArgs) {
 
@@ -41,6 +41,7 @@ export default function GamesPage() {
     return (
         <>
             <DadScrabble/>
+            <MazeView/>
         </>
     );
 };
