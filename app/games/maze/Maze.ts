@@ -10,6 +10,8 @@ export class Maze {
     endY: number;
     playerX: number;
     playerY: number;
+    playerHp: number;
+    message:string;
 
     constructor(width = 12, height = 12) {
         this.width = width;
@@ -23,9 +25,14 @@ export class Maze {
         this.endY = height - 2;
         this.playerX = this.startX;
         this.playerY = this.startY;
+        this.playerHp = 3
+        this.message = ""
     }
 
     generate(): void {
+        // Reset player hp
+        this.playerHp = 3
+
         // Reset grid
         for (let y = 0; y < this.height; y++) {
             for (let x = 0; x < this.width; x++) {
@@ -129,9 +136,15 @@ export class Maze {
 
         if (!targetTile.isWall) {
             this.placePlayer(newX, newY);
+            this.message = ""
+        } else {
+            this.playerHp--
+            if (this.playerHp === 2) {
+                this.message = "Outch"
+            } else if (this.playerHp === 1) {
+                this.message = "Ayoye"
+            }
         }
-        // else: wall is revealed, player stays
-
     }
 
     moveUp() {
@@ -150,10 +163,17 @@ export class Maze {
         this.move(1, 0);
     }
 
-    validate() {
+    /**
+     * Return state of the board
+     * @returns 0 = continue, 1 = win, 2 = loss
+     */
+    getState() {
         if (this.playerX === this.endX && this.playerY === this.endY) {
-            return true
+            return 1
         }
-        return false
+        if (this.playerHp === 0) {
+            return 2
+        }
+        return 0
     }
 }

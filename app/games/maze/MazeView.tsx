@@ -7,7 +7,9 @@ const MazeView = () => {
   const [maze, setMaze] = useState<Maze>(new Maze());
   const [_, forceUpdate] = useState(0); // to trigger rerenders
   const [showAll, setShowAll] = useState(true);
-  const [isWin, setIsWin] =  useState(false)
+  const [gameState, setGameState] =  useState<0|1|2>(0) // 0 = continue, 1 = win, 2 = loss
+  const [playerEmoji, setPlayerEmoji] = useState("🙂")
+  const [message, setMessage] = useState("")
   
   useEffect(() => {
 
@@ -43,6 +45,14 @@ const MazeView = () => {
     };
   }, [showAll])
 
+  useEffect(() => {
+    if (message !== "" && message !== "Game Over") {
+      setPlayerEmoji("🤕")
+    } else {
+      setPlayerEmoji("🙂")
+    }
+  }, [message])
+
 
   const movePlayer = (direction: "up" | "down" | "left" | "right") => {
 
@@ -63,20 +73,38 @@ const MazeView = () => {
         break;
     }
 
-    if (maze.validate()) {
-      onWin()
+    setMessage(maze.message)
+
+    const gameState = maze.getState()
+    switch (gameState) {
+      case 0:
+        break;
+      case 1:
+        onWin()
+        break;
+      case 2:
+        onLoose()
+        break
     }
 
-    forceUpdate(n => n + 1);
+    setGameState(gameState)
+    forceUpdate(n => n + 1)
   };
 
   const onWin = () => {
     setShowAll(true)
-    setIsWin(true)
+    setPlayerEmoji("🥳")
+  }
+
+  const onLoose = () => {
+    setShowAll(true)
+    setPlayerEmoji("🙁")
+    setMessage("Game over")
   }
 
   const newGame = () => {
     maze.generate();
+    setPlayerEmoji("🙂")
 
     // Show full maze for 2 seconds
     const timer = setTimeout(() => {
@@ -88,6 +116,7 @@ const MazeView = () => {
 
   return (
     <div className="p-4">
+      <p className="text-lg text-white min-h-8">{message}</p>
       <div className="grid" style={{ gridTemplateColumns: `repeat(${maze.width}, 24px)` }}>
         {maze.grid.flat().map((tile: Tile, idx: number) => {
           const shouldShow = showAll || tile.isVisible;
@@ -101,8 +130,8 @@ const MazeView = () => {
           }
 
           const isPlayerOnEnd = tile.hasPlayer && tile.isEnd;
-          const displayEmoji = tile.hasPlayer && shouldShow
-            ? (isPlayerOnEnd ? "🥳" : "🙂")
+          let displayEmoji = tile.hasPlayer && shouldShow
+            ? playerEmoji
             : "";
 
           return (
@@ -117,7 +146,7 @@ const MazeView = () => {
         </div>
 
         <div className="mt-4 flex gap-2 justify-center">
-          {isWin ?
+          {gameState ?
             <button onClick={() => newGame()} className="px-2 py-1 bg-blue-500 text-white rounded">New Game</button>
           :
           <>
