@@ -14,8 +14,8 @@ import i18nServer from '~/i18next.server'
 import { urlTranslationSearchString } from '~/i18n'
 import { t } from 'i18next'
 import useWindowSize from '~/hooks/useWindowSize'
-import LocaleSwitch from './LocaleSwitch'
 import { langIcon } from '~/assets/icons'
+import { Button } from '@heroui/react'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const locale = params.lang ? params.lang : await i18nServer.getLocale(request)
@@ -157,13 +157,10 @@ export default function SiteLayout({
           </div>
           <div className={twMerge('absolute right-0 m-4 hover:underline z-20')}>
             {/* <LocaleSwitch/> */}
-            <Link
-              to={langSwitcherUrl}
-              className="flex gap-1 rounded bg-jmv_white/80 p-2 text-black transition hover:bg-jmv_white/90 focus-visible:bg-jmv_white/95 active:scale-[97%]"
-            >
+            <Button color={'primary'} as={Link} to={langSwitcherUrl}>
               {langIcon}
               {fullLang}
-            </Link>
+            </Button>
           </div>
           <div className="bg-gradient-to-b from-black to bg-slate-950 h-10"></div>
           <div className="max-w-7xl self-center">

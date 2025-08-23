@@ -64,7 +64,7 @@ const AProposPage = () => {
   const translations = useLoaderData<typeof loader>().translations
 
   return (
-    <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 text-jmv_white max-w-7xl self-center">
+    <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 max-w-7xl self-center">
       <div className="space-y-4">
         <h2 className="text-xl text-jmv_light mb-2">
           {translations['where-I-Am']}

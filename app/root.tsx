@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
   useRouteLoaderData,
   redirect,
+  useNavigate,
 } from 'react-router'
 
 import type { Route } from './+types/root'
@@ -21,6 +22,7 @@ import aboutImage from '~/assets/images/a-propos/JM_Lac.webp'
 import aboutImageSm from '~/assets/images/a-propos/JM_Lac_sm.webp'
 import musicImage from '~/assets/images/guitar.webp'
 import infoImage from '~/assets/images/coding.webp'
+import { HeroUIProvider } from '@heroui/react'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const { supportedLngs } = i18nConfig
@@ -151,7 +153,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const loaderData = useRouteLoaderData<typeof loader>('root')
   const locale = loaderData?.locale || 'fr'
   const { i18n } = useTranslation()
-
+  const navigate = useNavigate()
   // This hook will change the i18n instance language to the current locale
   // detected by the loader, this way, when we do something to change the
   // language, this locale will change and i18next will load the correct
@@ -159,17 +161,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
   useChangeLanguage(locale)
 
   return (
-    <html lang={locale} dir={i18n.dir()}>
+    <html
+      lang={locale}
+      dir={i18n.dir()}
+      className="overscroll-none overflow-x-hidden"
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-950">
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+      <body className="overscroll-none text-foreground bg-background dark">
+        <HeroUIProvider navigate={navigate}>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </HeroUIProvider>
       </body>
     </html>
   )
