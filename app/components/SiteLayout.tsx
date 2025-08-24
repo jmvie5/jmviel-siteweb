@@ -162,7 +162,7 @@ export default function SiteLayout({
             </Button>
           </div>
           <div className="bg-gradient-to-b from-black to bg-slate-950 h-10"></div>
-          <div className="max-w-7xl self-center">
+          <div className="w-full max-w-7xl self-center overflow-hidden">
             <Outlet />
           </div>
         </main>
