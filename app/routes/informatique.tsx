@@ -366,7 +366,7 @@ const InformatiquePage = () => {
             <CardHeader className="text-foreground">
               {translations['dev-pikado']}
             </CardHeader>
-            <CardBody className="text-foreground items-center">
+            <CardBody className="text-foreground items-center w-fit">
               {pikado_full}
             </CardBody>
           </Card>

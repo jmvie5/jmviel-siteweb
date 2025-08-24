@@ -37,7 +37,7 @@ const Siteweb = ({
         </a>
         <div className="flex flex-col justify-between gap-2">
           <div className="text-xl font-bold">{name}</div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap">
             <Link href={link} target="_blank" rel="noreferrer">
               {url}
             </Link>

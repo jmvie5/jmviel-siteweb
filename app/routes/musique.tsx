@@ -260,12 +260,12 @@ export default function MusicPage() {
         <h2 className="text-2xl font-semibold text-foreground ">
           {translations['music-downloads']}
         </h2>
-        <p className="text-foreground pb-4">
+        <p className="text-foreground pb-4 text-pretty">
           {translations['need-a-teacher']}{' '}
           <Link href="mailto:info@jeanmichelviel.ca">
             {translations['contact']}
-          </Link>{' '}
-          !
+          </Link>
+          {'\u202f'}!
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="flex flex-col gap-2 text-foreground">
