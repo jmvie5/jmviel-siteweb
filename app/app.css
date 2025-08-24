@@ -24,7 +24,7 @@
 }
 
 .hover-scale {
-  @apply transition duration-200 ease-in hover:scale-105;
+  @apply transition duration-100 ease-in hover:scale-105 transform hover:-translate-y-1;
 }
 
 html,

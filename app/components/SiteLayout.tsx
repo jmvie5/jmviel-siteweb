@@ -103,7 +103,7 @@ export default function SiteLayout({
   const wSize = useWindowSize()
 
   const langSwitcherUrl = loaderData.langSwitcherUrl
-  const fullLang = loaderData.fullLang
+  const fullLang = loaderData.fullLang === 'Français' ? 'English' : 'Français'
 
   // If we are on about page and on mobile we need to use to sm version of the header image
   let headerImage = pageData.img
@@ -136,7 +136,7 @@ export default function SiteLayout({
               <h1
                 className={twMerge(
                   'text-2xl ml-4 ',
-                  !pageData.isDark && 'text-white',
+                  !pageData.isDark && 'text-foreground',
                 )}
               >
                 Jean-Michel Viel
@@ -149,15 +149,14 @@ export default function SiteLayout({
               />
             </div>
             {page !== '' && (
-              <div className="m-4 row-span-2 bg-jmv_white/80 p-2 rounded-lg grow ">
+              <div className="m-4 row-span-2 bg-foreground/90 p-2 rounded-lg grow ">
                 <h2 className="text-xl mb-4">{matchesData.title}</h2>
                 <p className="mt-4">{matchesData.description}</p>
               </div>
             )}
           </div>
           <div className={twMerge('absolute right-0 m-4 hover:underline z-20')}>
-            {/* <LocaleSwitch/> */}
-            <Button color={'primary'} as={Link} to={langSwitcherUrl}>
+            <Button as={Link} to={langSwitcherUrl}>
               {langIcon}
               {fullLang}
             </Button>
@@ -167,7 +166,7 @@ export default function SiteLayout({
             <Outlet />
           </div>
         </main>
-        <footer className="flex flex-col xs:flex-row gap-4 justify-around text-jmv_white m-4 pt-4 border-t border-jmv_light">
+        <footer className="flex flex-col xs:flex-row gap-4 justify-around text-foreground m-4 pt-4 border-t border-jmv_light">
           <a
             href="mailto:info@jeanmichelviel.ca"
             className="hover:underline self-center"

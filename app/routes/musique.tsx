@@ -6,6 +6,7 @@ import * as partitions from '~/assets/partitions'
 import SheetMusicLink from '~/components/SheetMusicLink'
 import { useLoaderData } from 'react-router'
 import YoutubeEmbed from '~/components/YoutubeEmbed.js'
+import { Link } from '@heroui/react'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const locale = params.lang ? params.lang : await i18nServer.getLocale(request)
@@ -124,18 +125,18 @@ export default function MusicPage() {
   return (
     <div className="space-y-12">
       <div className="space-y-2 mx-2 sm:mx-4">
-        <h2 id="mus-duo" className="text-xl text-jmv_light ">
+        <h2 id="mus-duo" className="text-2xl font-semibold text-foreground  ">
           Duo Pichenotte
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2">
           <img
             src={duo_pichenotte_img}
             alt="Duo Pichenotte"
-            className="mb-2 sm:mb-0"
+            className="mb-2 sm:mb-0 rounded-xl"
           />
           <div className="flex flex-col justify-around sm:ml-2">
             <iframe
-              className="border-0 w-full h-32"
+              className="border-0 w-full h-32 rounded-t-xl"
               src="https://bandcamp.com/EmbeddedPlayer/album=1471944775/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
               seamless
             >
@@ -144,7 +145,7 @@ export default function MusicPage() {
               </a>
             </iframe>
             <iframe
-              className="border-0 w-full h-32"
+              className="border-0 w-full h-32 rounded-b-xl"
               src="https://bandcamp.com/EmbeddedPlayer/album=3343381706/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
               seamless
             >
@@ -154,7 +155,7 @@ export default function MusicPage() {
             </iframe>
             <iframe
               src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fduopichenotte%2Fvideos%2F1236176119915900%2F&show_text=false&width=560&t=0"
-              className="border-0 aspect-video overflow-hidden w-full"
+              className="border-0 aspect-video overflow-hidden w-full rounded-xl"
               allowFullScreen={true}
               allow="web-share"
               // c'est si bon RDV classique
@@ -163,11 +164,13 @@ export default function MusicPage() {
         </div>
       </div>
       <div className="space-y-2 mx-2 sm:mx-4">
-        <h2 className="text-xl text-jmv_light mb-2">La Revoir</h2>
+        <h2 className="text-2xl font-semibold text-foreground  mb-2">
+          La Revoir
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <div className="flex flex-col w-full justify-between">
             <iframe
-              className="w-full aspect-square"
+              className="w-full aspect-square rounded-xl"
               src="https://bandcamp.com/EmbeddedPlayer/track=809649105/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
               seamless
             >
@@ -186,7 +189,7 @@ export default function MusicPage() {
         </div>
       </div>
       <div className="space-y-2 mx-2 sm:mx-4">
-        <h2 id="mus-solo" className="text-xl text-jmv_light ">
+        <h2 id="mus-solo" className="text-2xl font-semibold text-foreground ">
           {translations['master-recital']}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -200,11 +203,15 @@ export default function MusicPage() {
         </div>
       </div>
       <div className="space-y-2 mx-2 sm:mx-4">
-        <h2 id="mus-solo" className="text-xl text-jmv_light ">
+        <h2 id="mus-solo" className="text-2xl font-semibold text-foreground ">
           {translations['solo-guitar']}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          <img src={solo_img} alt="Jean-Michel Viel, soliste" className="" />
+          <img
+            src={solo_img}
+            alt="Jean-Michel Viel, soliste"
+            className="rounded-xl"
+          />
           <div className="flex flex-col justify-around gap-2">
             <YoutubeEmbed
               id="B3IEiCGBJ6s"
@@ -218,7 +225,9 @@ export default function MusicPage() {
         </div>
       </div>
       <div className="space-y-2 mx-2 sm:mx-4">
-        <h2 className="text-xl text-jmv_light">Claudia Caron Trio</h2>
+        <h2 className="text-2xl font-semibold text-foreground ">
+          Claudia Caron Trio
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <YoutubeEmbed
             id="h-GswqZiHGU"
@@ -231,7 +240,9 @@ export default function MusicPage() {
         </div>
       </div>
       <div className="space-y-2 mx-2 sm:mx-4">
-        <h2 className="text-xl text-jmv_light">{translations['nbnr']}</h2>
+        <h2 className="text-2xl font-semibold text-foreground ">
+          {translations['nbnr']}
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <YoutubeEmbed id="HrFHISfk81I" title="Cantina Band"></YoutubeEmbed>
           <YoutubeEmbed
@@ -246,21 +257,18 @@ export default function MusicPage() {
         </div>
       </div>
       <div className="space-y-2 mx-2 sm:mx-4" id="mus-partitions">
-        <h2 className="text-xl text-jmv_light">
+        <h2 className="text-2xl font-semibold text-foreground ">
           {translations['music-downloads']}
         </h2>
-        <p className="text-jmv_white pb-4">
+        <p className="text-foreground pb-4">
           {translations['need-a-teacher']}{' '}
-          <a
-            href="mailto:info@jeanmichelviel.ca"
-            className="font-medium underline hover:text-jmv_light"
-          >
+          <Link href="mailto:info@jeanmichelviel.ca">
             {translations['contact']}
-          </a>{' '}
+          </Link>{' '}
           !
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="flex flex-col gap-2 text-jmv_white">
+          <div className="flex flex-col gap-2 text-foreground">
             <h3 className="font-semibold">Transcriptions</h3>
             <p>{translations['transcription-desc']}</p>
             <div className="pl-4">
@@ -273,7 +281,7 @@ export default function MusicPage() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-2 text-jmv_white sm:pl-4">
+          <div className="flex flex-col gap-2 text-foreground sm:pl-4">
             <h3 className="font-semibold">Exercices</h3>
             <p>{translations['exercices-desc']}</p>
             <div className="pl-4">
@@ -286,7 +294,7 @@ export default function MusicPage() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-2 text-jmv_white">
+          <div className="flex flex-col gap-2 text-foreground">
             <h3 className="font-semibold">{translations['compo-title']}</h3>
             <p>{translations['compo-desc']}</p>
             <div className="pl-4">

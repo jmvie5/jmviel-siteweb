@@ -1,6 +1,12 @@
-import { Link } from 'react-router'
 import { twMerge } from 'tailwind-merge'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+  Link,
+} from '@heroui/react'
 
 interface NavbarProps {
   locale: string
@@ -9,44 +15,53 @@ interface NavbarProps {
   menuLinks: { name: string; url: string }[]
 }
 
-export default function NavBar({ locale, menuLinks, dark, more }: NavbarProps) {
+export default function NavBar({ menuLinks, dark, more }: NavbarProps) {
   const navButton = (
-    <Menu>
-      <MenuButton className="text-jmv_dark bg-jmv_white hover:bg-gray-300 hover:ring-1 hover:ring-jmv_light active:bg-jmv_white focus:outline-none focus:ring-1 focus:ring-jmv_light rounded-md p-2 ml-4 mt-2 w-32 self-center">
-        Menu
-      </MenuButton>
-      <MenuItems
-        transition
-        anchor="bottom end"
-        className="z-50 absolute top-full sm:self-center left-0 w-60 mt-2 ml-4 rounded-md shadow-md shadow-jmv_light bg-jmv_white  p-1 text-sm/6 text-white transition duration-200 ease-out [--anchor-gap:var(--spacing-1)] transform data-[closed]:-translate-x-full focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+    <Dropdown placement="bottom-start">
+      <DropdownTrigger>
+        <Button color={'primary'} className={twMerge('ml-4 mt-2 w-32')}>
+          Menu
+        </Button>
+      </DropdownTrigger>
+      <DropdownMenu
+        aria-label="Navigation Menu"
+        className="z-50 w-60 rounded-xl bg-content2 text-foreground shadow-lg shadow-primary/30"
       >
         {menuLinks.map(link => (
-          <MenuItem key={link.name}>
+          <DropdownItem key={link.name} className="p-0">
             <Link
-              to={link.url}
+              href={link.url}
               className={twMerge(
-                'hover:bg-gradient-to-r from-jmv_light hover:text-jmv_dark text-jmv_lessDark block rounded-l-full ml-2 px-4 py-2 text-sm',
+                'block w-full rounded-lg px-4 py-2 text-sm transition-colors',
+                'hover:bg-secondary/20 hover:text-white',
               )}
             >
               {link.name}
             </Link>
-          </MenuItem>
+          </DropdownItem>
         ))}
-      </MenuItems>
-    </Menu>
+      </DropdownMenu>
+    </Dropdown>
   )
 
   const navFull = (
-    <ul className="flex py-4 ml-4 divide-x divide-jmv_light border-b border-jmv_light max-w-fit">
+    <ul
+      className={twMerge(
+        'flex max-w-fit divide-x border-b py-4 ml-4',
+        dark
+          ? 'divide-content1/40  border-content1/40 '
+          : ' divide-foreground/40  border-foreground/40 ',
+      )}
+    >
       {menuLinks.map(link => (
         <li key={link.name}>
           <Link
-            to={link.url}
+            href={link.url}
             className={twMerge(
-              'block xl:text-lg text-md ml-4 pr-4 whitespace-nowrap',
+              'block ml-4 pr-4 whitespace-nowrap transition-colors xl:text-lg text-md',
               dark
-                ? 'hover:text-jmv_medium text-jmv_dark'
-                : 'hover:text-jmv_light text-jmv_white',
+                ? 'text-content1 hover:text-content1/80'
+                : 'text-foreground hover:text-foreground/80',
             )}
           >
             {link.name}

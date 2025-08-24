@@ -6,6 +6,8 @@ import * as infoImages from '~/assets/images/informatique'
 import { twMerge } from 'tailwind-merge'
 import { pikado_full } from '~/assets/images/informatique/pikado_icons'
 import { useLoaderData } from 'react-router'
+import { motion, useReducedMotion } from 'framer-motion'
+import { Card, CardBody, CardHeader, Link } from '@heroui/react'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const locale = params.lang ? params.lang : await i18nServer.getLocale(request)
@@ -113,18 +115,19 @@ const InformatiquePage = () => {
       logoSrc: infoImages.improvison,
       logoAlt: 'Logo Improvison',
     },
-    {
-      name: 'Café social',
-      description: (
-        <div>
-          <p className="mb-2">{translations['cafe-social-1']}</p>
-          <p>{translations['cafe-social-2']}</p>
-        </div>
-      ),
-      github: 'https://github.com/charlotrudel/cafe_social',
-      logoSrc: infoImages.cafesocial,
-      logoAlt: 'Logo Café social',
-    },
+    // Repo made private
+    // {
+    //   name: 'Café social',
+    //   description: (
+    //     <div>
+    //       <p className="mb-2">{translations['cafe-social-1']}</p>
+    //       <p>{translations['cafe-social-2']}</p>
+    //     </div>
+    //   ),
+    //   github: 'https://github.com/charlotrudel/cafe_social',
+    //   logoSrc: infoImages.cafesocial,
+    //   logoAlt: 'Logo Café social',
+    // },
     {
       name: translations['this-website-title'],
       description: <div>{translations['this-website']}</div>,
@@ -141,7 +144,7 @@ const InformatiquePage = () => {
           <p>{translations['remplismonordidebits-2']}</p>
         </div>
       ),
-      url: 'www.remplismonordidebits.xyz',
+      url: 'remplismonordidebits.xyz',
       github: 'https://github.com/jmvie5/remplismonordidebits',
       logoSrc: infoImages.remplismonordidebits,
       logoAlt: 'Logo Remplis mon ordi de bits',
@@ -168,7 +171,7 @@ const InformatiquePage = () => {
       url: 'https://heroui.com/',
       width: 'w-24',
       alt: 'HeroUI-icon',
-      src: infoImages.nextui,
+      src: infoImages.heroui,
     },
     {
       title: 'Motion',
@@ -326,10 +329,14 @@ const InformatiquePage = () => {
     },
   ]
 
+  const prefersReduced = useReducedMotion()
+  const hoverAnim = prefersReduced ? {} : { y: -1, scale: 1.01 }
+  const tapAnim = prefersReduced ? {} : { scale: 0.99 }
+
   return (
     <div className="">
       <div className="space-y-4 mx-2 sm:mx-4">
-        <h2 id="info-web" className="text-xl text-jmv_light ">
+        <h2 id="info-web" className="text-2xl font-semibold text-foreground  ">
           {translations['web-dev']}
         </h2>
         {webProjects.map(project => (
@@ -345,81 +352,88 @@ const InformatiquePage = () => {
         ))}
       </div>
       <div className="my-4 px-2 sm:px-4">
-        <h2 className="text-jmv_light text-xl">EduMedia</h2>
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-          <p className="text-jmv_white ml-4 my-4">
-            {translations['dev-pikado']}
-          </p>
-          <a
-            title="Pikado"
+        <h2 className="text-2xl font-semibold text-foreground my-4">
+          EduMedia
+        </h2>
+        <div className={'flex flex-col sm:flex-row gap-4 '}>
+          <Card
+            as={Link}
             href="https://pikado.education"
-            className="flex self-center items-center gap-2 hover-scale"
             target="_blank"
             rel="noreferrer"
+            className="sm:basis-1/2 text-center mb-4 gap-2 rounded-xl bg-content1/70 p-4 text-foreground ring-1 ring-content3/60 shadow-sm bg-gradient-to-l from-content3 to-content4 hover:bg-gradient-to-r hover:bg-content1 hover:ring-primary/60 transition duration-100 ease-in hover:scale-101 transform hover:-translate-y-1"
           >
-            {pikado_full}
-          </a>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-          <p className="text-jmv_white ml-4 my-4">
-            {translations['dev-alec']}{' '}
-            <a
-              href="https://alec-edu.com"
-              className="hover:underline font-medium"
-            >
-              Alec
-            </a>
-          </p>
-          <a
-            title="Alec"
-            href="https://alec-edu.com/"
-            className="flex self-center items-center gap-2 hover-scale"
+            <CardHeader className="text-foreground">
+              {translations['dev-pikado']}
+            </CardHeader>
+            <CardBody className="text-foreground items-center">
+              {pikado_full}
+            </CardBody>
+          </Card>
+          <Card
+            as={Link}
+            href="https://alec-edu.com"
             target="_blank"
             rel="noreferrer"
+            className="sm:basis-1/2 text-center mb-4 gap-2 rounded-xl bg-content1/70 p-4 text-foreground ring-1 ring-content3/60 shadow-sm bg-gradient-to-l from-content3 to-content4 hover:bg-gradient-to-r hover:bg-content1 hover:ring-primary/60 transition duration-100 ease-in hover:scale-101 transform hover:-translate-y-1"
           >
-            <img src={infoImages.alec_logo} alt="Logo Alec" className="p-4" />
-          </a>
+            <CardHeader>{translations['dev-alec']} Alec</CardHeader>
+            <CardBody>
+              <img
+                src={infoImages.alec_logo}
+                alt="Logo Alec"
+                className="aspect-square max-w-60 self-center"
+              />
+            </CardBody>
+          </Card>
         </div>
       </div>
       <div className="my-4 px-2 sm:px-4 ">
-        <h2 id="info-jeux" className="text-jmv_light text-xl">
+        <h2 id="info-jeux" className="text-2xl font-semibold text-foreground ">
           Université Laval
         </h2>
         <div className="flex  flex-col w-full sm:flex-row gap-4 items-center justify-between">
-          <p className="flex grow text-jmv_white ml-4 my-4">
+          <p className="flex grow text-foreground ml-4 my-4">
             {translations['games-desc']}
           </p>
           <a
             title="Improvison"
             href="https://www.roblox.com/games/5984084686/Improvison"
-            className="flex min-w-max  self-center items-center gap-2 hover-scale"
+            className="flex min-w-max self-center items-center gap-2 hover-scale"
             target="_blank"
             rel="noreferrer"
           >
             <img src={infoImages.roblox} alt="Roblox logo" className="w-12 " />
-            <span className="text-jmv_white text-2xl font-bold font-josefin ">
+            <span className="text-foreground text-2xl font-bold font-josefin ">
               Improvison
             </span>
           </a>
         </div>
       </div>
       <div className="my-4 mx-2 sm:mx-4">
-        <h2 className="text-jmv_light text-xl">{translations['skills']}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 m-4 gap-4 place-items-center">
+        <h2 className="text-2xl font-semibold text-foreground ">
+          {translations['skills']}
+        </h2>
+        <div className="flex flex-wrap gap-4 py-4 justify-center">
           {skills.map(skill => (
-            <a
+            <motion.a
               title={skill.title}
               href={skill.url}
               key={skill.title}
               target="_blank"
               rel="noreferrer"
+              className={
+                'flex rounded-xl p-4 ring-2 ring-content4 shadow-sm transition-colors bg-foreground/95 hover:bg-foreground hover:ring-primary/60 aspect-square size-42 justify-center items-center'
+              }
+              whileHover={hoverAnim}
+              whileTap={tapAnim}
             >
               <img
-                className={twMerge('hover-scale ', skill.width)}
+                className={twMerge(' max-h-40 w-fit grow', skill.width)}
                 alt={skill.alt}
                 src={skill.src}
               />
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

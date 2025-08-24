@@ -1,10 +1,11 @@
 import type { Route } from './+types/a-propos'
 import i18nServer from '~/i18next.server'
-import { Link, useLoaderData } from 'react-router'
+import { useLoaderData } from 'react-router'
 import edumediaLogo from '../assets/images/informatique/edumedia-logo.svg'
 import alecLogo from '../assets/images/informatique/alec-logo.svg'
 import { pikado_p } from '~/assets/images/informatique/pikado_icons'
 import comboJazzBoat from '../assets/images/a-propos/ComboJazzMTMBateau.webp'
+import { Link } from '@heroui/react'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const locale = params.lang ? params.lang : await i18nServer.getLocale(request)
@@ -66,39 +67,39 @@ const AProposPage = () => {
   return (
     <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 max-w-7xl self-center">
       <div className="space-y-4">
-        <h2 className="text-xl text-jmv_light mb-2">
+        <h2 className="text-2xl font-semibold text-foreground  mb-2">
           {translations['where-I-Am']}
         </h2>
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="space-y-4">
             <p className="">
               {translations['where-I-Am-1']}
-              <a
+              <Link
                 href="https://www.edumedia.com"
-                className="hover:underline font-semibold "
+                className="font-semibold "
                 target="_blank"
                 rel="noreferrer"
               >
                 EduMedia
-              </a>
+              </Link>
               {translations['where-I-Am-2']}
-              <a
+              <Link
                 href="https://alec-edu.com"
-                className="hover:underline font-semibold "
+                className="font-semibold "
                 target="_blank"
                 rel="noreferrer"
               >
                 Alec
-              </a>
+              </Link>
               {translations['where-I-Am-3']}
-              <a
+              <Link
                 href="https://pikado.education"
-                className="hover:underline font-semibold "
+                className="font-semibold "
                 target="_blank"
                 rel="noreferrer"
               >
                 Pikado
-              </a>
+              </Link>
               {'.'}
             </p>
             <p className="hidden lg:inline">{translations['my-background']}</p>
@@ -132,40 +133,34 @@ const AProposPage = () => {
       </div>
 
       <div className="">
-        <h2 className="text-xl text-jmv_light mb-2">{translations['Music']}</h2>
+        <h2 className="text-2xl font-semibold text-foreground  mb-2">
+          {translations['Music']}
+        </h2>
         <div className="space-y-2 flex flex-col xs:inline">
           <img
             src={comboJazzBoat}
             alt="Spectacle sur le HMS PROTECTOR"
-            className="float-right w-72 sm:w-96 mx-4 mb-2 self-center"
+            className="float-right w-72 sm:w-96 mx-4 mb-2 self-center rounded-xl"
           />
           <p>{translations['about-1']}</p>
           <p>
-            {translations['about-2']}
-            <a
-              href="mailto:info@jeanmichelviel.ca"
-              className="font-medium hover:underline"
-            >
+            {translations['about-2']}{' '}
+            <Link href="mailto:info@jeanmichelviel.ca">
               {translations['contact-me']}
-            </a>
+            </Link>
           </p>
           <p>{translations['about-3']}</p>
           <p>{translations['about-4']}</p>
         </div>
       </div>
       <div>
-        <h2 className="text-xl text-jmv_light mb-2">
+        <h2 className="text-2xl font-semibold text-foreground mb-2">
           {translations['Computer Science']}
         </h2>
         <div className="space-y-2">
           <p>
             {translations['about-5']}{' '}
-            <a
-              href="/informatique#info-jeux"
-              className="font-medium hover:underline"
-            >
-              Roblox
-            </a>
+            <Link href="/informatique#info-jeux">Roblox</Link>
             {translations['about-6']}
           </p>
           <p>{translations['about-7']}</p>
@@ -178,10 +173,7 @@ const AProposPage = () => {
           </ul>
           <p>
             {translations['about-8']}
-            <Link
-              to="/informatique#info-web"
-              className="font-medium hover:underline"
-            >
+            <Link href="/informatique#info-web">
               {translations['my-projects']}
             </Link>
             .

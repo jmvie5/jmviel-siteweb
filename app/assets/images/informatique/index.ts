@@ -20,7 +20,7 @@ import nbnr from './nbnr.webp'
 import remplismonordidebits from './remplismonordidebits.svg'
 import python from './python.webp'
 import Vitejs_logo_svg from './Vitejs-logo.svg.png'
-import nextui from './nextui.png'
+import heroui from './heroui.svg'
 import symfony from './symfony.png'
 
 export {
@@ -46,6 +46,6 @@ export {
   remplismonordidebits,
   python,
   Vitejs_logo_svg,
-  nextui,
+  heroui,
   symfony,
 }
