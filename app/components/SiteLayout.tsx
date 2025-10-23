@@ -145,7 +145,6 @@ export default function SiteLayout({
                 locale={locale}
                 menuLinks={menuLinks}
                 dark={pageData.isDark}
-                more
               />
             </div>
             {page !== '' && (

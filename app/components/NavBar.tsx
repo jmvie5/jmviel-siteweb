@@ -11,11 +11,10 @@ import {
 interface NavbarProps {
   locale: string
   dark?: boolean
-  more?: boolean
   menuLinks: { name: string; url: string }[]
 }
 
-export default function NavBar({ menuLinks, dark, more }: NavbarProps) {
+export default function NavBar({ menuLinks, dark }: NavbarProps) {
   const navButton = (
     <Dropdown placement="bottom-start">
       <DropdownTrigger>
@@ -23,17 +22,14 @@ export default function NavBar({ menuLinks, dark, more }: NavbarProps) {
           Menu
         </Button>
       </DropdownTrigger>
-      <DropdownMenu
-        aria-label="Navigation Menu"
-        className="z-50 w-60 rounded-xl bg-content2 text-foreground shadow-lg shadow-primary/30"
-      >
+      <DropdownMenu aria-label="Navigation Menu">
         {menuLinks.map(link => (
           <DropdownItem key={link.name} className="p-0">
             <Link
               href={link.url}
               className={twMerge(
                 'block w-full rounded-lg px-4 py-2 text-sm transition-colors',
-                'hover:bg-secondary/20 hover:text-white',
+                'hover:bg-primary/20 hover:text-white',
               )}
             >
               {link.name}
@@ -73,17 +69,8 @@ export default function NavBar({ menuLinks, dark, more }: NavbarProps) {
 
   return (
     <div className="flex flex-col place-self-start">
-      {more ? (
-        <>
-          <div className="flex sm:hidden">{navButton}</div>
-          <div className="hidden sm:flex">{navFull}</div>
-        </>
-      ) : (
-        <>
-          <div className="flex lg:hidden">{navButton}</div>
-          <div className="hidden lg:flex">{navFull}</div>
-        </>
-      )}
+      <div className={'flex sm:hidden'}>{navButton}</div>
+      <div className={'hidden sm:flex'}>{navFull}</div>
     </div>
   )
 }
