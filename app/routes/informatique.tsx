@@ -418,7 +418,9 @@ const InformatiquePage = () => {
           >
             <CardHeader>{translations['games-desc']}</CardHeader>
             <CardBody className={''}>
-              <div className={'flex min-w-max self-center items-center gap-2'}>
+              <div
+                className={'flex min-w-max justify-center items-center gap-2'}
+              >
                 <img
                   src={infoImages.roblox}
                   alt="Roblox logo"
