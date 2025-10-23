@@ -105,8 +105,7 @@ const InformatiquePage = () => {
       description: (
         <div>
           {translations['improvison-1']}
-          <strong>{translations['improvison-2']}</strong>
-
+          <strong>{translations['improvison-2']}</strong>{' '}
           {translations['improvison-3']}
         </div>
       ),
@@ -152,6 +151,13 @@ const InformatiquePage = () => {
   ]
 
   const skills = [
+    {
+      title: 'React Router',
+      url: 'https://reactrouter.com/',
+      width: 'w-24',
+      alt: 'React Router Logo',
+      src: infoImages.rr_logo_light,
+    },
     {
       title: 'Remix',
       url: 'https://remix.run/',
@@ -265,6 +271,13 @@ const InformatiquePage = () => {
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/512px-Netlify_logo_%282%29.svg.png',
     },
     {
+      title: 'CloudFlare',
+      url: 'https://www.cloudflare.com/',
+      width: 'w-24',
+      alt: 'CloudFlare logo',
+      src: infoImages.cloudflare_logo,
+    },
+    {
       title: 'Tailwind CSS',
       url: 'https://tailwindcss.com/',
       width: 'w-24',
@@ -351,11 +364,11 @@ const InformatiquePage = () => {
           />
         ))}
       </div>
-      <div className="my-4 px-2 sm:px-4">
+      <div className="my-4 px-2 sm:px-4 pt-4">
         <h2 className="text-2xl font-semibold text-foreground my-4">
           EduMedia
         </h2>
-        <div className={'flex flex-col sm:flex-row gap-4 '}>
+        <div className={'flex flex-col md:flex-row gap-4 '}>
           <Card
             as={Link}
             href="https://pikado.education"
@@ -389,25 +402,34 @@ const InformatiquePage = () => {
         </div>
       </div>
       <div className="my-4 px-2 sm:px-4 ">
-        <h2 id="info-jeux" className="text-2xl font-semibold text-foreground ">
+        <h2
+          id="info-jeux"
+          className="text-2xl font-semibold text-foreground py-4"
+        >
           Université Laval
         </h2>
-        <div className="flex  flex-col w-full sm:flex-row gap-4 items-center justify-between">
-          <p className="flex grow text-foreground ml-4 my-4">
-            {translations['games-desc']}
-          </p>
-          <a
-            title="Improvison"
+        <div className={'flex flex-col md:flex-row gap-4 '}>
+          <Card
+            as={Link}
             href="https://www.roblox.com/games/5984084686/Improvison"
-            className="flex min-w-max self-center items-center gap-2 hover-scale"
             target="_blank"
             rel="noreferrer"
+            className="sm:basis-1/2 text-center mb-4 gap-2 rounded-xl bg-content1/70 p-4 text-foreground ring-1 ring-content3/60 shadow-sm bg-gradient-to-l from-content3 to-content4 hover:bg-gradient-to-r hover:bg-content1 hover:ring-primary/60 transition duration-100 ease-in hover:scale-101 transform hover:-translate-y-1"
           >
-            <img src={infoImages.roblox} alt="Roblox logo" className="w-12 " />
-            <span className="text-foreground text-2xl font-bold font-josefin ">
-              Improvison
-            </span>
-          </a>
+            <CardHeader>{translations['games-desc']}</CardHeader>
+            <CardBody className={''}>
+              <div className={'flex min-w-max self-center items-center gap-2'}>
+                <img
+                  src={infoImages.roblox}
+                  alt="Roblox logo"
+                  className="aspect-square max-w-24 self-center"
+                />
+                <span className="text-foreground text-2xl font-bold font-josefin ">
+                  Improvison
+                </span>
+              </div>
+            </CardBody>
+          </Card>
         </div>
       </div>
       <div className="my-4 mx-2 sm:mx-4">

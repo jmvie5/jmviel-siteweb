@@ -29,7 +29,7 @@ export default async function handleRequest(
 
   const body = await renderToReadableStream(
     <I18nextProvider i18n={i18nextInstance}>
-      <ServerRouter context={routerContext} url={request.url} />,
+      <ServerRouter context={routerContext} url={request.url} />
     </I18nextProvider>,
     {
       onError(error: unknown) {

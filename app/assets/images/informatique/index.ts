@@ -22,6 +22,8 @@ import python from './python.webp'
 import Vitejs_logo_svg from './Vitejs-logo.svg.png'
 import heroui from './heroui.svg'
 import symfony from './symfony.png'
+import rr_logo_light from './rr_logo_light.svg'
+import cloudflare_logo from './cloudflare-icon-color_3x.webp'
 
 export {
   PHP_logo,
@@ -48,4 +50,6 @@ export {
   Vitejs_logo_svg,
   heroui,
   symfony,
+  rr_logo_light,
+  cloudflare_logo,
 }
