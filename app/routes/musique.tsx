@@ -271,7 +271,7 @@ export default function MusicPage() {
           <div className="flex flex-col gap-2 text-foreground">
             <h3 className="font-semibold">Transcriptions</h3>
             <p>{translations['transcription-desc']}</p>
-            <div className="pl-4">
+            <div className="">
               {transcriptionsLinks.map(link => (
                 <SheetMusicLink
                   key={link.name}
@@ -281,10 +281,10 @@ export default function MusicPage() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-2 text-foreground sm:pl-4">
+          <div className="flex flex-col gap-2 text-foreground">
             <h3 className="font-semibold">Exercices</h3>
             <p>{translations['exercices-desc']}</p>
-            <div className="pl-4">
+            <div className="">
               {exercicesLinks.map(link => (
                 <SheetMusicLink
                   key={link.name}
@@ -297,7 +297,7 @@ export default function MusicPage() {
           <div className="flex flex-col gap-2 text-foreground">
             <h3 className="font-semibold">{translations['compo-title']}</h3>
             <p>{translations['compo-desc']}</p>
-            <div className="pl-4">
+            <div className="">
               {composLinks.map(link => (
                 <SheetMusicLink
                   key={link.name}
