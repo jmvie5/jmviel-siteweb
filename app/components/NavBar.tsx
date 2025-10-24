@@ -24,16 +24,15 @@ export default function NavBar({ menuLinks, dark }: NavbarProps) {
       </DropdownTrigger>
       <DropdownMenu aria-label="Navigation Menu">
         {menuLinks.map(link => (
-          <DropdownItem key={link.name} className="p-0">
-            <Link
-              href={link.url}
-              className={twMerge(
-                'block w-full rounded-lg px-4 py-2 text-sm transition-colors',
-                'hover:bg-primary/20 hover:text-white',
-              )}
-            >
-              {link.name}
-            </Link>
+          <DropdownItem
+            key={link.name}
+            className={twMerge(
+              'block w-full rounded-lg px-4 py-2 text-sm transition-colors',
+              'hover:bg-primary/20 hover:text-white',
+            )}
+            href={link.url}
+          >
+            {link.name}
           </DropdownItem>
         ))}
       </DropdownMenu>
