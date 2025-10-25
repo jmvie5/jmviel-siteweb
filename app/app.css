@@ -1,12 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import "tailwindcss";
 
+@plugin './hero.ts';
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-poppins: Poppins, sans-serif;
-  --font-josefin: "Josepfin Sans", sans-serif;
+  --font-josefin: 'Josepfin Sans', sans-serif;
 
   --breakpoint-xss: 20rem;
   --breakpoint-xs: 30rem;
@@ -16,16 +21,14 @@
   --color-jmv_medium: #415a77;
   --color-jmv_light: #778da9;
   --color-jmv_white: #e0e1dd;
-
 }
 
 .hover-scale {
-  @apply transition duration-200 ease-in hover:scale-105
+  @apply transition duration-100 ease-in hover:scale-105 transform hover:-translate-y-1;
 }
 
 html,
 body {
-
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }

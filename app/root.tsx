@@ -6,36 +6,35 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
-  redirect
-} from "react-router";
+  redirect,
+  useNavigate,
+} from 'react-router'
 
-import type { Route } from "./+types/root";
-import "./app.css";
+import type { Route } from './+types/root'
+import './app.css'
 
-import { useChangeLanguage } from "remix-i18next/react";
-import { useTranslation } from "react-i18next";
-import i18next from "~/i18next.server";
-import i18nConfig, { urlTranslationSearchString } from "./i18n";
+import { useChangeLanguage } from 'remix-i18next/react'
+import { useTranslation } from 'react-i18next'
+import i18next from '~/i18next.server'
+import i18nConfig, { urlTranslationSearchString } from './i18n'
 
-import aboutImage from "~/assets/images/a-propos/JM_Lac.webp"
-import aboutImageSm from "~/assets/images/a-propos/JM_Lac_sm.webp"
-import musicImage from "~/assets/images/guitar.webp"
-import infoImage from "~/assets/images/coding.webp"
+import aboutImage from '~/assets/images/a-propos/JM_Lac.webp'
+import aboutImageSm from '~/assets/images/a-propos/JM_Lac_sm.webp'
+import musicImage from '~/assets/images/guitar.webp'
+import infoImage from '~/assets/images/coding.webp'
+import { HeroUIProvider } from '@heroui/react'
 
 export async function loader({ request, params }: Route.LoaderArgs) {
-  
-  const {supportedLngs} = i18nConfig
-  
-  let locale = params.lang
-    ? params.lang 
-    : await i18next.getLocale(request)
+  const { supportedLngs } = i18nConfig
+
+  let locale = params.lang ? params.lang : await i18next.getLocale(request)
 
   if (!supportedLngs.includes(locale)) {
     locale = await i18next.getLocale(request)
   }
 
   const t = await i18next.getFixedT(locale)
-  
+
   const url = new URL(request.url)
 
   const page = url.pathname.split('/')[url.pathname.split('/').length - 1]
@@ -44,9 +43,10 @@ export async function loader({ request, params }: Route.LoaderArgs) {
   // check if route exists across lng and redirect with the good url if necessary (/locale/route)
   if (page && !supportedLngs.includes(page)) {
     let pageFound = false
-    for (const [searchLocale, pages] of Object.entries(urlTranslationSearchString)) {
+    for (const [searchLocale, pages] of Object.entries(
+      urlTranslationSearchString,
+    )) {
       for (const [url, tString] of Object.entries(pages)) {
-
         if (page === url) {
           pageFound = true
           // redirect only if page was found in another locale
@@ -54,11 +54,14 @@ export async function loader({ request, params }: Route.LoaderArgs) {
           if (params.lang && supportedLngs.includes(params.lang)) {
             // to avoid multiple redirection if a page is in both locales (i.e. /fractions, /legal)
             // we redirect only if transation with current lang param is different from current page url
-            if (t(tString) !== page){
+            if (t(tString) !== page) {
               // user tried to go to a valid page in the wrong locale in the url,
               // locale in url is king so we redirect 301 (Moved Permanently)
               if (searchParams.size) {
-                return redirect(`/${params.lang}/${t(tString)}?${searchParams.toString()}`, 301)
+                return redirect(
+                  `/${params.lang}/${t(tString)}?${searchParams.toString()}`,
+                  301,
+                )
               } else {
                 return redirect(`/${params.lang}/${t(tString)}`, 301)
               }
@@ -66,17 +69,19 @@ export async function loader({ request, params }: Route.LoaderArgs) {
           } else {
             // user went to the page without the /locale/, we add the locale = redirect 302
             if (searchParams.size) {
-              return redirect(`/${searchLocale}/${url}?${searchParams.toString()}`, 302)
+              return redirect(
+                `/${searchLocale}/${url}?${searchParams.toString()}`,
+                302,
+              )
             } else {
               return redirect(`/${searchLocale}/${url}`, 302)
             }
-            
           }
 
           break
         }
       }
-      if (pageFound) break;
+      if (pageFound) break
     }
     if (!pageFound) {
       // this redirect works when user goes to a page not found without locale
@@ -86,9 +91,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
       } else {
         throw redirect(`/${locale}`, 302)
       }
-      
     }
-    
   } else {
     // user went to landing page without locale
     if (!params.lang) {
@@ -97,103 +100,103 @@ export async function loader({ request, params }: Route.LoaderArgs) {
       } else {
         return redirect(`/${locale}`, 302)
       }
-      
     }
   }
 
-  return { locale };
+  return { locale }
 }
 
 export const handle = {
-  i18n: ["translation"]
-};
+  i18n: ['translation'],
+}
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com',
+    crossOrigin: 'anonymous',
   },
   {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
   {
-    rel:"preload",
+    rel: 'preload',
     href: aboutImage,
-    as:"image"
+    as: 'image',
   },
   {
-    rel:"preload",
+    rel: 'preload',
     href: aboutImageSm,
-    as:"image"
+    as: 'image',
   },
   {
-    rel:"preload",
+    rel: 'preload',
     href: musicImage,
-    as:"image"
+    as: 'image',
   },
   {
-    rel:"preload",
+    rel: 'preload',
     href: musicImage,
-    as:"image"
+    as: 'image',
   },
   {
-    rel:"preload",
+    rel: 'preload',
     href: infoImage,
-    as:"image"
+    as: 'image',
   },
-  
-];
+]
 
 export function Layout({ children }: { children: React.ReactNode }) {
   // Get the locale from the loader
-  const loaderData = useRouteLoaderData<typeof loader>("root");
-  const locale = loaderData?.locale || "fr"
-  const { i18n } = useTranslation();
-
+  const loaderData = useRouteLoaderData<typeof loader>('root')
+  const locale = loaderData?.locale || 'fr'
+  const { i18n } = useTranslation()
+  const navigate = useNavigate()
   // This hook will change the i18n instance language to the current locale
   // detected by the loader, this way, when we do something to change the
   // language, this locale will change and i18next will load the correct
   // translation files
-  useChangeLanguage(locale);
+  useChangeLanguage(locale)
 
   return (
-    <html lang={locale} dir={i18n.dir()}>
+    <html lang={locale} dir={i18n.dir()} className="overscroll-none">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-950">
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+      <body className="overscroll-none text-foreground bg-background dark">
+        <HeroUIProvider navigate={navigate}>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </HeroUIProvider>
       </body>
     </html>
-  );
+  )
 }
 
 export default function App() {
-  return <Outlet />;
+  return <Outlet />
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
+  let message = 'Oops!'
+  let details = 'An unexpected error occurred.'
+  let stack: string | undefined
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
+    message = error.status === 404 ? '404' : 'Error'
     details =
       error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+        ? 'The requested page could not be found.'
+        : error.statusText || details
   } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
+    details = error.message
+    stack = error.stack
   }
 
   return (
@@ -206,5 +209,5 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         </pre>
       )}
     </main>
-  );
+  )
 }
