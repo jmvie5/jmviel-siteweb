@@ -155,7 +155,11 @@ export default function SiteLayout({
             )}
           </div>
           <div className={twMerge('absolute right-0 m-4 hover:underline z-20')}>
-            <Button as={Link} to={langSwitcherUrl}>
+            <Button
+              as={Link}
+              className={'bg-foreground/90 text-black'}
+              to={langSwitcherUrl}
+            >
               {langIcon}
               {fullLang}
             </Button>
