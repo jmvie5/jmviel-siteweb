@@ -1,12 +1,12 @@
-import "react-router";
+import 'react-router'
 
-declare module "react-router" {
+declare module 'react-router' {
   interface Register {
-    params: Params;
+    params: Params
   }
 }
 
 type Params = {
-  "/": {};
-  "/a-propos": {};
-};
+  '/': {}
+  '/a-propos': {}
+}
