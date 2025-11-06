@@ -133,12 +133,15 @@ export default function MusicPage() {
             src={duo_pichenotte_img}
             alt="Duo Pichenotte"
             className="mb-2 sm:mb-0 rounded-xl"
+            loading="lazy"
+            decoding="async"
           />
           <div className="flex flex-col justify-around sm:ml-2">
             <iframe
               className="border-0 w-full h-32 rounded-t-xl"
               src="https://bandcamp.com/EmbeddedPlayer/album=1471944775/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
               seamless
+              loading="lazy"
             >
               <a href="https://leduopichenotte.bandcamp.com/album/with-friends-for-christmas">
                 With friends, for Christmas - Le Duo Pichenotte
@@ -148,6 +151,7 @@ export default function MusicPage() {
               className="border-0 w-full h-32 rounded-b-xl"
               src="https://bandcamp.com/EmbeddedPlayer/album=3343381706/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/"
               seamless
+              loading="lazy"
             >
               <a href="https://leduopichenotte.bandcamp.com/album/comme-un-manouche">
                 Comme Un Manouche - Le Duo Pichenotte
@@ -158,6 +162,7 @@ export default function MusicPage() {
               className="border-0 aspect-video overflow-hidden w-full rounded-xl"
               allowFullScreen={true}
               allow="web-share"
+              loading="lazy"
               // c'est si bon RDV classique
             />
           </div>
@@ -173,6 +178,7 @@ export default function MusicPage() {
               className="w-full aspect-square rounded-xl"
               src="https://bandcamp.com/EmbeddedPlayer/track=809649105/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/"
               seamless
+              loading="lazy"
             >
               <a href="https://larevoir.bandcamp.com/track/lautomnale">
                 L'automnale by La Revoir
@@ -211,6 +217,8 @@ export default function MusicPage() {
             src={solo_img}
             alt="Jean-Michel Viel, soliste"
             className="rounded-xl"
+            loading="lazy"
+            decoding="async"
           />
           <div className="flex flex-col justify-around gap-2">
             <YoutubeEmbed
