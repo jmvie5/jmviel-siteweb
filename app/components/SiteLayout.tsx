@@ -120,11 +120,14 @@ export default function SiteLayout({
       <div className="flex flex-col justify-between w-full">
         <main className="flex flex-col h-full">
           <img
+            alt="Header Image"
             src={headerImage}
             className={twMerge(
               'absolute object-cover w-full object-[center_top]',
               page === '' ? 'h-dvh' : 'h-96',
             )}
+            loading="lazy"
+            decoding="async"
           />
           <div
             className={twMerge(
