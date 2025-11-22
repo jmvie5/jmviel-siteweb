@@ -24,6 +24,9 @@ import heroui from './heroui.svg'
 import symfony from './symfony.png'
 import rr_logo_light from './rr_logo_light.svg'
 import cloudflare_logo from './cloudflare-icon-color_3x.webp'
+import gitlab_logo from './gitlab-logo.svg'
+import hrc_logo from './hrc-logo.svg'
+import npm_logo from './npm-logo.svg'
 
 export {
   PHP_logo,
@@ -52,4 +55,7 @@ export {
   symfony,
   rr_logo_light,
   cloudflare_logo,
+  gitlab_logo,
+  hrc_logo,
+  npm_logo,
 }

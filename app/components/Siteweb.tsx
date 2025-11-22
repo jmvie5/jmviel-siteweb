@@ -1,5 +1,9 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { github_white } from '~/assets/images/informatique/index.js'
+import {
+  github_white,
+  gitlab_logo,
+  npm_logo,
+} from '~/assets/images/informatique/index.js'
 import { Link } from '@heroui/react'
 
 interface SitewebProps {
@@ -7,9 +11,10 @@ interface SitewebProps {
   id?: string
   url?: string
   description: React.ReactElement
-  github: string
+  remoteHostUrl: string
   logoSrc?: string
   logoAlt?: string
+  npmUrl?: string
 }
 
 const Siteweb = ({
@@ -17,14 +22,17 @@ const Siteweb = ({
   id,
   url,
   description,
-  github,
+  remoteHostUrl,
   logoSrc,
   logoAlt,
+  npmUrl,
 }: SitewebProps) => {
   const link = 'https://' + url
 
   const prefersReduced = useReducedMotion()
   const hoverAnim = prefersReduced ? {} : { y: -1, scale: 1.01 }
+
+  const isGitHub = remoteHostUrl.includes('github.com')
 
   return (
     <motion.div
@@ -43,15 +51,43 @@ const Siteweb = ({
             </Link>
             <Link
               color={'foreground'}
-              href={github}
+              href={remoteHostUrl}
               target="_blank"
               rel="noreferrer"
+              className={
+                'hover:underline underline-offset-2 decoration-secondary'
+              }
             >
               <div className="flex gap-1">
-                <img src={github_white} alt="Github logo" className="size-6" />
-                <p>GitHub</p>
+                {isGitHub ? (
+                  <>
+                    <img
+                      src={github_white}
+                      alt="Github logo"
+                      className="size-6"
+                    />
+                    <p>GitHub</p>
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={gitlab_logo}
+                      alt="Gitlab logo"
+                      className="size-6"
+                    />
+                    <p>GitLab</p>
+                  </>
+                )}
               </div>
             </Link>
+            {npmUrl && (
+              <Link href={npmUrl} target="_blank" rel="noreferrer">
+                <div className="flex gap-1">
+                  <img src={npm_logo} alt="npm logo" className="w-14" />
+                  <p></p>
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       </div>

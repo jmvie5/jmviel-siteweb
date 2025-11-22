@@ -73,6 +73,8 @@
   "remplismonordidebits-title": "Remplis mon ordi de bits",
   "remplismonordidebits": "Application web démontrant la possible nécessité de réguler IndexedDB. ",
   "remplismonordidebits-2": "Ce site remplit automatiquement votre disque dur de données impertinentes, n'oubliez pas de videz votre cache!",
+  "hrc-title": "Reconnaissance des caractères manuscrits",
+  "hrc-description": "Développé avec mes collègues chez EduMedia pour reconnaitre les nombres et les caractères <, > et = dessinés sur un canvas dans une application web pour travailler les mathématiques. L’algorithme peut en théorie reconnaitre n’importe quel caractère qui est contenu dans son jeu de données.",
 
   "games-title": "Jeux vidéos",
   "games-desc": "Dans le cadre du projet de recherche-développement Improvison, dirigé par Jean-Philippe Després (Ph. D.), j'ai créé le jeu au cœur de la recherche avec Roblox.",

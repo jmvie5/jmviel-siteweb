@@ -1,0 +1,42 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            :root {
+            --bg-color: #3b0764;
+            --border-color: #3b0764;
+            --stroke-color: #c266ff;
+            --text-color: #c266ff;
+            }
+
+            .logo-bg {
+            fill: var(--bg-color);
+            }
+
+            .logo-border {
+            fill: none;
+            stroke: var(--border-color);
+            stroke-width: 4;
+            }
+
+            .logo-text {
+            font-family: Arial, sans-serif;
+            font-size: 80px;
+            font-weight: bold;
+            fill: var(--text-color);
+            stroke: var(--stroke-color);
+            stroke-width: 2;
+            text-anchor: middle;
+            dominant-baseline: central;
+            }
+        </style>
+    </defs>
+
+    <!-- Square background with rounded corners -->
+    <rect class="logo-bg" width="200" height="200" x="0" y="0" rx="12" ry="12"/>
+
+    <!-- Border with rounded corners -->
+    <rect class="logo-border" width="196" height="196" x="2" y="2" rx="10" ry="10"/>
+
+    <!-- HRC text -->
+    <text class="logo-text" x="100" y="100">HCR</text>
+</svg>
