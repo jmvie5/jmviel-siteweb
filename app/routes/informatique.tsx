@@ -90,6 +90,21 @@ const InformatiquePage = () => {
       logoAtl: 'Logo Laurence bf, orthopédagogue',
     },
     {
+      name: translations['hrc-title'],
+      description: (
+        <div>
+          <p className="mb-2">{translations['hrc-description']}</p>
+        </div>
+      ),
+      url: 'handwriting-character-recognition-35f721.gitlab.io/',
+      remoteHostUrl:
+        'https://gitlab.com/edumedia/handwriting-character-recognition',
+      logoSrc: infoImages.hrc_logo,
+      logoAlt: 'Logo HRC',
+      npmUrl:
+        'https://www.npmjs.com/package/@edumedia/handwriting-character-recognition',
+    },
+    {
       name: translations.nbnr,
       description: (
         <div>
@@ -149,21 +164,6 @@ const InformatiquePage = () => {
       remoteHostUrl: 'https://github.com/jmvie5/remplismonordidebits',
       logoSrc: infoImages.remplismonordidebits,
       logoAlt: 'Logo Remplis mon ordi de bits',
-    },
-    {
-      name: translations['hrc-title'],
-      description: (
-        <div>
-          <p className="mb-2">{translations['hrc-description']}</p>
-        </div>
-      ),
-      url: 'handwriting-character-recognition-35f721.gitlab.io/',
-      remoteHostUrl:
-        'https://gitlab.com/edumedia/handwriting-character-recognition',
-      logoSrc: infoImages.hrc_logo,
-      logoAlt: 'Logo HRC',
-      npmUrl:
-        'https://www.npmjs.com/package/@edumedia/handwriting-character-recognition',
     },
   ]
 
