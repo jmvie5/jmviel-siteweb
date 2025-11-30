@@ -38,6 +38,8 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     'remplismonordidebits-title': t('remplismonordidebits-title'),
     remplismonordidebits: t('remplismonordidebits'),
     'remplismonordidebits-2': t('remplismonordidebits-2'),
+    'hrc-title': t('hrc-title'),
+    'hrc-description': t('hrc-description'),
 
     'games-title': t('games-title'),
     'games-desc': t('games-desc'),
@@ -83,9 +85,24 @@ const InformatiquePage = () => {
         </div>
       ),
       url: 'laurencebf.ca',
-      github: 'https://github.com/jmvie5/laurence-orthopedagogue',
+      remoteHostUrl: 'https://github.com/jmvie5/laurence-orthopedagogue',
       logoSrc: infoImages.laurencebf,
       logoAtl: 'Logo Laurence bf, orthopédagogue',
+    },
+    {
+      name: translations['hrc-title'],
+      description: (
+        <div>
+          <p className="mb-2">{translations['hrc-description']}</p>
+        </div>
+      ),
+      url: 'handwriting-character-recognition-35f721.gitlab.io/',
+      remoteHostUrl:
+        'https://gitlab.com/edumedia/handwriting-character-recognition',
+      logoSrc: infoImages.hrc_logo,
+      logoAlt: 'Logo HRC',
+      npmUrl:
+        'https://www.npmjs.com/package/@edumedia/handwriting-character-recognition',
     },
     {
       name: translations.nbnr,
@@ -96,7 +113,7 @@ const InformatiquePage = () => {
         </div>
       ),
       url: 'nbnr.ca',
-      github: 'https://github.com/jmvie5/nbnr-mnrn',
+      remoteHostUrl: 'https://github.com/jmvie5/nbnr-mnrn',
       logoSrc: infoImages.nbnr,
       logoAlt: 'Logo NBNR',
     },
@@ -110,7 +127,7 @@ const InformatiquePage = () => {
         </div>
       ),
       url: 'improvison.ca',
-      github: 'https://github.com/jmvie5/improvison',
+      remoteHostUrl: 'https://github.com/jmvie5/improvison',
       logoSrc: infoImages.improvison,
       logoAlt: 'Logo Improvison',
     },
@@ -131,7 +148,7 @@ const InformatiquePage = () => {
       name: translations['this-website-title'],
       description: <div>{translations['this-website']}</div>,
       url: 'jeanmichelviel.ca',
-      github: 'https://github.com/jmvie5/jmviel-siteweb',
+      remoteHostUrl: 'https://github.com/jmvie5/jmviel-siteweb',
       logoSrc: jmvie5Logo,
       logoAlt: 'Logo JM Viel',
     },
@@ -144,7 +161,7 @@ const InformatiquePage = () => {
         </div>
       ),
       url: 'remplismonordidebits.xyz',
-      github: 'https://github.com/jmvie5/remplismonordidebits',
+      remoteHostUrl: 'https://github.com/jmvie5/remplismonordidebits',
       logoSrc: infoImages.remplismonordidebits,
       logoAlt: 'Logo Remplis mon ordi de bits',
     },
@@ -358,9 +375,10 @@ const InformatiquePage = () => {
             name={project.name}
             description={project.description}
             url={project.url}
-            github={project.github}
+            remoteHostUrl={project.remoteHostUrl}
             logoSrc={project.logoSrc}
             logoAlt={project.logoAlt}
+            npmUrl={project.npmUrl}
           />
         ))}
       </div>
