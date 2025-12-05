@@ -110,10 +110,10 @@ const MazeView = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-4 flex flex-col items-center">
       <p className="text-lg text-white min-h-8">{message}</p>
       <div
-        className="grid"
+        className="grid bg-background w-fit"
         style={{ gridTemplateColumns: `repeat(${maze.width}, 24px)` }}
       >
         {maze.grid.flat().map((tile: Tile, idx: number) => {
