@@ -65,7 +65,7 @@ export class Board {
     // Validate board before adding the word for real
     const [isBoardValid, boardMessage] = tempBoard.validateBoard()
     if (!isBoardValid) {
-      throw new Error(`Invalid board : ${boardMessage}`)
+      throw new Error(`${boardMessage}`)
     }
 
     // Place each letter of the word on the board
