@@ -1,5 +1,5 @@
-import { RemixI18Next } from "remix-i18next/server";
-import i18n from "~/i18n"; // your i18n configuration file
+import { RemixI18Next } from 'remix-i18next/server'
+import i18n from '~/i18n' // your i18n configuration file
 
 let i18next = new RemixI18Next({
   detection: {
@@ -11,6 +11,6 @@ let i18next = new RemixI18Next({
   i18next: {
     ...i18n,
   },
-});
+})
 
-export default i18next;
+export default i18next

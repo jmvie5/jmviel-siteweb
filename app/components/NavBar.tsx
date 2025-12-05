@@ -1,76 +1,75 @@
-import { Link } from "react-router"
 import { twMerge } from 'tailwind-merge'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+  Link,
+} from '@heroui/react'
 
 interface NavbarProps {
-    locale: string;
-    dark?: boolean;
-    more?: boolean;
-    menuLinks: {name:string, url:string}[]
+  locale: string
+  dark?: boolean
+  menuLinks: { name: string; url: string }[]
 }
 
-export default function NavBar({locale, menuLinks, dark, more}: NavbarProps) {
+export default function NavBar({ menuLinks, dark }: NavbarProps) {
+  const navButton = (
+    <Dropdown placement="bottom-start">
+      <DropdownTrigger>
+        <Button color={'primary'} className={twMerge('ml-4 mt-2 w-32')}>
+          Menu
+        </Button>
+      </DropdownTrigger>
+      <DropdownMenu aria-label="Navigation Menu">
+        {menuLinks.map(link => (
+          <DropdownItem
+            key={link.name}
+            className={twMerge(
+              'block w-full rounded-lg px-4 py-2 text-sm transition-colors',
+              'hover:bg-primary/20 hover:text-white',
+            )}
+            href={link.url}
+          >
+            {link.name}
+          </DropdownItem>
+        ))}
+      </DropdownMenu>
+    </Dropdown>
+  )
 
+  const navFull = (
+    <ul
+      className={twMerge(
+        'flex max-w-fit divide-x border-b py-4 ml-4',
+        dark
+          ? 'divide-content1/40  border-content1/40 '
+          : ' divide-foreground/40  border-foreground/40 ',
+      )}
+    >
+      {menuLinks.map(link => (
+        <li key={link.name}>
+          <Link
+            href={link.url}
+            className={twMerge(
+              'block ml-4 pr-4 whitespace-nowrap transition-colors xl:text-lg text-md',
+              dark
+                ? 'text-content1 hover:text-content1/80'
+                : 'text-foreground hover:text-foreground/80',
+            )}
+          >
+            {link.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )
 
-
-    const navButton =
-        <Menu>
-            <MenuButton className="text-jmv_dark bg-jmv_white hover:bg-gray-300 hover:ring-1 hover:ring-jmv_light active:bg-jmv_white focus:outline-none focus:ring-1 focus:ring-jmv_light rounded-md p-2 ml-4 mt-2 w-32 self-center">
-            Menu
-            </MenuButton>
-            <MenuItems
-                transition
-                anchor="bottom end"
-                className="z-50 absolute top-full sm:self-center left-0 w-60 mt-2 ml-4 rounded-md shadow-md shadow-jmv_light bg-jmv_white  p-1 text-sm/6 text-white transition duration-200 ease-out [--anchor-gap:var(--spacing-1)] transform data-[closed]:-translate-x-full focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
-            >
-                {menuLinks.map(link => (
-                    <MenuItem key={link.name}>
-                        <Link 
-                            to={link.url}
-                            className={twMerge('hover:bg-gradient-to-r from-jmv_light hover:text-jmv_dark text-jmv_lessDark block rounded-l-full ml-2 px-4 py-2 text-sm')}
-                        >{link.name}</Link>
-                    </MenuItem>
-                        
-                ))}
-            </MenuItems>
-        </Menu>
-
-    
-
-    const navFull = 
-        <ul className='flex py-4 ml-4 divide-x divide-jmv_light border-b border-jmv_light max-w-fit'>
-            {menuLinks.map(link => (
-                <li key={link.name}>
-                    <Link 
-                        to={link.url}
-                        className={twMerge('block xl:text-lg text-md ml-4 pr-4 whitespace-nowrap', dark ? "hover:text-jmv_medium text-jmv_dark" : "hover:text-jmv_light text-jmv_white")}
-                    >{link.name}</Link>
-                </li>
-            ))}
-        </ul> 
-
-    return (
-        <div className='flex flex-col place-self-start'>
-            {more ?
-            <>
-                <div className='flex sm:hidden'>
-                    {navButton}
-                </div>
-                <div className='hidden sm:flex'>
-                    {navFull} 
-                </div>
-            </>
-            :
-            <>
-                <div className='flex lg:hidden'>
-                    {navButton}
-                </div>
-                <div className='hidden lg:flex'>
-                    {navFull} 
-                </div>
-            </>
-            }
-                
-        </div>
-    )
+  return (
+    <div className="flex flex-col place-self-start">
+      <div className={'flex sm:hidden'}>{navButton}</div>
+      <div className={'hidden sm:flex'}>{navFull}</div>
+    </div>
+  )
 }
