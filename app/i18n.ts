@@ -23,13 +23,13 @@ export const urlTranslationSearchString: {
     about: 'about-url',
     music: 'music-url',
     'computer-science': 'computer-science-url',
-    'games': 'games-url',
+    games: 'games-url',
   },
   fr: {
     '': '',
     'a-propos': 'about-url',
     musique: 'music-url',
     informatique: 'computer-science-url',
-    'jeux': 'games-url',
+    jeux: 'games-url',
   },
 }

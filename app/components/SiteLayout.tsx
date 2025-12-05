@@ -8,7 +8,7 @@ import aboutImageSM from '../assets/images/a-propos/JM_Lac_sm.webp'
 import aboutImage from '../assets/images/a-propos/JM_Lac.webp'
 import informatiqueImage from '../assets/images/coding.webp'
 import musicImage from '../assets/images/guitar.webp'
-import gamesImage from "../assets/images/game_chess.jpeg"
+import gamesImage from '../assets/images/game_chess.jpeg'
 import NavBar from './NavBar'
 import i18nConfig from '~/i18n'
 import i18nServer from '~/i18next.server'
@@ -48,7 +48,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     {
       name: t('Games'),
       url: `/${locale}/${t(urlTranslationSearchString['en']['games'])}`,
-    }
+    },
   ]
 
   const otherLng: { [locale: string]: string } = {
@@ -80,9 +80,9 @@ export async function loader({ request, params }: Route.LoaderArgs) {
       img: musicImage,
       isDark: false,
     },
-    jeux : {
+    jeux: {
       img: gamesImage,
-      isDark: false
+      isDark: false,
     },
   }
   const pageData =

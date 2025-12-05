@@ -4,15 +4,15 @@
 
   "index-desc": "Jean-Michel Viel, musicien, pédagogue et programmeur.",
 
-    "about-url": "a-propos",
-    "music-url": "musique",
-    "computer-science-url": "informatique",
+  "about-url": "a-propos",
+  "music-url": "musique",
+  "computer-science-url": "informatique",
   "games-url": "jeux",
 
-    "Home" : "Accueil",
-    "About": "À propos",
-    "Music": "Musique",
-    "Computer Science": "Informatique",
+  "Home": "Accueil",
+  "About": "À propos",
+  "Music": "Musique",
+  "Computer Science": "Informatique",
   "Games": "Jeux",
   "Contact": "Contact",
 
@@ -101,6 +101,6 @@
   "modal-desc": "Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.",
   "modal-close": "Fermer",
 
-  "games-title" : "Jeux",
-  "games-desc" : "Collection de petits jeux inspirés de ma vie de père."
+  "games-title": "Jeux",
+  "games-desc": "Collection de petits jeux inspirés de ma vie de père."
 }
