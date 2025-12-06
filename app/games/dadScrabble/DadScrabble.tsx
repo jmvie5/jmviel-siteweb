@@ -8,7 +8,21 @@ export default function DadScrabble() {
   const [board, setBoard] = useState(new Board())
   const [errors, setErrors] = useState('')
 
-  const addNewWord = (word: string) => {
+  const onKeyDown = (e: KeyboardEvent) => {
+    const key = e.key.toLowerCase()
+    if (key === 'enter') {
+      addNewWord()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [onKeyDown])
+
+  const addNewWord = (word: string = inputValue) => {
     try {
       board.addWord(word)
     } catch (e: any) {
@@ -16,6 +30,7 @@ export default function DadScrabble() {
       return
     }
     setErrors('')
+    setInputValue('')
   }
 
   return (
@@ -39,13 +54,7 @@ export default function DadScrabble() {
             errorMessage={errors}
             isInvalid={errors.length > 0}
           />
-          <Button
-            color={'primary'}
-            onPress={() => {
-              addNewWord(inputValue)
-              setInputValue('')
-            }}
-          >
+          <Button color={'primary'} onPress={() => addNewWord()}>
             Ajouter
           </Button>
         </div>
