@@ -7,6 +7,9 @@ export default function DadScrabble() {
   const [inputValue, setInputValue] = useState('')
   const [board, setBoard] = useState(new Board())
   const [errors, setErrors] = useState('')
+  const [availableLetters, setAvailableLetters] = useState<string[]>(
+    board.availableLetters,
+  )
 
   const onKeyDown = (e: KeyboardEvent) => {
     const key = e.key.toLowerCase()
@@ -29,6 +32,7 @@ export default function DadScrabble() {
       setErrors(e.message as string)
       return
     }
+    setAvailableLetters(board.availableLetters)
     setErrors('')
     setInputValue('')
   }
@@ -36,6 +40,7 @@ export default function DadScrabble() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
+        <div>Available letters : {availableLetters.join(', ')}</div>
         <div className="grid grid-cols-20 gap-2">
           {board.grid.map((row, i) =>
             row.map((cell, j) => <p key={`${i}-${j}`}>{cell}</p>),

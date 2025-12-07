@@ -39,7 +39,9 @@ export class Board {
     }
   }
 
-  addWord(word: string): void {
+  addWord(userWord: string): void {
+    const word = userWord.toUpperCase()
+
     const [wordIsValid, message] = this.isValidWord(word)
     if (!wordIsValid) {
       throw new Error(`Invalid word : ${message}`)
@@ -149,6 +151,11 @@ export class Board {
     for (let i = 0; i < word.length; i++) {
       if (word.indexOf(word[i]) !== i) {
         return [false, "Can't place this word, conflict with other letters."]
+      }
+      if (
+        ![...this.availableLetters, ...this.lettersOnBoard].includes(word[i])
+      ) {
+        return [false, "Word contains letters that aren't available."]
       }
     }
 
