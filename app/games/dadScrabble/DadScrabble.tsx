@@ -10,6 +10,8 @@ export default function DadScrabble() {
   const [availableLetters, setAvailableLetters] = useState<string[]>(
     board.availableLetters,
   )
+  const [gameScore, setGameScore] = useState(0)
+  const [gameState, setGameState] = useState<'started' | 'over'>('started')
 
   const onKeyDown = (e: KeyboardEvent) => {
     const key = e.key.toLowerCase()
@@ -37,13 +39,41 @@ export default function DadScrabble() {
     setInputValue('')
   }
 
+  const gameOver = () => {
+    setGameState('over')
+    setGameScore(board.getScore())
+  }
+
+  const newGame = () => {
+    const newBoard = new Board()
+    setBoard(newBoard)
+    setAvailableLetters(newBoard.availableLetters)
+    setErrors('')
+    setInputValue('')
+    setGameScore(0)
+    setGameState('started')
+  }
+
+  const tileClass = 'p-2 rounded-xl border aspect-square text-center'
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
-        <div>Available letters : {availableLetters.join(', ')}</div>
+        <div>
+          Available letters :{' '}
+          <div className={'grid grid-cols-6 sm:grid-cols-13 gap-1'}>
+            {availableLetters.map(l => (
+              <p className={tileClass}>{l}</p>
+            ))}
+          </div>
+        </div>
         <div className="grid grid-cols-20 gap-2">
           {board.grid.map((row, i) =>
-            row.map((cell, j) => <p key={`${i}-${j}`}>{cell}</p>),
+            row.map((cell, j) => (
+              <p className={cell !== ' ' ? tileClass : ''} key={`${i}-${j}`}>
+                {cell}
+              </p>
+            )),
           )}
         </div>
         <div className="flex gap-2">
@@ -58,11 +88,24 @@ export default function DadScrabble() {
             }}
             errorMessage={errors}
             isInvalid={errors.length > 0}
+            isDisabled={gameState === 'over'}
           />
-          <Button color={'primary'} onPress={() => addNewWord()}>
-            Ajouter
-          </Button>
+          {gameState === 'over' ? (
+            <Button color={'primary'} onPress={newGame} className={'px-8'}>
+              Nouvelle partie
+            </Button>
+          ) : (
+            <>
+              <Button color={'primary'} onPress={() => addNewWord()}>
+                Ajouter
+              </Button>
+              <Button color={'danger'} onPress={gameOver}>
+                Terminer
+              </Button>
+            </>
+          )}
         </div>
+        <div>{gameState === 'over' && <p>Score : {gameScore}</p>}</div>
       </div>
     </div>
   )

@@ -17,6 +17,7 @@ const MazeView = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      e.preventDefault()
       switch (e.key) {
         case 'w':
           movePlayer('up')
