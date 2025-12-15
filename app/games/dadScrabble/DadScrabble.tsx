@@ -12,6 +12,7 @@ export default function DadScrabble() {
   )
   const [gameScore, setGameScore] = useState(0)
   const [gameState, setGameState] = useState<'started' | 'over'>('started')
+  const [highScore, setHighScore] = useState(0)
 
   const onKeyDown = (e: KeyboardEvent) => {
     const key = e.key.toLowerCase()
@@ -41,7 +42,11 @@ export default function DadScrabble() {
 
   const gameOver = () => {
     setGameState('over')
-    setGameScore(board.getScore())
+    const score = board.getScore()
+    setGameScore(score)
+    if (score > highScore) {
+      setHighScore(score)
+    }
   }
 
   const newGame = () => {
@@ -59,6 +64,7 @@ export default function DadScrabble() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
+        <div>HighScore : {highScore}</div>
         <div>
           Available letters :{' '}
           <div className={'grid grid-cols-6 sm:grid-cols-13 gap-1'}>
@@ -91,9 +97,14 @@ export default function DadScrabble() {
             isDisabled={gameState === 'over'}
           />
           {gameState === 'over' ? (
-            <Button color={'primary'} onPress={newGame} className={'px-8'}>
-              Nouvelle partie
-            </Button>
+            <>
+              <Button color={'primary'} onPress={newGame} className={'px-8'}>
+                Nouvelle partie
+              </Button>
+              <Button color={'success'} onPress={() => window.print()}>
+                Imprimer
+              </Button>
+            </>
           ) : (
             <>
               <Button color={'primary'} onPress={() => addNewWord()}>
