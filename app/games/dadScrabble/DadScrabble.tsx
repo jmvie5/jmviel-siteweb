@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { twMerge } from 'tailwind-merge'
 import { Board } from './Board'
 import { Button, Input } from '@heroui/react'
+import { useTranslation } from 'react-i18next'
 
 export default function DadScrabble() {
   const [inputValue, setInputValue] = useState('')
@@ -13,6 +13,8 @@ export default function DadScrabble() {
   const [gameScore, setGameScore] = useState(0)
   const [gameState, setGameState] = useState<'started' | 'over'>('started')
   const [highScore, setHighScore] = useState(0)
+
+  const locale = useTranslation().i18n.language
 
   const onKeyDown = (e: KeyboardEvent) => {
     const key = e.key.toLowerCase()
@@ -28,8 +30,12 @@ export default function DadScrabble() {
     }
   }, [onKeyDown])
 
-  const addNewWord = (word: string = inputValue) => {
+  const addNewWord = async (word: string = inputValue) => {
     try {
+      const isValid = await doesWordExist(word)
+      if (!isValid) {
+        throw new Error(`Le mot ${word} n'existe pas`)
+      }
       board.addWord(word)
     } catch (e: any) {
       setErrors(e.message as string)
@@ -57,6 +63,25 @@ export default function DadScrabble() {
     setInputValue('')
     setGameScore(0)
     setGameState('started')
+  }
+
+  const doesWordExist = async (word: string): Promise<boolean> => {
+    const response = await fetch(
+      `https://${locale}.wiktionary.org/w/api.php?action=query&titles=${word}&prop=revisions&rvprop=content&format=json&origin=*`,
+    )
+    const data = await response.json()
+    // Invalid words have query.pages['-1'] key
+    return !(
+      data &&
+      typeof data === 'object' &&
+      'query' in data &&
+      data.query &&
+      typeof data.query === 'object' &&
+      'pages' in data.query &&
+      data.query.pages &&
+      typeof data.query.pages === 'object' &&
+      '-1' in data.query.pages
+    )
   }
 
   const tileClass = 'p-2 rounded-xl border aspect-square text-center'
