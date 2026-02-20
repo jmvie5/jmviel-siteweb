@@ -1,14 +1,11 @@
-import type { Route } from './+types/outils-musique.js'
 import i18nServer from '~/i18next.server.js'
 import { Button, Divider } from '@heroui/react'
 import { useState } from 'react'
 import { Scale } from 'tonal'
 import { shuffleArray } from '~/utils/shuffleArray.js'
 
-export async function loader({ request, params }: Route.LoaderArgs) {
-  const locale = params.lang ? params.lang : await i18nServer.getLocale(request)
-
-  const t = await i18nServer.getFixedT(locale)
+export async function loader() {
+  const t = await i18nServer.getFixedT('fr')
 
   const title = t('music-tools-title')
   const description = t('music-tools-desc')
