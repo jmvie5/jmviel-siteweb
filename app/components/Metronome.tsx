@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react'
 import { Button, ButtonGroup } from '@heroui/react'
-import workerScript from './metronomeWorker'
+import workerScript from '../workers/metronomeWorker?url'
 import {
   PlusIcon,
   MinusIcon,
   PlayIcon,
   PauseIcon,
 } from '@heroicons/react/24/solid'
-import metronomeSound from './metronomeSound'
+import metronomeSrc from '../assets/sounds/metronome.mp3?url'
 
-export default function Metronome() {
+export function Metronome() {
   const [metronomeWorker, setMetronomeWorker] = useState<Worker>()
   const [bpm, setBpm] = useState(120)
   const [isPLaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
+    console.log(workerScript, import.meta.url)
     // set Worker
-    const worker = new Worker(workerScript)
+    const worker = new Worker(new URL(workerScript, import.meta.url))
     worker.postMessage({ interval: 60000 / bpm })
     worker.onmessage = ({ data }) => {
       if (data === 'tick') {
@@ -37,11 +38,17 @@ export default function Metronome() {
   }, [bpm, metronomeWorker])
 
   function playMetronome() {
-    metronomeSound.play()
+    const metronomeElement = document.getElementById(
+      'metronome',
+    ) as HTMLAudioElement
+    if (!metronomeElement) return
+    metronomeElement.currentTime = 0
+    metronomeElement.play()
   }
 
   return (
     <div className="flex items-center gap-2">
+      <audio src={metronomeSrc} id={'metronome'} />
       <ButtonGroup>
         <Button
           isIconOnly

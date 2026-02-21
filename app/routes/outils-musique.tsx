@@ -1,9 +1,9 @@
 import i18nServer from '~/i18next.server.js'
 import { Button, Card, CardBody, Divider, Tab, Tabs } from '@heroui/react'
-import { type Key, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Scale } from 'tonal'
 import { shuffleArray } from '~/utils/shuffleArray.js'
-import Metronome from '~/components/Metronome/Metronome.js'
+import { Metronome } from '~/components/Metronome.js'
 import { VexFlow } from 'vexflow'
 
 export async function loader() {
