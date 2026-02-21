@@ -14,6 +14,16 @@ export default [
     route('music', './routes/musique.tsx', { id: 'music-en' }),
     route('informatique', './routes/informatique.tsx', { id: 'cs-fr' }),
     route('computer-science', './routes/informatique.tsx', { id: 'cs-en' }),
+    // route('outils-musique', './routes/outils-musique.tsx', {
+    //   id: 'music-utils-fr',
+    // }),
+    // Add this when english page is ready and set in urlTranslationSearchString
+    // route('music-tools', './routes/outils-musique.tsx', {
+    //   id: 'music-utils-en',
+    // }),
   ]),
+  route('outils-musique', './routes/outils-musique.tsx', {
+    id: 'music-utils-fr',
+  }),
   route(':lang/*', './routes/splat.tsx'),
 ] satisfies RouteConfig
