@@ -7,12 +7,14 @@
   "about-url": "about",
   "music-url": "music",
   "computer-science-url": "computer-science",
+  "music-tools-url": "music-tools",
 
   "Home": "Home",
   "About": "About",
   "Music": "Music",
   "Computer Science": "Computer Science",
   "Contact": "Contact",
+  "music-tools-title": "Music tools",
 
   "about-desc": "Guitar, teaching and programming; these are my three passions that have guided me to this day.",
   "where-I-Am": "Where I am",
@@ -97,5 +99,7 @@
   "send": "Send",
   "modal-title": "Thanks!",
   "modal-desc": "Your message has been sent successfully. I will reply as soon as possible.",
-  "modal-close": "Close"
+  "modal-close": "Close",
+
+  "music-tools-desc": "Tools for musicians"
 }

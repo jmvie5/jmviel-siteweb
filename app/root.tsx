@@ -37,6 +37,11 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 
   const url = new URL(request.url)
 
+  // Handle not listed page outils-musique
+  if (url.pathname.includes('outils-musique')) {
+    return { locale }
+  }
+
   const page = url.pathname.split('/')[url.pathname.split('/').length - 1]
   const searchParams = url.searchParams
 
