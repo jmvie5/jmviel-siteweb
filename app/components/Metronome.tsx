@@ -15,7 +15,6 @@ export function Metronome() {
   const [isPLaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
-    console.log(workerScript, import.meta.url)
     // set Worker
     const worker = new Worker(new URL(workerScript, import.meta.url))
     worker.postMessage({ interval: 60000 / bpm })

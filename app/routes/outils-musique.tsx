@@ -1,5 +1,5 @@
 import i18nServer from '~/i18next.server.js'
-import { Button, Card, CardBody, Divider, Tab, Tabs } from '@heroui/react'
+import { Button, Card, CardBody, Divider, Tab, Tabs, Link } from '@heroui/react'
 import { useEffect, useState } from 'react'
 import { Scale } from 'tonal'
 import { shuffleArray } from '~/utils/shuffleArray.js'
@@ -217,6 +217,11 @@ export default function OutilsMusique() {
             </Button>
           </div>
         </main>
+        <footer className={'p-2'}>
+          <div className="flex justify-center gap-2">
+            <Link href={'/'}>jeanmichelviel.ca</Link>
+          </div>
+        </footer>
       </div>
     </div>
   )
