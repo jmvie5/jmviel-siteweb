@@ -25,10 +25,6 @@ export default function OutilsMusique() {
     A: 'La',
     B: 'Si',
   }
-  const alterationsFrenchNameMap: { [alteration: string]: string } = {
-    '#': 'dièse',
-    b: 'bémol',
-  }
   const [selectedTab, setSelectedTab] = useState<string | number>('fr')
   const [combination, setCombination] = useState<string[]>([])
   const [frenchCombination, setFrenchCombination] = useState<string[]>([])
@@ -37,7 +33,9 @@ export default function OutilsMusique() {
     const frenchChromaticScale = chromaticScale.map(note => {
       if (note.includes('b')) {
         const [letter, alteration] = note.split('')
-        return `${noteFrenchNameMap[letter]} ${alterationsFrenchNameMap[alteration]}`
+        return `${noteFrenchNameMap[letter]}${alteration}`
+          .replace('b', '♭')
+          .replace('#', '♯')
       }
       return noteFrenchNameMap[note]
     })
@@ -168,8 +166,9 @@ export default function OutilsMusique() {
               aria-label="Gamme"
               selectedKey={selectedTab}
               onSelectionChange={setSelectedTab}
+              color={'primary'}
             >
-              <Tab key="fr" title="Noms des notes">
+              <Tab key="fr" title="Français">
                 <Card>
                   <CardBody>
                     <div className={'grid grid-cols-4 gap-2'}>
@@ -177,7 +176,7 @@ export default function OutilsMusique() {
                         <span
                           key={`${note}`}
                           className={
-                            'flex justify-center border-primary border-1 aspect-square p-2 items-center gap-2'
+                            'flex justify-center border-primary border-1 aspect-square p-2 items-center gap-2 min-w-12'
                           }
                         >
                           {note}
@@ -187,7 +186,7 @@ export default function OutilsMusique() {
                   </CardBody>
                 </Card>
               </Tab>
-              <Tab key="en" title="Notation anglaise">
+              <Tab key="en" title="Anglais">
                 <Card>
                   <CardBody>
                     <div className={'grid grid-cols-4 gap-2'}>
@@ -195,7 +194,7 @@ export default function OutilsMusique() {
                         <span
                           key={`${note}`}
                           className={
-                            'flex justify-center border-primary border-1 aspect-square p-2 items-center gap-2'
+                            'flex justify-center border-primary border-1 aspect-square p-2 items-center gap-2 min-w-12'
                           }
                         >
                           {note}
