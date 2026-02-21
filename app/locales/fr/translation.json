@@ -7,12 +7,14 @@
   "about-url": "a-propos",
   "music-url": "musique",
   "computer-science-url": "informatique",
+  "music-tools-url": "outils-musique",
 
   "Home": "Accueil",
   "About": "À propos",
   "Music": "Musique",
   "Computer Science": "Informatique",
   "Contact": "Contact",
+  "music-tools-title": "Outils musicaux",
 
   "about-desc": "La guitare, la pédagogie et la programmation; ce sont mes trois passions qui m'ont guidé jusqu'à aujourd'hui.",
   "where-I-Am": "Où j'en suis",
@@ -97,5 +99,7 @@
   "send": "Envoyer",
   "modal-title": "Merci!",
   "modal-desc": "Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais.",
-  "modal-close": "Fermer"
+  "modal-close": "Fermer",
+
+  "music-tools-desc": "Des outils pour les musiciens"
 }

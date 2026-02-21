@@ -75,6 +75,10 @@ export async function loader({ request, params }: Route.LoaderArgs) {
       img: musicImage,
       isDark: false,
     },
+    'outils-musique': {
+      img: musicImage,
+      isDark: false,
+    },
   }
   const pageData =
     allPageData[t(urlTranslationSearchString[locale][page], { lng: 'fr' })]

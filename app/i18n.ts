@@ -29,5 +29,6 @@ export const urlTranslationSearchString: {
     'a-propos': 'about-url',
     musique: 'music-url',
     informatique: 'computer-science-url',
+    'outils-musique': 'music-tools-url',
   },
 }
