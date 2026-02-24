@@ -7,7 +7,7 @@ import {
   PlayIcon,
   PauseIcon,
 } from '@heroicons/react/24/solid'
-import metronomeSrc from '../assets/sounds/metronome.mp3?url'
+import { metronomePlayer } from '../assets/sounds/MetronomePlayer.client.js'
 
 export function Metronome() {
   const [metronomeWorker, setMetronomeWorker] = useState<Worker>()
@@ -20,7 +20,7 @@ export function Metronome() {
     worker.postMessage({ interval: 60000 / bpm })
     worker.onmessage = ({ data }) => {
       if (data === 'tick') {
-        playMetronome()
+        metronomePlayer.play()
       }
     }
     setMetronomeWorker(worker)
@@ -36,18 +36,8 @@ export function Metronome() {
     metronomeWorker?.postMessage({ interval: 60000 / bpm })
   }, [bpm, metronomeWorker])
 
-  function playMetronome() {
-    const metronomeElement = document.getElementById(
-      'metronome',
-    ) as HTMLAudioElement
-    if (!metronomeElement) return
-    metronomeElement.currentTime = 0
-    metronomeElement.play()
-  }
-
   return (
     <div className="flex items-center gap-2">
-      <audio src={metronomeSrc} id={'metronome'} />
       <ButtonGroup>
         <Button
           isIconOnly
