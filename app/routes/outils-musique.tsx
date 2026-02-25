@@ -149,7 +149,7 @@ export default function OutilsMusique() {
   }, [selectedTab, combination])
 
   return (
-    <div className="flex min-h-dvh justify-center">
+    <div className="flex min-h-dvh justify-center bg-slate-950">
       <div className="flex flex-col justify-between w-full">
         <main className="flex flex-col h-full">
           <div className="space-y-4 mx-2 sm:mx-4 flex flex-col items-center my-4">
