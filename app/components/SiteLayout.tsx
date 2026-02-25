@@ -120,7 +120,7 @@ export default function SiteLayout({
   }
 
   return (
-    <div className="flex min-h-dvh justify-center">
+    <div className="flex min-h-dvh justify-center bg-slate-950">
       <div className="flex flex-col justify-between w-full">
         <main className="flex flex-col h-full">
           <img
@@ -172,7 +172,7 @@ export default function SiteLayout({
             </Button>
           </div>
           <div className="bg-gradient-to-b from-black to bg-slate-950 h-10"></div>
-          <div className="w-full max-w-7xl self-center overflow-hidden">
+          <div className="w-full max-w-7xl self-center overflow-hidden ">
             <Outlet />
           </div>
         </main>
