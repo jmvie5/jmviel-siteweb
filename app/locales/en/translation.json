@@ -77,6 +77,7 @@
   "remplismonordidebits-2": "This site automatically fills your hard disk with irrelevant data, so don't forget to clear your cache!",
   "hrc-title": "Handwriting Character Recognition",
   "hrc-description": "Developed with my colleagues at EduMedia to recognize numbers and the characters <, >, and = drawn on a canvas in a web application for learning mathematics. The algorithm can theoretically recognize any character contained in its dataset.",
+  "cestmatoune-desc": "French app for live musicians: share your setlist, let the audience choose the next song, and receive tips in real time.",
 
   "games-title": "Video games",
   "games-desc": "As part of the Improvison R&D project, directed by Jean-Philippe Després (Ph. D.), I created the game at the heart of the research using Roblox.",
