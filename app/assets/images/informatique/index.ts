@@ -8,6 +8,7 @@ import nuxt from './nuxt.svg'
 import remix_glowing from './remix-glowing.svg'
 import roblox from './roblox.svg'
 import cafesocial from './cafesocial.webp'
+import cestmatoune_logo from './cestmatoune-logo.png'
 import gatsbyjs from './gatsbyjs.webp'
 import github from './github.webp'
 import github_white from './github-mark-white.svg'
@@ -32,6 +33,7 @@ export {
   PHP_logo,
   Vue_js_Logo_2,
   alec_logo,
+  cestmatoune_logo,
   createjs,
   edumedia_logo,
   framer,

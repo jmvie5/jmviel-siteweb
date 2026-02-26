@@ -40,6 +40,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     'remplismonordidebits-2': t('remplismonordidebits-2'),
     'hrc-title': t('hrc-title'),
     'hrc-description': t('hrc-description'),
+    'cestmatoune-desc': t('cestmatoune-desc'),
 
     'games-title': t('games-title'),
     'games-desc': t('games-desc'),
@@ -73,6 +74,17 @@ const InformatiquePage = () => {
   const translations = useLoaderData<typeof loader>().translations
 
   const webProjects = [
+    {
+      name: 'C’est ma toune !',
+      description: (
+        <div>
+          <p className="mb-2">{translations['cestmatoune-desc']} </p>
+        </div>
+      ),
+      url: 'cestmatoune.ca',
+      logoSrc: infoImages.cestmatoune_logo,
+      logoAtl: 'Logo cestmatoune.ca',
+    },
     {
       name: 'Laurence bf, orthopédagogue',
       description: (

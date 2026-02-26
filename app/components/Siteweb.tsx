@@ -11,7 +11,7 @@ interface SitewebProps {
   id?: string
   url?: string
   description: React.ReactElement
-  remoteHostUrl: string
+  remoteHostUrl?: string
   logoSrc?: string
   logoAlt?: string
   npmUrl?: string
@@ -32,7 +32,7 @@ const Siteweb = ({
   const prefersReduced = useReducedMotion()
   const hoverAnim = prefersReduced ? {} : { y: -1, scale: 1.01 }
 
-  const isGitHub = remoteHostUrl.includes('github.com')
+  const isGitHub = remoteHostUrl && remoteHostUrl.includes('github.com')
 
   return (
     <motion.div
@@ -49,37 +49,39 @@ const Siteweb = ({
             <Link href={link} target="_blank" rel="noreferrer">
               {url}
             </Link>
-            <Link
-              color={'foreground'}
-              href={remoteHostUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={
-                'hover:underline underline-offset-2 decoration-secondary'
-              }
-            >
-              <div className="flex gap-1">
-                {isGitHub ? (
-                  <>
-                    <img
-                      src={github_white}
-                      alt="Github logo"
-                      className="size-6"
-                    />
-                    <p>GitHub</p>
-                  </>
-                ) : (
-                  <>
-                    <img
-                      src={gitlab_logo}
-                      alt="Gitlab logo"
-                      className="size-6"
-                    />
-                    <p>GitLab</p>
-                  </>
-                )}
-              </div>
-            </Link>
+            {remoteHostUrl && (
+              <Link
+                color={'foreground'}
+                href={remoteHostUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={
+                  'hover:underline underline-offset-2 decoration-secondary'
+                }
+              >
+                <div className="flex gap-1">
+                  {isGitHub ? (
+                    <>
+                      <img
+                        src={github_white}
+                        alt="Github logo"
+                        className="size-6"
+                      />
+                      <p>GitHub</p>
+                    </>
+                  ) : (
+                    <>
+                      <img
+                        src={gitlab_logo}
+                        alt="Gitlab logo"
+                        className="size-6"
+                      />
+                      <p>GitLab</p>
+                    </>
+                  )}
+                </div>
+              </Link>
+            )}
             {npmUrl && (
               <Link href={npmUrl} target="_blank" rel="noreferrer">
                 <div className="flex gap-1">
