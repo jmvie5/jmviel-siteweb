@@ -48,6 +48,13 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     'dev-alec': t('dev-alec'),
 
     skills: t('skills'),
+
+    urls: {
+      emCompagny: t('urls.emCompagny'),
+      emScience: t('urls.emScience'),
+      pikado: t('urls.pikado'),
+      alec: t('urls.alec'),
+    },
   }
 
   return { title, description, translations }
@@ -199,7 +206,7 @@ const InformatiquePage = () => {
       url: 'https://react.dev/',
       width: 'w-24',
       alt: 'React-icon',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png',
+      src: infoImages.React_icon,
     },
     {
       title: 'Hero UI',
@@ -220,7 +227,7 @@ const InformatiquePage = () => {
       url: 'https://vitejs.dev/',
       width: 'w-24',
       alt: 'Vite Logo',
-      src: infoImages.Vitejs_logo_svg,
+      src: infoImages.Vitejs_logo,
     },
     {
       title: 'CreateJS',
@@ -234,21 +241,21 @@ const InformatiquePage = () => {
       url: 'https://www.mongodb.com/',
       width: 'w-44',
       alt: 'MongoDB logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/512px-MongoDB_Logo.svg.png',
+      src: infoImages.MongoDB_Logo,
     },
     {
       title: 'expressjs',
       url: 'https://expressjs.com/',
       width: 'w-44',
       alt: 'Expressjs logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png',
+      src: infoImages.Expressjs,
     },
     {
       title: 'NodeJS',
       url: 'https://nodejs.org/',
       width: 'w-44',
       alt: 'NodeJS logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/6/67/NodeJS.png',
+      src: infoImages.Node_js_logo,
     },
     {
       title: 'PHP',
@@ -276,7 +283,7 @@ const InformatiquePage = () => {
       url: 'https://graphql.org/',
       width: 'w-24',
       alt: 'GraphQL logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/512px-GraphQL_Logo.svg.png',
+      src: infoImages.GraphQL_Logo,
     },
     {
       title: 'Vue',
@@ -297,35 +304,35 @@ const InformatiquePage = () => {
       url: 'https://www.netlify.com/',
       width: 'w-24',
       alt: 'Netlify logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/512px-Netlify_logo_%282%29.svg.png',
+      src: infoImages.Netlify_logo,
     },
     {
       title: 'CloudFlare',
       url: 'https://www.cloudflare.com/',
       width: 'w-24',
       alt: 'CloudFlare logo',
-      src: infoImages.cloudflare_logo,
+      src: infoImages.cloudflare_icon_color_3x,
     },
     {
       title: 'Tailwind CSS',
       url: 'https://tailwindcss.com/',
       width: 'w-24',
       alt: 'TailwindCSS logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png',
+      src: infoImages.Tailwind_CSS_Logo,
     },
     {
       title: 'JavaScript',
       url: 'https://www.javascript.com/',
       width: 'w-24',
       alt: 'JavaScript logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/512px-JavaScript-logo.png',
+      src: infoImages.Javascript_Logo,
     },
     {
       title: 'TypeScript',
       url: 'https://www.typescriptlang.org/',
       width: 'w-24',
       alt: 'TypeScript logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png',
+      src: infoImages.Typescript_logo_2020,
     },
     {
       title: 'HTML5',
@@ -339,11 +346,11 @@ const InformatiquePage = () => {
       url: 'https://www.w3.org/Style/CSS/',
       width: 'w-24',
       alt: 'CSS3 logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/256px-CSS3_logo_and_wordmark.svg.png',
+      src: infoImages.CSS3_logo_and_wordmark,
     },
     {
       title: 'Python',
-      url: 'https://www.w3.org/Style/CSS/',
+      url: 'https://www.python.org/',
       width: 'w-24',
       alt: 'Python logo',
       src: infoImages.python,
@@ -353,21 +360,21 @@ const InformatiquePage = () => {
       url: 'https://cplusplus.com/',
       width: 'w-24',
       alt: 'C++ logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/256px-ISO_C%2B%2B_Logo.svg.png',
+      src: infoImages.Cpp_Logo,
     },
     {
       title: 'Lua',
       url: 'https://www.lua.org/',
       width: 'w-24',
       alt: 'Lua logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lua-Logo.svg/512px-Lua-Logo.svg.png',
+      src: infoImages.Lua_Logo,
     },
     {
       title: 'Git',
       url: 'https://git-scm.com/',
       width: 'w-32',
       alt: 'Git logo',
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png',
+      src: infoImages.Git_logo,
     },
   ]
 
@@ -401,7 +408,7 @@ const InformatiquePage = () => {
         <div className={'flex flex-col md:flex-row gap-4 '}>
           <Card
             as={Link}
-            href="https://pikado.education"
+            href={translations.urls.pikado}
             target="_blank"
             rel="noreferrer"
             className="sm:basis-1/2 text-center mb-4 gap-2 rounded-xl bg-content1/70 p-4 text-foreground ring-1 ring-content3/60 shadow-sm bg-gradient-to-l from-content3 to-content4 hover:bg-gradient-to-r hover:bg-content1 hover:ring-primary/60 transition duration-100 ease-in hover:scale-101 transform hover:-translate-y-1"
@@ -415,7 +422,7 @@ const InformatiquePage = () => {
           </Card>
           <Card
             as={Link}
-            href="https://alec-edu.com"
+            href={translations.urls.alec}
             target="_blank"
             rel="noreferrer"
             className="sm:basis-1/2 text-center mb-4 gap-2 rounded-xl bg-content1/70 p-4 text-foreground ring-1 ring-content3/60 shadow-sm bg-gradient-to-l from-content3 to-content4 hover:bg-gradient-to-r hover:bg-content1 hover:ring-primary/60 transition duration-100 ease-in hover:scale-101 transform hover:-translate-y-1"

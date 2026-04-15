@@ -39,9 +39,15 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     'my-projects': t('my-projects'),
     'Computer Science': t('Computer Science'),
     Music: t('Music'),
+    urls: {
+      emCompagny: t('urls.emCompagny'),
+      emScience: t('urls.emScience'),
+      pikado: t('urls.pikado'),
+      alec: t('urls.alec'),
+    },
   }
 
-  return { title, description, translations }
+  return { title, description, translations, locale }
 }
 
 export function meta({ matches }: Route.MetaArgs) {
@@ -62,7 +68,7 @@ export function meta({ matches }: Route.MetaArgs) {
 }
 
 const AProposPage = () => {
-  const translations = useLoaderData<typeof loader>().translations
+  const { translations } = useLoaderData<typeof loader>()
 
   return (
     <div className="grid grid-cols-1 gap-4 mx-2 sm:mx-4 max-w-7xl self-center">
@@ -75,7 +81,7 @@ const AProposPage = () => {
             <p className="">
               {translations['where-I-Am-1']}
               <Link
-                href="https://www.edumedia.com"
+                href={translations.urls.emCompagny}
                 className="font-semibold "
                 target="_blank"
                 rel="noreferrer"
@@ -84,7 +90,7 @@ const AProposPage = () => {
               </Link>
               {translations['where-I-Am-2']}
               <Link
-                href="https://alec-edu.com"
+                href={translations.urls.alec}
                 className="font-semibold "
                 target="_blank"
                 rel="noreferrer"
@@ -93,7 +99,7 @@ const AProposPage = () => {
               </Link>
               {translations['where-I-Am-3']}
               <Link
-                href="https://pikado.education"
+                href={translations.urls.pikado}
                 className="font-semibold "
                 target="_blank"
                 rel="noreferrer"
@@ -105,7 +111,11 @@ const AProposPage = () => {
             <p className="hidden lg:inline">{translations['my-background']}</p>
           </div>
           <div className="w-full flex items-center justify-around lg-float-right p-2">
-            <a href="https://www.edumedia.com" target="_blank" rel="noreferrer">
+            <a
+              href={translations.urls.emScience}
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src={edumediaLogo}
                 alt="Logo EduMedia"
@@ -113,14 +123,14 @@ const AProposPage = () => {
               />
             </a>
             <a
-              href="https://pikado.education"
+              href={translations.urls.pikado}
               className="w-fit pl-2 pr-1 hover-scale"
               target="_blank"
               rel="noreferrer"
             >
               {pikado_p}
             </a>
-            <a href="https://alec-edu.com" target="_blank" rel="noreferrer">
+            <a href={translations.urls.alec} target="_blank" rel="noreferrer">
               <img
                 src={alecLogo}
                 alt="Logo Alec"

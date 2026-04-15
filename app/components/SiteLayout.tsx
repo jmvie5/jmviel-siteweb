@@ -1,5 +1,5 @@
 import { Outlet, Link } from 'react-router'
-import { github_white } from '~/assets/images/informatique'
+import { github_mark_white } from '~/assets/images/informatique'
 import linkedinLogo from '~/assets/images/informatique/linkedin.webp'
 import type { Route } from './+types/SiteLayout'
 import { twMerge } from 'tailwind-merge'
@@ -191,7 +191,7 @@ export default function SiteLayout({
               rel="noreferrer"
             >
               <img
-                src={github_white}
+                src={github_mark_white}
                 alt="GitHub Logo"
                 width={30}
                 height={30}

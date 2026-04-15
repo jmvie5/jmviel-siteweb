@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import {
-  github_white,
+  github_mark_white,
   gitlab_logo,
   npm_logo,
 } from '~/assets/images/informatique/index.js'
@@ -63,7 +63,7 @@ const Siteweb = ({
                   {isGitHub ? (
                     <>
                       <img
-                        src={github_white}
+                        src={github_mark_white}
                         alt="Github logo"
                         className="size-6"
                       />
