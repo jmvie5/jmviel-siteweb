@@ -48,6 +48,13 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     'dev-alec': t('dev-alec'),
 
     skills: t('skills'),
+
+    urls: {
+      emCompagny: t('urls.emCompagny'),
+      emScience: t('urls.emScience'),
+      pikado: t('urls.pikado'),
+      alec: t('urls.alec'),
+    },
   }
 
   return { title, description, translations }
@@ -343,7 +350,7 @@ const InformatiquePage = () => {
     },
     {
       title: 'Python',
-      url: 'https://www.w3.org/Style/CSS/',
+      url: 'https://www.python.org/',
       width: 'w-24',
       alt: 'Python logo',
       src: infoImages.python,
@@ -401,7 +408,7 @@ const InformatiquePage = () => {
         <div className={'flex flex-col md:flex-row gap-4 '}>
           <Card
             as={Link}
-            href="https://pikado.education"
+            href={translations.urls.pikado}
             target="_blank"
             rel="noreferrer"
             className="sm:basis-1/2 text-center mb-4 gap-2 rounded-xl bg-content1/70 p-4 text-foreground ring-1 ring-content3/60 shadow-sm bg-gradient-to-l from-content3 to-content4 hover:bg-gradient-to-r hover:bg-content1 hover:ring-primary/60 transition duration-100 ease-in hover:scale-101 transform hover:-translate-y-1"
@@ -415,7 +422,7 @@ const InformatiquePage = () => {
           </Card>
           <Card
             as={Link}
-            href="https://alec-edu.com"
+            href={translations.urls.alec}
             target="_blank"
             rel="noreferrer"
             className="sm:basis-1/2 text-center mb-4 gap-2 rounded-xl bg-content1/70 p-4 text-foreground ring-1 ring-content3/60 shadow-sm bg-gradient-to-l from-content3 to-content4 hover:bg-gradient-to-r hover:bg-content1 hover:ring-primary/60 transition duration-100 ease-in hover:scale-101 transform hover:-translate-y-1"

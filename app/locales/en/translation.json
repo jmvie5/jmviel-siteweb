@@ -1,6 +1,12 @@
 {
   "fr": "Français",
   "en": "English",
+  "urls": {
+    "emCompagny": "https://www.edumedia.company/en",
+    "emScience": "https://www.edumedia.com/en",
+    "pikado": "https://pikado.education/en",
+    "alec": "https://en.alec-edu.com"
+  },
 
   "index-desc": "Jean-Michel Viel, musician, educator and programmer.",
 
